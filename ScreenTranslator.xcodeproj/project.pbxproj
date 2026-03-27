@@ -6,6 +6,231 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		03494BCF2F6EF5360048643B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03494BBE2F6EF5360048643B /* Preview Assets.xcassets */; };
+		03494BD02F6EF5360048643B /* ScaffoldSnapshot.md in Resources */ = {isa = PBXBuildFile; fileRef = 03494BC22F6EF5360048643B /* ScaffoldSnapshot.md */; };
+		03494BD12F6EF5360048643B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03494BC02F6EF5360048643B /* Assets.xcassets */; };
+		03494BD22F6EF5360048643B /* OverlayBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BAE2F6EF5360048643B /* OverlayBlockView.swift */; };
+		03494BD32F6EF5360048643B /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B752F6EF5360048643B /* AppSettings.swift */; };
+		03494BD42F6EF5360048643B /* TextBlockComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B872F6EF5360048643B /* TextBlockComposer.swift */; };
+		03494BD52F6EF5360048643B /* TranslationBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B7D2F6EF5360048643B /* TranslationBlock.swift */; };
+		03494BD62F6EF5360048643B /* OverlayRenderStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B782F6EF5360048643B /* OverlayRenderStyle.swift */; };
+		03494BD72F6EF5360048643B /* HistoryStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B7F2F6EF5360048643B /* HistoryStoreProtocol.swift */; };
+		03494BD82F6EF5360048643B /* OnDeviceTranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B9B2F6EF5360048643B /* OnDeviceTranslationService.swift */; };
+		03494BD92F6EF5360048643B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B702F6EF5360048643B /* AppCoordinator.swift */; };
+		03494BDA2F6EF5360048643B /* ScreenshotInputBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B8B2F6EF5360048643B /* ScreenshotInputBuilder.swift */; };
+		03494BDB2F6EF5360048643B /* OverlayRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B942F6EF5360048643B /* OverlayRenderer.swift */; };
+		03494BDC2F6EF5360048643B /* OCRServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B802F6EF5360048643B /* OCRServiceProtocol.swift */; };
+		03494BDD2F6EF5360048643B /* TranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B9E2F6EF5360048643B /* TranslationService.swift */; };
+		03494BDE2F6EF5360048643B /* TranslateScreenshotIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BBC2F6EF5360048643B /* TranslateScreenshotIntent.swift */; };
+		03494BDF2F6EF5360048643B /* OverlayRenderResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B772F6EF5360048643B /* OverlayRenderResult.swift */; };
+		03494BE02F6EF5360048643B /* DebugViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BA52F6EF5360048643B /* DebugViewModel.swift */; };
+		03494BE12F6EF5360048643B /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B712F6EF5360048643B /* AppEnvironment.swift */; };
+		03494BE22F6EF5360048643B /* OCRTextObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B762F6EF5360048643B /* OCRTextObservation.swift */; };
+		03494BE32F6EF5360048643B /* ProcessingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B7A2F6EF5360048643B /* ProcessingState.swift */; };
+		03494BE52F6EF5360048643B /* OCRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B8F2F6EF5360048643B /* OCRService.swift */; };
+		03494BE62F6EF5360048643B /* DebugOverlayInspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BA32F6EF5360048643B /* DebugOverlayInspectorView.swift */; };
+		03494BE72F6EF5360048643B /* AppShortcutsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BB92F6EF5360048643B /* AppShortcutsProvider.swift */; };
+		03494BE82F6EF5360048643B /* ScreenshotNormalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B8C2F6EF5360048643B /* ScreenshotNormalizer.swift */; };
+		03494BE92F6EF5360048643B /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B982F6EF5360048643B /* SettingsStore.swift */; };
+		03494BEA2F6EF5360048643B /* IntentResultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BBB2F6EF5360048643B /* IntentResultRouter.swift */; };
+		03494BEB2F6EF5360048643B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BB52F6EF5360048643B /* SettingsView.swift */; };
+		03494BEC2F6EF5360048643B /* ScreenshotInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B7B2F6EF5360048643B /* ScreenshotInput.swift */; };
+		03494BED2F6EF5360048643B /* TranslationLanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B9D2F6EF5360048643B /* TranslationLanguageManager.swift */; };
+		03494BEE2F6EF5360048643B /* LanguagePreparationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BB42F6EF5360048643B /* LanguagePreparationView.swift */; };
+		03494BEF2F6EF5360048643B /* OverlayRendererProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B812F6EF5360048643B /* OverlayRendererProtocol.swift */; };
+		03494BF02F6EF5360048643B /* HistoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B972F6EF5360048643B /* HistoryStore.swift */; };
+		03494BF12F6EF5360048643B /* AppRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B722F6EF5360048643B /* AppRoute.swift */; };
+		03494BF22F6EF5360048643B /* ResultOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BB12F6EF5360048643B /* ResultOverlayView.swift */; };
+		03494BF32F6EF5360048643B /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BA72F6EF5360048643B /* ErrorView.swift */; };
+		03494BF42F6EF5360048643B /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BA42F6EF5360048643B /* DebugView.swift */; };
+		03494BF52F6EF5360048643B /* ProcessingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BAB2F6EF5360048643B /* ProcessingView.swift */; };
+		03494BF62F6EF5360048643B /* VisionOCRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B902F6EF5360048643B /* VisionOCRService.swift */; };
+		03494BF72F6EF5360048643B /* ProcessingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BAC2F6EF5360048643B /* ProcessingViewModel.swift */; };
+		03494BF82F6EF5360048643B /* ResultOverlayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BB22F6EF5360048643B /* ResultOverlayViewModel.swift */; };
+		03494BFA2F6EF5360048643B /* DebugOCRInspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BA22F6EF5360048643B /* DebugOCRInspectorView.swift */; };
+		03494BFC2F6EF5360048643B /* TextGroupingServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B832F6EF5360048643B /* TextGroupingServiceProtocol.swift */; };
+		03494BFD2F6EF5360048643B /* ProcessingOrchestrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BAA2F6EF5360048643B /* ProcessingOrchestrator.swift */; };
+		03494BFE2F6EF5360048643B /* ProcessingJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B792F6EF5360048643B /* ProcessingJob.swift */; };
+		03494BFF2F6EF5360048643B /* BoundingBoxGrouper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B862F6EF5360048643B /* BoundingBoxGrouper.swift */; };
+		03494C002F6EF5360048643B /* IntentInputDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BBA2F6EF5360048643B /* IntentInputDecoder.swift */; };
+		03494C012F6EF5360048643B /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BB62F6EF5360048643B /* SettingsViewModel.swift */; };
+		03494C022F6EF5360048643B /* ScreenTranslatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BC32F6EF5360048643B /* ScreenTranslatorApp.swift */; };
+		03494C032F6EF5360048643B /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B6F2F6EF5360048643B /* AppContainer.swift */; };
+		03494C042F6EF5360048643B /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B742F6EF5360048643B /* AppError.swift */; };
+		03494C052F6EF5360048643B /* TranslationBatchBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B9C2F6EF5360048643B /* TranslationBatchBuilder.swift */; };
+		03494C062F6EF5360048643B /* OverlayTextFitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B952F6EF5360048643B /* OverlayTextFitter.swift */; };
+		03494C072F6EF5360048643B /* OCRRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B8E2F6EF5360048643B /* OCRRequestFactory.swift */; };
+		03494C082F6EF5360048643B /* OverlayLayoutEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B932F6EF5360048643B /* OverlayLayoutEngine.swift */; };
+		03494C092F6EF5360048643B /* ResultMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BB02F6EF5360048643B /* ResultMode.swift */; };
+		03494C0A2F6EF5360048643B /* SettingsStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B822F6EF5360048643B /* SettingsStoreProtocol.swift */; };
+		03494C0B2F6EF5360048643B /* OverlayCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BAF2F6EF5360048643B /* OverlayCanvasView.swift */; };
+		03494C0C2F6EF5360048643B /* TextGroupingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B882F6EF5360048643B /* TextGroupingService.swift */; };
+		03494C0D2F6EF5360048643B /* ImageOrientationResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B8A2F6EF5360048643B /* ImageOrientationResolver.swift */; };
+		03494C0E2F6EF5360048643B /* OverlayImageComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B922F6EF5360048643B /* OverlayImageComposer.swift */; };
+		03494C0F2F6EF5360048643B /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BA82F6EF5360048643B /* ErrorViewModel.swift */; };
+		03494C102F6EF5360048643B /* TextBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B7C2F6EF5360048643B /* TextBlock.swift */; };
+		03494C122F6EF5360048643B /* TemporaryImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B992F6EF5360048643B /* TemporaryImageStore.swift */; };
+		03494C132F6EF5360048643B /* TranslationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B842F6EF5360048643B /* TranslationServiceProtocol.swift */; };
+		03494C142F6EF5370048643B /* OverlayBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BAE2F6EF5360048643B /* OverlayBlockView.swift */; };
+		03494C152F6EF5370048643B /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B752F6EF5360048643B /* AppSettings.swift */; };
+		03494C162F6EF5370048643B /* TextBlockComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B872F6EF5360048643B /* TextBlockComposer.swift */; };
+		03494C172F6EF5370048643B /* TranslationBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B7D2F6EF5360048643B /* TranslationBlock.swift */; };
+		03494C182F6EF5370048643B /* OverlayRenderStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B782F6EF5360048643B /* OverlayRenderStyle.swift */; };
+		03494C192F6EF5370048643B /* HistoryStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B7F2F6EF5360048643B /* HistoryStoreProtocol.swift */; };
+		03494C1A2F6EF5370048643B /* OnDeviceTranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B9B2F6EF5360048643B /* OnDeviceTranslationService.swift */; };
+		03494C1B2F6EF5370048643B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B702F6EF5360048643B /* AppCoordinator.swift */; };
+		03494C1C2F6EF5370048643B /* ScreenshotInputBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B8B2F6EF5360048643B /* ScreenshotInputBuilder.swift */; };
+		03494C1D2F6EF5370048643B /* OverlayRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B942F6EF5360048643B /* OverlayRenderer.swift */; };
+		03494C1E2F6EF5370048643B /* OCRServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B802F6EF5360048643B /* OCRServiceProtocol.swift */; };
+		03494C1F2F6EF5370048643B /* TranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B9E2F6EF5360048643B /* TranslationService.swift */; };
+		03494C202F6EF5370048643B /* TranslateScreenshotIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BBC2F6EF5360048643B /* TranslateScreenshotIntent.swift */; };
+		03494C212F6EF5370048643B /* OverlayRenderResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B772F6EF5360048643B /* OverlayRenderResult.swift */; };
+		03494C222F6EF5370048643B /* DebugViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BA52F6EF5360048643B /* DebugViewModel.swift */; };
+		03494C232F6EF5370048643B /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B712F6EF5360048643B /* AppEnvironment.swift */; };
+		03494C242F6EF5370048643B /* OCRTextObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B762F6EF5360048643B /* OCRTextObservation.swift */; };
+		03494C252F6EF5370048643B /* ProcessingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B7A2F6EF5360048643B /* ProcessingState.swift */; };
+		03494C272F6EF5370048643B /* OCRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B8F2F6EF5360048643B /* OCRService.swift */; };
+		03494C282F6EF5370048643B /* DebugOverlayInspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BA32F6EF5360048643B /* DebugOverlayInspectorView.swift */; };
+		03494C292F6EF5370048643B /* AppShortcutsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BB92F6EF5360048643B /* AppShortcutsProvider.swift */; };
+		03494C2A2F6EF5370048643B /* ScreenshotNormalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B8C2F6EF5360048643B /* ScreenshotNormalizer.swift */; };
+		03494C2B2F6EF5370048643B /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B982F6EF5360048643B /* SettingsStore.swift */; };
+		03494C2C2F6EF5370048643B /* IntentResultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BBB2F6EF5360048643B /* IntentResultRouter.swift */; };
+		03494C2D2F6EF5370048643B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BB52F6EF5360048643B /* SettingsView.swift */; };
+		03494C2E2F6EF5370048643B /* ScreenshotInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B7B2F6EF5360048643B /* ScreenshotInput.swift */; };
+		03494C2F2F6EF5370048643B /* TranslationLanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B9D2F6EF5360048643B /* TranslationLanguageManager.swift */; };
+		03494C302F6EF5370048643B /* LanguagePreparationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BB42F6EF5360048643B /* LanguagePreparationView.swift */; };
+		03494C312F6EF5370048643B /* OverlayRendererProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B812F6EF5360048643B /* OverlayRendererProtocol.swift */; };
+		03494C322F6EF5370048643B /* HistoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B972F6EF5360048643B /* HistoryStore.swift */; };
+		03494C332F6EF5370048643B /* AppRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B722F6EF5360048643B /* AppRoute.swift */; };
+		03494C342F6EF5370048643B /* ResultOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BB12F6EF5360048643B /* ResultOverlayView.swift */; };
+		03494C352F6EF5370048643B /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BA72F6EF5360048643B /* ErrorView.swift */; };
+		03494C362F6EF5370048643B /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BA42F6EF5360048643B /* DebugView.swift */; };
+		03494C372F6EF5370048643B /* ProcessingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BAB2F6EF5360048643B /* ProcessingView.swift */; };
+		03494C382F6EF5370048643B /* VisionOCRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B902F6EF5360048643B /* VisionOCRService.swift */; };
+		03494C392F6EF5370048643B /* ProcessingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BAC2F6EF5360048643B /* ProcessingViewModel.swift */; };
+		03494C3A2F6EF5370048643B /* ResultOverlayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BB22F6EF5360048643B /* ResultOverlayViewModel.swift */; };
+		03494C3C2F6EF5370048643B /* DebugOCRInspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BA22F6EF5360048643B /* DebugOCRInspectorView.swift */; };
+		03494C3E2F6EF5370048643B /* TextGroupingServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B832F6EF5360048643B /* TextGroupingServiceProtocol.swift */; };
+		03494C3F2F6EF5370048643B /* ProcessingOrchestrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BAA2F6EF5360048643B /* ProcessingOrchestrator.swift */; };
+		03494C402F6EF5370048643B /* ProcessingJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B792F6EF5360048643B /* ProcessingJob.swift */; };
+		03494C412F6EF5370048643B /* BoundingBoxGrouper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B862F6EF5360048643B /* BoundingBoxGrouper.swift */; };
+		03494C422F6EF5370048643B /* IntentInputDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BBA2F6EF5360048643B /* IntentInputDecoder.swift */; };
+		03494C432F6EF5370048643B /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BB62F6EF5360048643B /* SettingsViewModel.swift */; };
+		03494C442F6EF5370048643B /* ScreenTranslatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BC32F6EF5360048643B /* ScreenTranslatorApp.swift */; };
+		03494C452F6EF5370048643B /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B6F2F6EF5360048643B /* AppContainer.swift */; };
+		03494C462F6EF5370048643B /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B742F6EF5360048643B /* AppError.swift */; };
+		03494C472F6EF5370048643B /* TranslationBatchBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B9C2F6EF5360048643B /* TranslationBatchBuilder.swift */; };
+		03494C482F6EF5370048643B /* OverlayTextFitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B952F6EF5360048643B /* OverlayTextFitter.swift */; };
+		03494C492F6EF5370048643B /* OCRRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B8E2F6EF5360048643B /* OCRRequestFactory.swift */; };
+		03494C4A2F6EF5370048643B /* OverlayLayoutEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B932F6EF5360048643B /* OverlayLayoutEngine.swift */; };
+		03494C4B2F6EF5370048643B /* ResultMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BB02F6EF5360048643B /* ResultMode.swift */; };
+		03494C4C2F6EF5370048643B /* SettingsStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B822F6EF5360048643B /* SettingsStoreProtocol.swift */; };
+		03494C4D2F6EF5370048643B /* OverlayCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BAF2F6EF5360048643B /* OverlayCanvasView.swift */; };
+		03494C4E2F6EF5370048643B /* TextGroupingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B882F6EF5360048643B /* TextGroupingService.swift */; };
+		03494C4F2F6EF5370048643B /* ImageOrientationResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B8A2F6EF5360048643B /* ImageOrientationResolver.swift */; };
+		03494C502F6EF5370048643B /* OverlayImageComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B922F6EF5360048643B /* OverlayImageComposer.swift */; };
+		03494C512F6EF5370048643B /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BA82F6EF5360048643B /* ErrorViewModel.swift */; };
+		03494C522F6EF5370048643B /* TextBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B7C2F6EF5360048643B /* TextBlock.swift */; };
+		03494C542F6EF5370048643B /* TemporaryImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B992F6EF5360048643B /* TemporaryImageStore.swift */; };
+		03494C552F6EF5370048643B /* TranslationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B842F6EF5360048643B /* TranslationServiceProtocol.swift */; };
+		03494C572F6EF5370048643B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03494BBE2F6EF5360048643B /* Preview Assets.xcassets */; };
+		03494C582F6EF5370048643B /* ScaffoldSnapshot.md in Resources */ = {isa = PBXBuildFile; fileRef = 03494BC22F6EF5360048643B /* ScaffoldSnapshot.md */; };
+		03494C592F6EF5370048643B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03494BC02F6EF5360048643B /* Assets.xcassets */; };
+		03494C5B2F6EF5370048643B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03494BBE2F6EF5360048643B /* Preview Assets.xcassets */; };
+		03494C5C2F6EF5370048643B /* ScaffoldSnapshot.md in Resources */ = {isa = PBXBuildFile; fileRef = 03494BC22F6EF5360048643B /* ScaffoldSnapshot.md */; };
+		03494C5D2F6EF5370048643B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03494BC02F6EF5360048643B /* Assets.xcassets */; };
+		03494C5E2F6EF5370048643B /* OverlayBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BAE2F6EF5360048643B /* OverlayBlockView.swift */; };
+		03494C5F2F6EF5370048643B /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B752F6EF5360048643B /* AppSettings.swift */; };
+		03494C602F6EF5370048643B /* TextBlockComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B872F6EF5360048643B /* TextBlockComposer.swift */; };
+		03494C612F6EF5370048643B /* TranslationBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B7D2F6EF5360048643B /* TranslationBlock.swift */; };
+		03494C622F6EF5370048643B /* OverlayRenderStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B782F6EF5360048643B /* OverlayRenderStyle.swift */; };
+		03494C632F6EF5370048643B /* HistoryStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B7F2F6EF5360048643B /* HistoryStoreProtocol.swift */; };
+		03494C642F6EF5370048643B /* OnDeviceTranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B9B2F6EF5360048643B /* OnDeviceTranslationService.swift */; };
+		03494C652F6EF5370048643B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B702F6EF5360048643B /* AppCoordinator.swift */; };
+		03494C662F6EF5370048643B /* ScreenshotInputBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B8B2F6EF5360048643B /* ScreenshotInputBuilder.swift */; };
+		03494C672F6EF5370048643B /* OverlayRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B942F6EF5360048643B /* OverlayRenderer.swift */; };
+		03494C682F6EF5370048643B /* OCRServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B802F6EF5360048643B /* OCRServiceProtocol.swift */; };
+		03494C692F6EF5370048643B /* TranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B9E2F6EF5360048643B /* TranslationService.swift */; };
+		03494C6A2F6EF5370048643B /* TranslateScreenshotIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BBC2F6EF5360048643B /* TranslateScreenshotIntent.swift */; };
+		03494C6B2F6EF5370048643B /* OverlayRenderResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B772F6EF5360048643B /* OverlayRenderResult.swift */; };
+		03494C6C2F6EF5370048643B /* DebugViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BA52F6EF5360048643B /* DebugViewModel.swift */; };
+		03494C6D2F6EF5370048643B /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B712F6EF5360048643B /* AppEnvironment.swift */; };
+		03494C6E2F6EF5370048643B /* OCRTextObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B762F6EF5360048643B /* OCRTextObservation.swift */; };
+		03494C6F2F6EF5370048643B /* ProcessingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B7A2F6EF5360048643B /* ProcessingState.swift */; };
+		03494C702F6EF5370048643B /* ScreenshotNormalizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BCA2F6EF5360048643B /* ScreenshotNormalizerTests.swift */; };
+		03494C712F6EF5370048643B /* OCRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B8F2F6EF5360048643B /* OCRService.swift */; };
+		03494C722F6EF5370048643B /* DebugOverlayInspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BA32F6EF5360048643B /* DebugOverlayInspectorView.swift */; };
+		03494C732F6EF5370048643B /* AppShortcutsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BB92F6EF5360048643B /* AppShortcutsProvider.swift */; };
+		03494C742F6EF5370048643B /* ScreenshotNormalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B8C2F6EF5360048643B /* ScreenshotNormalizer.swift */; };
+		03494C752F6EF5370048643B /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B982F6EF5360048643B /* SettingsStore.swift */; };
+		03494C762F6EF5370048643B /* IntentResultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BBB2F6EF5360048643B /* IntentResultRouter.swift */; };
+		03494C772F6EF5370048643B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BB52F6EF5360048643B /* SettingsView.swift */; };
+		03494C782F6EF5370048643B /* ScreenshotInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B7B2F6EF5360048643B /* ScreenshotInput.swift */; };
+		03494C792F6EF5370048643B /* TranslationLanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B9D2F6EF5360048643B /* TranslationLanguageManager.swift */; };
+		03494C7A2F6EF5370048643B /* LanguagePreparationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BB42F6EF5360048643B /* LanguagePreparationView.swift */; };
+		03494C7B2F6EF5370048643B /* OverlayRendererProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B812F6EF5360048643B /* OverlayRendererProtocol.swift */; };
+		03494C7C2F6EF5370048643B /* HistoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B972F6EF5360048643B /* HistoryStore.swift */; };
+		03494C7D2F6EF5370048643B /* AppRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B722F6EF5360048643B /* AppRoute.swift */; };
+		03494C7E2F6EF5370048643B /* ResultOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BB12F6EF5360048643B /* ResultOverlayView.swift */; };
+		03494C7F2F6EF5370048643B /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BA72F6EF5360048643B /* ErrorView.swift */; };
+		03494C802F6EF5370048643B /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BA42F6EF5360048643B /* DebugView.swift */; };
+		03494C812F6EF5370048643B /* ProcessingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BAB2F6EF5360048643B /* ProcessingView.swift */; };
+		03494C822F6EF5370048643B /* VisionOCRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B902F6EF5360048643B /* VisionOCRService.swift */; };
+		03494C832F6EF5370048643B /* ProcessingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BAC2F6EF5360048643B /* ProcessingViewModel.swift */; };
+		03494C842F6EF5370048643B /* ResultOverlayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BB22F6EF5360048643B /* ResultOverlayViewModel.swift */; };
+		03494C852F6EF5370048643B /* ScreenTranslatorScaffoldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BCB2F6EF5360048643B /* ScreenTranslatorScaffoldTests.swift */; };
+		03494C862F6EF5370048643B /* DebugOCRInspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BA22F6EF5360048643B /* DebugOCRInspectorView.swift */; };
+		03494C872F6EF5370048643B /* ScreenTranslatorIntegrationPlaceholderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BC72F6EF5360048643B /* ScreenTranslatorIntegrationPlaceholderTests.swift */; };
+		03494C882F6EF5370048643B /* TextGroupingServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B832F6EF5360048643B /* TextGroupingServiceProtocol.swift */; };
+		03494C892F6EF5370048643B /* ProcessingOrchestrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BAA2F6EF5360048643B /* ProcessingOrchestrator.swift */; };
+		03494C8A2F6EF5370048643B /* ProcessingJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B792F6EF5360048643B /* ProcessingJob.swift */; };
+		03494C8B2F6EF5370048643B /* BoundingBoxGrouper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B862F6EF5360048643B /* BoundingBoxGrouper.swift */; };
+		03494C8C2F6EF5370048643B /* IntentInputDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BBA2F6EF5360048643B /* IntentInputDecoder.swift */; };
+		03494C8D2F6EF5370048643B /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BB62F6EF5360048643B /* SettingsViewModel.swift */; };
+		03494C8E2F6EF5370048643B /* ScreenTranslatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BC32F6EF5360048643B /* ScreenTranslatorApp.swift */; };
+		03494C8F2F6EF5370048643B /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B6F2F6EF5360048643B /* AppContainer.swift */; };
+		03494C902F6EF5370048643B /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B742F6EF5360048643B /* AppError.swift */; };
+		03494C912F6EF5370048643B /* TranslationBatchBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B9C2F6EF5360048643B /* TranslationBatchBuilder.swift */; };
+		03494C922F6EF5370048643B /* OverlayTextFitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B952F6EF5360048643B /* OverlayTextFitter.swift */; };
+		03494C932F6EF5370048643B /* OCRRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B8E2F6EF5360048643B /* OCRRequestFactory.swift */; };
+		03494C942F6EF5370048643B /* OverlayLayoutEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B932F6EF5360048643B /* OverlayLayoutEngine.swift */; };
+		03494C952F6EF5370048643B /* ResultMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BB02F6EF5360048643B /* ResultMode.swift */; };
+		03494C962F6EF5370048643B /* SettingsStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B822F6EF5360048643B /* SettingsStoreProtocol.swift */; };
+		03494C972F6EF5370048643B /* OverlayCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BAF2F6EF5360048643B /* OverlayCanvasView.swift */; };
+		03494C982F6EF5370048643B /* TextGroupingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B882F6EF5360048643B /* TextGroupingService.swift */; };
+		03494C992F6EF5370048643B /* ImageOrientationResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B8A2F6EF5360048643B /* ImageOrientationResolver.swift */; };
+		03494C9A2F6EF5370048643B /* OverlayImageComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B922F6EF5360048643B /* OverlayImageComposer.swift */; };
+		03494C9B2F6EF5370048643B /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BA82F6EF5360048643B /* ErrorViewModel.swift */; };
+		03494C9C2F6EF5370048643B /* TextBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B7C2F6EF5360048643B /* TextBlock.swift */; };
+		03494C9D2F6EF5370048643B /* ScreenshotInputBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BC92F6EF5360048643B /* ScreenshotInputBuilderTests.swift */; };
+		03494C9E2F6EF5370048643B /* TemporaryImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B992F6EF5360048643B /* TemporaryImageStore.swift */; };
+		03494C9F2F6EF5370048643B /* TranslationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B842F6EF5360048643B /* TranslationServiceProtocol.swift */; };
+		03A1B0015A11000100000001 /* BoundingBoxGrouperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1B0015A11000100000011 /* BoundingBoxGrouperTests.swift */; };
+		03A1B0015A11000100000002 /* TextBlockComposerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1B0015A11000100000012 /* TextBlockComposerTests.swift */; };
+		03A1B0015A11000100000003 /* TextGroupingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1B0015A11000100000013 /* TextGroupingServiceTests.swift */; };
+		03A1B0015A11000100000004 /* TranslationBatchBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1B0015A11000100000014 /* TranslationBatchBuilderTests.swift */; };
+		03A1B0015A11000100000005 /* OverlayTextFitterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1B0015A11000100000015 /* OverlayTextFitterTests.swift */; };
+		03A1B0015A11000100000006 /* ProcessingOrchestratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1B0015A11000100000016 /* ProcessingOrchestratorTests.swift */; };
+		03A1B0015A11000100000007 /* IntentInputFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1B0015A11000100000017 /* IntentInputFlowTests.swift */; };
+		03A1B0015A11000100000008 /* ProcessingFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1B0015A11000100000018 /* ProcessingFlowTests.swift */; };
+		03B1C0015A22000100000001 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1C0015A22000100000011 /* AppServices.swift */; };
+		03B1C0015A22000100000002 /* DebugInspectionModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1C0015A22000100000012 /* DebugInspectionModels.swift */; };
+		03B1C0015A22000100000003 /* DebugPipelineInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1C0015A22000100000013 /* DebugPipelineInspector.swift */; };
+		03B1C0015A22000100000004 /* OverlayPreviewSurface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1C0015A22000100000014 /* OverlayPreviewSurface.swift */; };
+		03B1C0015A22000100000005 /* ZoomablePreviewImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1C0015A22000100000015 /* ZoomablePreviewImage.swift */; };
+		03B1C0015A22000100000006 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1C0015A22000100000011 /* AppServices.swift */; };
+		03B1C0015A22000100000007 /* DebugInspectionModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1C0015A22000100000012 /* DebugInspectionModels.swift */; };
+		03B1C0015A22000100000008 /* DebugPipelineInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1C0015A22000100000013 /* DebugPipelineInspector.swift */; };
+		03B1C0015A22000100000009 /* OverlayPreviewSurface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1C0015A22000100000014 /* OverlayPreviewSurface.swift */; };
+		03B1C0015A2200010000000A /* ZoomablePreviewImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1C0015A22000100000015 /* ZoomablePreviewImage.swift */; };
+		03B1C0015A2200010000000B /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1C0015A22000100000011 /* AppServices.swift */; };
+		03B1C0015A2200010000000C /* DebugInspectionModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1C0015A22000100000012 /* DebugInspectionModels.swift */; };
+		03B1C0015A2200010000000D /* DebugPipelineInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1C0015A22000100000013 /* DebugPipelineInspector.swift */; };
+		03B1C0015A2200010000000E /* OverlayPreviewSurface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1C0015A22000100000014 /* OverlayPreviewSurface.swift */; };
+		03B1C0015A2200010000000F /* ZoomablePreviewImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1C0015A22000100000015 /* ZoomablePreviewImage.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		034948F42F6EB7120048643B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,9 +249,93 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		034948E62F6EB7110048643B /* ScreenTranslator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScreenTranslator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		034948E62F6EB7110048643B /* ChinaTap Screen Translator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChinaTap Screen Translator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		034948F32F6EB7120048643B /* ScreenTranslatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScreenTranslatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		034948FD2F6EB7120048643B /* ScreenTranslatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScreenTranslatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		03494B6F2F6EF5360048643B /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
+		03494B702F6EF5360048643B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		03494B712F6EF5360048643B /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		03494B722F6EF5360048643B /* AppRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoute.swift; sourceTree = "<group>"; };
+		03494B742F6EF5360048643B /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		03494B752F6EF5360048643B /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		03494B762F6EF5360048643B /* OCRTextObservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRTextObservation.swift; sourceTree = "<group>"; };
+		03494B772F6EF5360048643B /* OverlayRenderResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayRenderResult.swift; sourceTree = "<group>"; };
+		03494B782F6EF5360048643B /* OverlayRenderStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayRenderStyle.swift; sourceTree = "<group>"; };
+		03494B792F6EF5360048643B /* ProcessingJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingJob.swift; sourceTree = "<group>"; };
+		03494B7A2F6EF5360048643B /* ProcessingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingState.swift; sourceTree = "<group>"; };
+		03494B7B2F6EF5360048643B /* ScreenshotInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotInput.swift; sourceTree = "<group>"; };
+		03494B7C2F6EF5360048643B /* TextBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBlock.swift; sourceTree = "<group>"; };
+		03494B7D2F6EF5360048643B /* TranslationBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationBlock.swift; sourceTree = "<group>"; };
+		03494B7F2F6EF5360048643B /* HistoryStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStoreProtocol.swift; sourceTree = "<group>"; };
+		03494B802F6EF5360048643B /* OCRServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRServiceProtocol.swift; sourceTree = "<group>"; };
+		03494B812F6EF5360048643B /* OverlayRendererProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayRendererProtocol.swift; sourceTree = "<group>"; };
+		03494B822F6EF5360048643B /* SettingsStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStoreProtocol.swift; sourceTree = "<group>"; };
+		03494B832F6EF5360048643B /* TextGroupingServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextGroupingServiceProtocol.swift; sourceTree = "<group>"; };
+		03494B842F6EF5360048643B /* TranslationServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationServiceProtocol.swift; sourceTree = "<group>"; };
+		03494B862F6EF5360048643B /* BoundingBoxGrouper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoundingBoxGrouper.swift; sourceTree = "<group>"; };
+		03494B872F6EF5360048643B /* TextBlockComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBlockComposer.swift; sourceTree = "<group>"; };
+		03494B882F6EF5360048643B /* TextGroupingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextGroupingService.swift; sourceTree = "<group>"; };
+		03494B8A2F6EF5360048643B /* ImageOrientationResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOrientationResolver.swift; sourceTree = "<group>"; };
+		03494B8B2F6EF5360048643B /* ScreenshotInputBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotInputBuilder.swift; sourceTree = "<group>"; };
+		03494B8C2F6EF5360048643B /* ScreenshotNormalizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotNormalizer.swift; sourceTree = "<group>"; };
+		03494B8E2F6EF5360048643B /* OCRRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRRequestFactory.swift; sourceTree = "<group>"; };
+		03494B8F2F6EF5360048643B /* OCRService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRService.swift; sourceTree = "<group>"; };
+		03494B902F6EF5360048643B /* VisionOCRService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionOCRService.swift; sourceTree = "<group>"; };
+		03494B922F6EF5360048643B /* OverlayImageComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayImageComposer.swift; sourceTree = "<group>"; };
+		03494B932F6EF5360048643B /* OverlayLayoutEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayLayoutEngine.swift; sourceTree = "<group>"; };
+		03494B942F6EF5360048643B /* OverlayRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayRenderer.swift; sourceTree = "<group>"; };
+		03494B952F6EF5360048643B /* OverlayTextFitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayTextFitter.swift; sourceTree = "<group>"; };
+		03494B972F6EF5360048643B /* HistoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStore.swift; sourceTree = "<group>"; };
+		03494B982F6EF5360048643B /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
+		03494B992F6EF5360048643B /* TemporaryImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporaryImageStore.swift; sourceTree = "<group>"; };
+		03494B9B2F6EF5360048643B /* OnDeviceTranslationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnDeviceTranslationService.swift; sourceTree = "<group>"; };
+		03494B9C2F6EF5360048643B /* TranslationBatchBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationBatchBuilder.swift; sourceTree = "<group>"; };
+		03494B9D2F6EF5360048643B /* TranslationLanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationLanguageManager.swift; sourceTree = "<group>"; };
+		03494B9E2F6EF5360048643B /* TranslationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationService.swift; sourceTree = "<group>"; };
+		03494BA22F6EF5360048643B /* DebugOCRInspectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugOCRInspectorView.swift; sourceTree = "<group>"; };
+		03494BA32F6EF5360048643B /* DebugOverlayInspectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugOverlayInspectorView.swift; sourceTree = "<group>"; };
+		03494BA42F6EF5360048643B /* DebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
+		03494BA52F6EF5360048643B /* DebugViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewModel.swift; sourceTree = "<group>"; };
+		03494BA72F6EF5360048643B /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		03494BA82F6EF5360048643B /* ErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewModel.swift; sourceTree = "<group>"; };
+		03494BAA2F6EF5360048643B /* ProcessingOrchestrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingOrchestrator.swift; sourceTree = "<group>"; };
+		03494BAB2F6EF5360048643B /* ProcessingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingView.swift; sourceTree = "<group>"; };
+		03494BAC2F6EF5360048643B /* ProcessingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingViewModel.swift; sourceTree = "<group>"; };
+		03494BAE2F6EF5360048643B /* OverlayBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayBlockView.swift; sourceTree = "<group>"; };
+		03494BAF2F6EF5360048643B /* OverlayCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayCanvasView.swift; sourceTree = "<group>"; };
+		03494BB02F6EF5360048643B /* ResultMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultMode.swift; sourceTree = "<group>"; };
+		03494BB12F6EF5360048643B /* ResultOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultOverlayView.swift; sourceTree = "<group>"; };
+		03494BB22F6EF5360048643B /* ResultOverlayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultOverlayViewModel.swift; sourceTree = "<group>"; };
+		03494BB42F6EF5360048643B /* LanguagePreparationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagePreparationView.swift; sourceTree = "<group>"; };
+		03494BB52F6EF5360048643B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		03494BB62F6EF5360048643B /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		03494BB92F6EF5360048643B /* AppShortcutsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppShortcutsProvider.swift; sourceTree = "<group>"; };
+		03494BBA2F6EF5360048643B /* IntentInputDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentInputDecoder.swift; sourceTree = "<group>"; };
+		03494BBB2F6EF5360048643B /* IntentResultRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentResultRouter.swift; sourceTree = "<group>"; };
+		03494BBC2F6EF5360048643B /* TranslateScreenshotIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateScreenshotIntent.swift; sourceTree = "<group>"; };
+		03494BBE2F6EF5360048643B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		03494BC02F6EF5360048643B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		03494BC22F6EF5360048643B /* ScaffoldSnapshot.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ScaffoldSnapshot.md; sourceTree = "<group>"; };
+		03494BC32F6EF5360048643B /* ScreenTranslatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTranslatorApp.swift; sourceTree = "<group>"; };
+		03494BC42F6EF5360048643B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03494BC52F6EF5360048643B /* ScreenTranslator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ScreenTranslator.entitlements; sourceTree = "<group>"; };
+		03494BC72F6EF5360048643B /* ScreenTranslatorIntegrationPlaceholderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTranslatorIntegrationPlaceholderTests.swift; sourceTree = "<group>"; };
+		03494BC92F6EF5360048643B /* ScreenshotInputBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotInputBuilderTests.swift; sourceTree = "<group>"; };
+		03494BCA2F6EF5360048643B /* ScreenshotNormalizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotNormalizerTests.swift; sourceTree = "<group>"; };
+		03494BCB2F6EF5360048643B /* ScreenTranslatorScaffoldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTranslatorScaffoldTests.swift; sourceTree = "<group>"; };
+		03A1B0015A11000100000011 /* BoundingBoxGrouperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoundingBoxGrouperTests.swift; sourceTree = "<group>"; };
+		03A1B0015A11000100000012 /* TextBlockComposerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBlockComposerTests.swift; sourceTree = "<group>"; };
+		03A1B0015A11000100000013 /* TextGroupingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextGroupingServiceTests.swift; sourceTree = "<group>"; };
+		03A1B0015A11000100000014 /* TranslationBatchBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationBatchBuilderTests.swift; sourceTree = "<group>"; };
+		03A1B0015A11000100000015 /* OverlayTextFitterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayTextFitterTests.swift; sourceTree = "<group>"; };
+		03A1B0015A11000100000016 /* ProcessingOrchestratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingOrchestratorTests.swift; sourceTree = "<group>"; };
+		03A1B0015A11000100000017 /* IntentInputFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentInputFlowTests.swift; sourceTree = "<group>"; };
+		03A1B0015A11000100000018 /* ProcessingFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingFlowTests.swift; sourceTree = "<group>"; };
+		03B1C0015A22000100000011 /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
+		03B1C0015A22000100000012 /* DebugInspectionModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugInspectionModels.swift; sourceTree = "<group>"; };
+		03B1C0015A22000100000013 /* DebugPipelineInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugPipelineInspector.swift; sourceTree = "<group>"; };
+		03B1C0015A22000100000014 /* OverlayPreviewSurface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayPreviewSurface.swift; sourceTree = "<group>"; };
+		03B1C0015A22000100000015 /* ZoomablePreviewImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomablePreviewImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -79,17 +388,293 @@
 				034948F62F6EB7120048643B /* ScreenTranslatorTests */,
 				034949002F6EB7120048643B /* ScreenTranslatorUITests */,
 				034948E72F6EB7110048643B /* Products */,
+				03494B732F6EF5360048643B /* App */,
+				03494BA12F6EF5360048643B /* Core */,
+				03494BB82F6EF5360048643B /* Features */,
+				03494BBD2F6EF5360048643B /* Intents */,
+				03494BC12F6EF5360048643B /* Resources */,
+				03494BC22F6EF5360048643B /* ScaffoldSnapshot.md */,
+				03494BC32F6EF5360048643B /* ScreenTranslatorApp.swift */,
+				03494BC62F6EF5360048643B /* SupportingFiles */,
+				03494BCD2F6EF5360048643B /* Tests */,
 			);
 			sourceTree = "<group>";
 		};
 		034948E72F6EB7110048643B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				034948E62F6EB7110048643B /* ScreenTranslator.app */,
+				034948E62F6EB7110048643B /* ChinaTap Screen Translator.app */,
 				034948F32F6EB7120048643B /* ScreenTranslatorTests.xctest */,
 				034948FD2F6EB7120048643B /* ScreenTranslatorUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		03494B732F6EF5360048643B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				03494B6F2F6EF5360048643B /* AppContainer.swift */,
+				03494B702F6EF5360048643B /* AppCoordinator.swift */,
+				03494B712F6EF5360048643B /* AppEnvironment.swift */,
+				03494B722F6EF5360048643B /* AppRoute.swift */,
+				03B1C0015A22000100000011 /* AppServices.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		03494B7E2F6EF5360048643B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				03494B742F6EF5360048643B /* AppError.swift */,
+				03494B752F6EF5360048643B /* AppSettings.swift */,
+				03494B762F6EF5360048643B /* OCRTextObservation.swift */,
+				03494B772F6EF5360048643B /* OverlayRenderResult.swift */,
+				03494B782F6EF5360048643B /* OverlayRenderStyle.swift */,
+				03494B792F6EF5360048643B /* ProcessingJob.swift */,
+				03494B7A2F6EF5360048643B /* ProcessingState.swift */,
+				03494B7B2F6EF5360048643B /* ScreenshotInput.swift */,
+				03494B7C2F6EF5360048643B /* TextBlock.swift */,
+				03494B7D2F6EF5360048643B /* TranslationBlock.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		03494B852F6EF5360048643B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				03494B7F2F6EF5360048643B /* HistoryStoreProtocol.swift */,
+				03494B802F6EF5360048643B /* OCRServiceProtocol.swift */,
+				03494B812F6EF5360048643B /* OverlayRendererProtocol.swift */,
+				03494B822F6EF5360048643B /* SettingsStoreProtocol.swift */,
+				03494B832F6EF5360048643B /* TextGroupingServiceProtocol.swift */,
+				03494B842F6EF5360048643B /* TranslationServiceProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		03494B892F6EF5360048643B /* Grouping */ = {
+			isa = PBXGroup;
+			children = (
+				03494B862F6EF5360048643B /* BoundingBoxGrouper.swift */,
+				03494B872F6EF5360048643B /* TextBlockComposer.swift */,
+				03494B882F6EF5360048643B /* TextGroupingService.swift */,
+			);
+			path = Grouping;
+			sourceTree = "<group>";
+		};
+		03494B8D2F6EF5360048643B /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				03494B8A2F6EF5360048643B /* ImageOrientationResolver.swift */,
+				03494B8B2F6EF5360048643B /* ScreenshotInputBuilder.swift */,
+				03494B8C2F6EF5360048643B /* ScreenshotNormalizer.swift */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
+		03494B912F6EF5360048643B /* OCR */ = {
+			isa = PBXGroup;
+			children = (
+				03494B8E2F6EF5360048643B /* OCRRequestFactory.swift */,
+				03494B8F2F6EF5360048643B /* OCRService.swift */,
+				03494B902F6EF5360048643B /* VisionOCRService.swift */,
+			);
+			path = OCR;
+			sourceTree = "<group>";
+		};
+		03494B962F6EF5360048643B /* Rendering */ = {
+			isa = PBXGroup;
+			children = (
+				03494B922F6EF5360048643B /* OverlayImageComposer.swift */,
+				03494B932F6EF5360048643B /* OverlayLayoutEngine.swift */,
+				03494B942F6EF5360048643B /* OverlayRenderer.swift */,
+				03494B952F6EF5360048643B /* OverlayTextFitter.swift */,
+			);
+			path = Rendering;
+			sourceTree = "<group>";
+		};
+		03494B9A2F6EF5360048643B /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				03494B972F6EF5360048643B /* HistoryStore.swift */,
+				03494B982F6EF5360048643B /* SettingsStore.swift */,
+				03494B992F6EF5360048643B /* TemporaryImageStore.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		03494B9F2F6EF5360048643B /* Translation */ = {
+			isa = PBXGroup;
+			children = (
+				03494B9B2F6EF5360048643B /* OnDeviceTranslationService.swift */,
+				03494B9C2F6EF5360048643B /* TranslationBatchBuilder.swift */,
+				03494B9D2F6EF5360048643B /* TranslationLanguageManager.swift */,
+				03494B9E2F6EF5360048643B /* TranslationService.swift */,
+			);
+			path = Translation;
+			sourceTree = "<group>";
+		};
+		03494BA02F6EF5360048643B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				03494B892F6EF5360048643B /* Grouping */,
+				03494B8D2F6EF5360048643B /* Input */,
+				03494B912F6EF5360048643B /* OCR */,
+				03494B962F6EF5360048643B /* Rendering */,
+				03494B9A2F6EF5360048643B /* Storage */,
+				03494B9F2F6EF5360048643B /* Translation */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		03494BA12F6EF5360048643B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				03494B7E2F6EF5360048643B /* Models */,
+				03494B852F6EF5360048643B /* Protocols */,
+				03494BA02F6EF5360048643B /* Services */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		03494BA62F6EF5360048643B /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				03B1C0015A22000100000012 /* DebugInspectionModels.swift */,
+				03494BA22F6EF5360048643B /* DebugOCRInspectorView.swift */,
+				03494BA32F6EF5360048643B /* DebugOverlayInspectorView.swift */,
+				03B1C0015A22000100000013 /* DebugPipelineInspector.swift */,
+				03494BA42F6EF5360048643B /* DebugView.swift */,
+				03494BA52F6EF5360048643B /* DebugViewModel.swift */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
+		03494BA92F6EF5360048643B /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				03494BA72F6EF5360048643B /* ErrorView.swift */,
+				03494BA82F6EF5360048643B /* ErrorViewModel.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		03494BAD2F6EF5360048643B /* Processing */ = {
+			isa = PBXGroup;
+			children = (
+				03494BAA2F6EF5360048643B /* ProcessingOrchestrator.swift */,
+				03494BAB2F6EF5360048643B /* ProcessingView.swift */,
+				03494BAC2F6EF5360048643B /* ProcessingViewModel.swift */,
+			);
+			path = Processing;
+			sourceTree = "<group>";
+		};
+		03494BB32F6EF5360048643B /* ResultOverlay */ = {
+			isa = PBXGroup;
+			children = (
+				03494BAE2F6EF5360048643B /* OverlayBlockView.swift */,
+				03494BAF2F6EF5360048643B /* OverlayCanvasView.swift */,
+				03B1C0015A22000100000014 /* OverlayPreviewSurface.swift */,
+				03494BB02F6EF5360048643B /* ResultMode.swift */,
+				03494BB12F6EF5360048643B /* ResultOverlayView.swift */,
+				03494BB22F6EF5360048643B /* ResultOverlayViewModel.swift */,
+				03B1C0015A22000100000015 /* ZoomablePreviewImage.swift */,
+			);
+			path = ResultOverlay;
+			sourceTree = "<group>";
+		};
+		03494BB72F6EF5360048643B /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				03494BB42F6EF5360048643B /* LanguagePreparationView.swift */,
+				03494BB52F6EF5360048643B /* SettingsView.swift */,
+				03494BB62F6EF5360048643B /* SettingsViewModel.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		03494BB82F6EF5360048643B /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				03494BA62F6EF5360048643B /* Debug */,
+				03494BA92F6EF5360048643B /* Errors */,
+				03494BAD2F6EF5360048643B /* Processing */,
+				03494BB32F6EF5360048643B /* ResultOverlay */,
+				03494BB72F6EF5360048643B /* Settings */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		03494BBD2F6EF5360048643B /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				03494BB92F6EF5360048643B /* AppShortcutsProvider.swift */,
+				03494BBA2F6EF5360048643B /* IntentInputDecoder.swift */,
+				03494BBB2F6EF5360048643B /* IntentResultRouter.swift */,
+				03494BBC2F6EF5360048643B /* TranslateScreenshotIntent.swift */,
+			);
+			path = Intents;
+			sourceTree = "<group>";
+		};
+		03494BBF2F6EF5360048643B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				03494BBE2F6EF5360048643B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		03494BC12F6EF5360048643B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				03494BBF2F6EF5360048643B /* Preview Content */,
+				03494BC02F6EF5360048643B /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		03494BC62F6EF5360048643B /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				03494BC42F6EF5360048643B /* Info.plist */,
+				03494BC52F6EF5360048643B /* ScreenTranslator.entitlements */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		03494BC82F6EF5360048643B /* Integration */ = {
+			isa = PBXGroup;
+			children = (
+				03A1B0015A11000100000017 /* IntentInputFlowTests.swift */,
+				03A1B0015A11000100000018 /* ProcessingFlowTests.swift */,
+				03494BC72F6EF5360048643B /* ScreenTranslatorIntegrationPlaceholderTests.swift */,
+			);
+			path = Integration;
+			sourceTree = "<group>";
+		};
+		03494BCC2F6EF5360048643B /* Unit */ = {
+			isa = PBXGroup;
+			children = (
+				03A1B0015A11000100000011 /* BoundingBoxGrouperTests.swift */,
+				03A1B0015A11000100000015 /* OverlayTextFitterTests.swift */,
+				03A1B0015A11000100000016 /* ProcessingOrchestratorTests.swift */,
+				03494BC92F6EF5360048643B /* ScreenshotInputBuilderTests.swift */,
+				03494BCA2F6EF5360048643B /* ScreenshotNormalizerTests.swift */,
+				03494BCB2F6EF5360048643B /* ScreenTranslatorScaffoldTests.swift */,
+				03A1B0015A11000100000012 /* TextBlockComposerTests.swift */,
+				03A1B0015A11000100000014 /* TranslationBatchBuilderTests.swift */,
+				03A1B0015A11000100000013 /* TextGroupingServiceTests.swift */,
+			);
+			path = Unit;
+			sourceTree = "<group>";
+		};
+		03494BCD2F6EF5360048643B /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				03494BC82F6EF5360048643B /* Integration */,
+				03494BCC2F6EF5360048643B /* Unit */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -114,7 +699,7 @@
 			packageProductDependencies = (
 			);
 			productName = ScreenTranslator;
-			productReference = 034948E62F6EB7110048643B /* ScreenTranslator.app */;
+			productReference = 034948E62F6EB7110048643B /* ChinaTap Screen Translator.app */;
 			productType = "com.apple.product-type.application";
 		};
 		034948F22F6EB7120048643B /* ScreenTranslatorTests */ = {
@@ -212,6 +797,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03494BCF2F6EF5360048643B /* Preview Assets.xcassets in Resources */,
+				03494BD02F6EF5360048643B /* ScaffoldSnapshot.md in Resources */,
+				03494BD12F6EF5360048643B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +807,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03494C5B2F6EF5370048643B /* Preview Assets.xcassets in Resources */,
+				03494C5C2F6EF5370048643B /* ScaffoldSnapshot.md in Resources */,
+				03494C5D2F6EF5370048643B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +817,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03494C572F6EF5370048643B /* Preview Assets.xcassets in Resources */,
+				03494C582F6EF5370048643B /* ScaffoldSnapshot.md in Resources */,
+				03494C592F6EF5370048643B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +830,73 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03494BD22F6EF5360048643B /* OverlayBlockView.swift in Sources */,
+				03494BD32F6EF5360048643B /* AppSettings.swift in Sources */,
+				03494BD42F6EF5360048643B /* TextBlockComposer.swift in Sources */,
+				03494BD52F6EF5360048643B /* TranslationBlock.swift in Sources */,
+				03494BD62F6EF5360048643B /* OverlayRenderStyle.swift in Sources */,
+				03494BD72F6EF5360048643B /* HistoryStoreProtocol.swift in Sources */,
+				03494BD82F6EF5360048643B /* OnDeviceTranslationService.swift in Sources */,
+				03494BD92F6EF5360048643B /* AppCoordinator.swift in Sources */,
+				03494BDA2F6EF5360048643B /* ScreenshotInputBuilder.swift in Sources */,
+				03494BDB2F6EF5360048643B /* OverlayRenderer.swift in Sources */,
+				03B1C0015A22000100000001 /* AppServices.swift in Sources */,
+				03494BDC2F6EF5360048643B /* OCRServiceProtocol.swift in Sources */,
+				03494BDD2F6EF5360048643B /* TranslationService.swift in Sources */,
+				03494BDE2F6EF5360048643B /* TranslateScreenshotIntent.swift in Sources */,
+				03494BDF2F6EF5360048643B /* OverlayRenderResult.swift in Sources */,
+				03494BE02F6EF5360048643B /* DebugViewModel.swift in Sources */,
+				03494BE12F6EF5360048643B /* AppEnvironment.swift in Sources */,
+				03494BE22F6EF5360048643B /* OCRTextObservation.swift in Sources */,
+				03494BE32F6EF5360048643B /* ProcessingState.swift in Sources */,
+				03494BE52F6EF5360048643B /* OCRService.swift in Sources */,
+				03B1C0015A22000100000002 /* DebugInspectionModels.swift in Sources */,
+				03494BE62F6EF5360048643B /* DebugOverlayInspectorView.swift in Sources */,
+				03494BE72F6EF5360048643B /* AppShortcutsProvider.swift in Sources */,
+				03494BE82F6EF5360048643B /* ScreenshotNormalizer.swift in Sources */,
+				03494BE92F6EF5360048643B /* SettingsStore.swift in Sources */,
+				03494BEA2F6EF5360048643B /* IntentResultRouter.swift in Sources */,
+				03494BEB2F6EF5360048643B /* SettingsView.swift in Sources */,
+				03494BEC2F6EF5360048643B /* ScreenshotInput.swift in Sources */,
+				03494BED2F6EF5360048643B /* TranslationLanguageManager.swift in Sources */,
+				03494BEE2F6EF5360048643B /* LanguagePreparationView.swift in Sources */,
+				03494BEF2F6EF5360048643B /* OverlayRendererProtocol.swift in Sources */,
+				03494BF02F6EF5360048643B /* HistoryStore.swift in Sources */,
+				03494BF12F6EF5360048643B /* AppRoute.swift in Sources */,
+				03494BF22F6EF5360048643B /* ResultOverlayView.swift in Sources */,
+				03B1C0015A22000100000003 /* DebugPipelineInspector.swift in Sources */,
+				03494BF32F6EF5360048643B /* ErrorView.swift in Sources */,
+				03494BF42F6EF5360048643B /* DebugView.swift in Sources */,
+				03494BF52F6EF5360048643B /* ProcessingView.swift in Sources */,
+				03494BF62F6EF5360048643B /* VisionOCRService.swift in Sources */,
+				03494BF72F6EF5360048643B /* ProcessingViewModel.swift in Sources */,
+				03494BF82F6EF5360048643B /* ResultOverlayViewModel.swift in Sources */,
+				03494BFA2F6EF5360048643B /* DebugOCRInspectorView.swift in Sources */,
+				03494BFC2F6EF5360048643B /* TextGroupingServiceProtocol.swift in Sources */,
+				03494BFD2F6EF5360048643B /* ProcessingOrchestrator.swift in Sources */,
+				03494BFE2F6EF5360048643B /* ProcessingJob.swift in Sources */,
+				03494BFF2F6EF5360048643B /* BoundingBoxGrouper.swift in Sources */,
+				03494C002F6EF5360048643B /* IntentInputDecoder.swift in Sources */,
+				03494C012F6EF5360048643B /* SettingsViewModel.swift in Sources */,
+				03494C022F6EF5360048643B /* ScreenTranslatorApp.swift in Sources */,
+				03494C032F6EF5360048643B /* AppContainer.swift in Sources */,
+				03494C042F6EF5360048643B /* AppError.swift in Sources */,
+				03494C052F6EF5360048643B /* TranslationBatchBuilder.swift in Sources */,
+				03494C062F6EF5360048643B /* OverlayTextFitter.swift in Sources */,
+				03494C072F6EF5360048643B /* OCRRequestFactory.swift in Sources */,
+				03494C082F6EF5360048643B /* OverlayLayoutEngine.swift in Sources */,
+				03494C092F6EF5360048643B /* ResultMode.swift in Sources */,
+				03494C0A2F6EF5360048643B /* SettingsStoreProtocol.swift in Sources */,
+				03494C0B2F6EF5360048643B /* OverlayCanvasView.swift in Sources */,
+				03B1C0015A22000100000004 /* OverlayPreviewSurface.swift in Sources */,
+				03494C0C2F6EF5360048643B /* TextGroupingService.swift in Sources */,
+				03494C0D2F6EF5360048643B /* ImageOrientationResolver.swift in Sources */,
+				03494C0E2F6EF5360048643B /* OverlayImageComposer.swift in Sources */,
+				03B1C0015A22000100000005 /* ZoomablePreviewImage.swift in Sources */,
+				03494C0F2F6EF5360048643B /* ErrorViewModel.swift in Sources */,
+				03494C102F6EF5360048643B /* TextBlock.swift in Sources */,
+				03494C122F6EF5360048643B /* TemporaryImageStore.swift in Sources */,
+				03494C132F6EF5360048643B /* TranslationServiceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +904,85 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03494C5E2F6EF5370048643B /* OverlayBlockView.swift in Sources */,
+				03494C5F2F6EF5370048643B /* AppSettings.swift in Sources */,
+				03494C602F6EF5370048643B /* TextBlockComposer.swift in Sources */,
+				03494C612F6EF5370048643B /* TranslationBlock.swift in Sources */,
+				03494C622F6EF5370048643B /* OverlayRenderStyle.swift in Sources */,
+				03494C632F6EF5370048643B /* HistoryStoreProtocol.swift in Sources */,
+				03494C642F6EF5370048643B /* OnDeviceTranslationService.swift in Sources */,
+				03494C652F6EF5370048643B /* AppCoordinator.swift in Sources */,
+				03494C662F6EF5370048643B /* ScreenshotInputBuilder.swift in Sources */,
+				03494C672F6EF5370048643B /* OverlayRenderer.swift in Sources */,
+				03B1C0015A22000100000006 /* AppServices.swift in Sources */,
+				03494C682F6EF5370048643B /* OCRServiceProtocol.swift in Sources */,
+				03494C692F6EF5370048643B /* TranslationService.swift in Sources */,
+				03494C6A2F6EF5370048643B /* TranslateScreenshotIntent.swift in Sources */,
+				03494C6B2F6EF5370048643B /* OverlayRenderResult.swift in Sources */,
+				03494C6C2F6EF5370048643B /* DebugViewModel.swift in Sources */,
+				03494C6D2F6EF5370048643B /* AppEnvironment.swift in Sources */,
+				03494C6E2F6EF5370048643B /* OCRTextObservation.swift in Sources */,
+				03494C6F2F6EF5370048643B /* ProcessingState.swift in Sources */,
+				03494C702F6EF5370048643B /* ScreenshotNormalizerTests.swift in Sources */,
+				03A1B0015A11000100000001 /* BoundingBoxGrouperTests.swift in Sources */,
+				03A1B0015A11000100000005 /* OverlayTextFitterTests.swift in Sources */,
+				03A1B0015A11000100000006 /* ProcessingOrchestratorTests.swift in Sources */,
+				03494C712F6EF5370048643B /* OCRService.swift in Sources */,
+				03B1C0015A22000100000007 /* DebugInspectionModels.swift in Sources */,
+				03494C722F6EF5370048643B /* DebugOverlayInspectorView.swift in Sources */,
+				03494C732F6EF5370048643B /* AppShortcutsProvider.swift in Sources */,
+				03494C742F6EF5370048643B /* ScreenshotNormalizer.swift in Sources */,
+				03494C752F6EF5370048643B /* SettingsStore.swift in Sources */,
+				03494C762F6EF5370048643B /* IntentResultRouter.swift in Sources */,
+				03494C772F6EF5370048643B /* SettingsView.swift in Sources */,
+				03494C782F6EF5370048643B /* ScreenshotInput.swift in Sources */,
+				03494C792F6EF5370048643B /* TranslationLanguageManager.swift in Sources */,
+				03494C7A2F6EF5370048643B /* LanguagePreparationView.swift in Sources */,
+				03494C7B2F6EF5370048643B /* OverlayRendererProtocol.swift in Sources */,
+				03494C7C2F6EF5370048643B /* HistoryStore.swift in Sources */,
+				03494C7D2F6EF5370048643B /* AppRoute.swift in Sources */,
+				03494C7E2F6EF5370048643B /* ResultOverlayView.swift in Sources */,
+				03B1C0015A22000100000008 /* DebugPipelineInspector.swift in Sources */,
+				03494C7F2F6EF5370048643B /* ErrorView.swift in Sources */,
+				03494C802F6EF5370048643B /* DebugView.swift in Sources */,
+				03494C812F6EF5370048643B /* ProcessingView.swift in Sources */,
+				03494C822F6EF5370048643B /* VisionOCRService.swift in Sources */,
+				03494C832F6EF5370048643B /* ProcessingViewModel.swift in Sources */,
+				03494C842F6EF5370048643B /* ResultOverlayViewModel.swift in Sources */,
+				03494C852F6EF5370048643B /* ScreenTranslatorScaffoldTests.swift in Sources */,
+				03A1B0015A11000100000002 /* TextBlockComposerTests.swift in Sources */,
+				03494C862F6EF5370048643B /* DebugOCRInspectorView.swift in Sources */,
+				03494C872F6EF5370048643B /* ScreenTranslatorIntegrationPlaceholderTests.swift in Sources */,
+				03A1B0015A11000100000007 /* IntentInputFlowTests.swift in Sources */,
+				03A1B0015A11000100000008 /* ProcessingFlowTests.swift in Sources */,
+				03494C882F6EF5370048643B /* TextGroupingServiceProtocol.swift in Sources */,
+				03494C892F6EF5370048643B /* ProcessingOrchestrator.swift in Sources */,
+				03494C8A2F6EF5370048643B /* ProcessingJob.swift in Sources */,
+				03494C8B2F6EF5370048643B /* BoundingBoxGrouper.swift in Sources */,
+				03494C8C2F6EF5370048643B /* IntentInputDecoder.swift in Sources */,
+				03494C8D2F6EF5370048643B /* SettingsViewModel.swift in Sources */,
+				03494C8E2F6EF5370048643B /* ScreenTranslatorApp.swift in Sources */,
+				03494C8F2F6EF5370048643B /* AppContainer.swift in Sources */,
+				03494C902F6EF5370048643B /* AppError.swift in Sources */,
+				03494C912F6EF5370048643B /* TranslationBatchBuilder.swift in Sources */,
+				03494C922F6EF5370048643B /* OverlayTextFitter.swift in Sources */,
+				03494C932F6EF5370048643B /* OCRRequestFactory.swift in Sources */,
+				03494C942F6EF5370048643B /* OverlayLayoutEngine.swift in Sources */,
+				03494C952F6EF5370048643B /* ResultMode.swift in Sources */,
+				03494C962F6EF5370048643B /* SettingsStoreProtocol.swift in Sources */,
+				03494C972F6EF5370048643B /* OverlayCanvasView.swift in Sources */,
+				03B1C0015A22000100000009 /* OverlayPreviewSurface.swift in Sources */,
+				03494C982F6EF5370048643B /* TextGroupingService.swift in Sources */,
+				03494C992F6EF5370048643B /* ImageOrientationResolver.swift in Sources */,
+				03494C9A2F6EF5370048643B /* OverlayImageComposer.swift in Sources */,
+				03B1C0015A2200010000000A /* ZoomablePreviewImage.swift in Sources */,
+				03494C9B2F6EF5370048643B /* ErrorViewModel.swift in Sources */,
+				03494C9C2F6EF5370048643B /* TextBlock.swift in Sources */,
+				03494C9D2F6EF5370048643B /* ScreenshotInputBuilderTests.swift in Sources */,
+				03A1B0015A11000100000003 /* TextGroupingServiceTests.swift in Sources */,
+				03A1B0015A11000100000004 /* TranslationBatchBuilderTests.swift in Sources */,
+				03494C9E2F6EF5370048643B /* TemporaryImageStore.swift in Sources */,
+				03494C9F2F6EF5370048643B /* TranslationServiceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +990,73 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03494C142F6EF5370048643B /* OverlayBlockView.swift in Sources */,
+				03494C152F6EF5370048643B /* AppSettings.swift in Sources */,
+				03494C162F6EF5370048643B /* TextBlockComposer.swift in Sources */,
+				03494C172F6EF5370048643B /* TranslationBlock.swift in Sources */,
+				03494C182F6EF5370048643B /* OverlayRenderStyle.swift in Sources */,
+				03494C192F6EF5370048643B /* HistoryStoreProtocol.swift in Sources */,
+				03494C1A2F6EF5370048643B /* OnDeviceTranslationService.swift in Sources */,
+				03494C1B2F6EF5370048643B /* AppCoordinator.swift in Sources */,
+				03494C1C2F6EF5370048643B /* ScreenshotInputBuilder.swift in Sources */,
+				03494C1D2F6EF5370048643B /* OverlayRenderer.swift in Sources */,
+				03B1C0015A2200010000000B /* AppServices.swift in Sources */,
+				03494C1E2F6EF5370048643B /* OCRServiceProtocol.swift in Sources */,
+				03494C1F2F6EF5370048643B /* TranslationService.swift in Sources */,
+				03494C202F6EF5370048643B /* TranslateScreenshotIntent.swift in Sources */,
+				03494C212F6EF5370048643B /* OverlayRenderResult.swift in Sources */,
+				03494C222F6EF5370048643B /* DebugViewModel.swift in Sources */,
+				03494C232F6EF5370048643B /* AppEnvironment.swift in Sources */,
+				03494C242F6EF5370048643B /* OCRTextObservation.swift in Sources */,
+				03494C252F6EF5370048643B /* ProcessingState.swift in Sources */,
+				03494C272F6EF5370048643B /* OCRService.swift in Sources */,
+				03B1C0015A2200010000000C /* DebugInspectionModels.swift in Sources */,
+				03494C282F6EF5370048643B /* DebugOverlayInspectorView.swift in Sources */,
+				03494C292F6EF5370048643B /* AppShortcutsProvider.swift in Sources */,
+				03494C2A2F6EF5370048643B /* ScreenshotNormalizer.swift in Sources */,
+				03494C2B2F6EF5370048643B /* SettingsStore.swift in Sources */,
+				03494C2C2F6EF5370048643B /* IntentResultRouter.swift in Sources */,
+				03494C2D2F6EF5370048643B /* SettingsView.swift in Sources */,
+				03494C2E2F6EF5370048643B /* ScreenshotInput.swift in Sources */,
+				03494C2F2F6EF5370048643B /* TranslationLanguageManager.swift in Sources */,
+				03494C302F6EF5370048643B /* LanguagePreparationView.swift in Sources */,
+				03494C312F6EF5370048643B /* OverlayRendererProtocol.swift in Sources */,
+				03494C322F6EF5370048643B /* HistoryStore.swift in Sources */,
+				03494C332F6EF5370048643B /* AppRoute.swift in Sources */,
+				03494C342F6EF5370048643B /* ResultOverlayView.swift in Sources */,
+				03B1C0015A2200010000000D /* DebugPipelineInspector.swift in Sources */,
+				03494C352F6EF5370048643B /* ErrorView.swift in Sources */,
+				03494C362F6EF5370048643B /* DebugView.swift in Sources */,
+				03494C372F6EF5370048643B /* ProcessingView.swift in Sources */,
+				03494C382F6EF5370048643B /* VisionOCRService.swift in Sources */,
+				03494C392F6EF5370048643B /* ProcessingViewModel.swift in Sources */,
+				03494C3A2F6EF5370048643B /* ResultOverlayViewModel.swift in Sources */,
+				03494C3C2F6EF5370048643B /* DebugOCRInspectorView.swift in Sources */,
+				03494C3E2F6EF5370048643B /* TextGroupingServiceProtocol.swift in Sources */,
+				03494C3F2F6EF5370048643B /* ProcessingOrchestrator.swift in Sources */,
+				03494C402F6EF5370048643B /* ProcessingJob.swift in Sources */,
+				03494C412F6EF5370048643B /* BoundingBoxGrouper.swift in Sources */,
+				03494C422F6EF5370048643B /* IntentInputDecoder.swift in Sources */,
+				03494C432F6EF5370048643B /* SettingsViewModel.swift in Sources */,
+				03494C442F6EF5370048643B /* ScreenTranslatorApp.swift in Sources */,
+				03494C452F6EF5370048643B /* AppContainer.swift in Sources */,
+				03494C462F6EF5370048643B /* AppError.swift in Sources */,
+				03494C472F6EF5370048643B /* TranslationBatchBuilder.swift in Sources */,
+				03494C482F6EF5370048643B /* OverlayTextFitter.swift in Sources */,
+				03494C492F6EF5370048643B /* OCRRequestFactory.swift in Sources */,
+				03494C4A2F6EF5370048643B /* OverlayLayoutEngine.swift in Sources */,
+				03494C4B2F6EF5370048643B /* ResultMode.swift in Sources */,
+				03494C4C2F6EF5370048643B /* SettingsStoreProtocol.swift in Sources */,
+				03494C4D2F6EF5370048643B /* OverlayCanvasView.swift in Sources */,
+				03B1C0015A2200010000000E /* OverlayPreviewSurface.swift in Sources */,
+				03494C4E2F6EF5370048643B /* TextGroupingService.swift in Sources */,
+				03494C4F2F6EF5370048643B /* ImageOrientationResolver.swift in Sources */,
+				03494C502F6EF5370048643B /* OverlayImageComposer.swift in Sources */,
+				03B1C0015A2200010000000F /* ZoomablePreviewImage.swift in Sources */,
+				03494C512F6EF5370048643B /* ErrorViewModel.swift in Sources */,
+				03494C522F6EF5370048643B /* TextBlock.swift in Sources */,
+				03494C542F6EF5370048643B /* TemporaryImageStore.swift in Sources */,
+				03494C552F6EF5370048643B /* TranslationServiceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,18 +1207,20 @@
 				DEVELOPMENT_TEAM = XWSTFX7FZU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Save translated screenshots from ScreenTranslator.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = AlenShamatov.ScreenTranslator;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "ChinaTap Screen Translator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -428,18 +1237,20 @@
 				DEVELOPMENT_TEAM = XWSTFX7FZU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Save translated screenshots from ScreenTranslator.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = AlenShamatov.ScreenTranslator;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "ChinaTap Screen Translator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
