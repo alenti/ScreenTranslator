@@ -56,8 +56,8 @@ final class ProcessingViewModel: ObservableObject {
         statusMessage = "Screenshot received from Shortcuts."
         detailMessage = "Starting the processing pipeline for this screenshot."
 
-        processingTask = Task { [weak self] in
-            await self?.runProcessingPipeline(
+        processingTask = Task { [self] in
+            await runProcessingPipeline(
                 for: job,
                 runID: runID
             )
@@ -94,8 +94,8 @@ final class ProcessingViewModel: ObservableObject {
         }
 
         do {
-            let result = try await orchestrator.process(job) { [weak self] progress in
-                await self?.apply(
+            let result = try await orchestrator.process(job) { [self] progress in
+                await apply(
                     progress,
                     for: runID,
                     jobID: job.id

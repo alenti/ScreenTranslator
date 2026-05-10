@@ -29,4 +29,19 @@ final class ScreenTranslatorIntegrationSmokeTests: XCTestCase {
 
         XCTAssertEqual(router.routeForIncomingScreenshot(input), .processing)
     }
+
+    func testIntentResultRouterReturnsFloatingPreviewRouteForFloatingRequests() {
+        let router = IntentResultRouter()
+        let request = IntentHandoffRequest(
+            screenshot: ScreenshotInput(
+                imageData: Data([0x01]),
+                size: CGSize(width: 320, height: 640),
+                orientation: .up,
+                sourceMetadata: .shortcuts(filename: "floating-sample.png")
+            ),
+            launchBehavior: .floatingPreview
+        )
+
+        XCTAssertEqual(router.routeForIncomingRequest(request), .floatingPreview)
+    }
 }

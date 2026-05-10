@@ -5,6 +5,7 @@ struct SettingsView: View {
 
     @ObservedObject var viewModel: SettingsViewModel
     @EnvironmentObject private var coordinator: AppCoordinator
+    @State private var isShowingShortcutsSetup = false
 
     var body: some View {
         ZStack {
@@ -13,6 +14,7 @@ struct SettingsView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 18) {
                     headerView
+                    shortcutsCard
                     displayCard
                     offlineCard
                 }
@@ -25,6 +27,9 @@ struct SettingsView: View {
         }
         .task {
             await viewModel.refreshLanguageStatus()
+        }
+        .sheet(isPresented: $isShowingShortcutsSetup) {
+            ShortcutsSetupView()
         }
     }
 
@@ -103,6 +108,51 @@ struct SettingsView: View {
                                 .strokeBorder(secondaryButtonStroke)
                         )
                         .contentShape(Capsule())
+                }
+                .buttonStyle(.plain)
+            }
+        }
+    }
+
+    private var shortcutsCard: some View {
+        settingsCard(title: "Shortcuts Setup") {
+            VStack(alignment: .leading, spacing: 14) {
+                Text("Install two ready-made screenshot flows in Shortcuts, with the main fullscreen translator kept as the default path.")
+                    .font(.subheadline)
+                    .foregroundStyle(secondaryTextColor)
+
+                HStack(spacing: 10) {
+                    shortcutFlowPill(
+                        title: "Main",
+                        subtitle: "Take Screenshot -> Open in App Translator",
+                        isPrimary: true
+                    )
+
+                    shortcutFlowPill(
+                        title: "Floating",
+                        subtitle: "Take Screenshot -> Floating Screen Translator",
+                        isPrimary: false
+                    )
+                }
+
+                Button {
+                    isShowingShortcutsSetup = true
+                } label: {
+                    HStack(spacing: 10) {
+                        Image(systemName: "square.and.arrow.down.on.square")
+                            .font(.headline)
+
+                        Text("Set Up Screenshot Shortcuts")
+                            .font(.headline)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 15)
+                    .foregroundStyle(primaryButtonTextColor)
+                    .background(
+                        Capsule()
+                            .fill(primaryButtonFill)
+                    )
+                    .contentShape(Capsule())
                 }
                 .buttonStyle(.plain)
             }
@@ -198,6 +248,41 @@ struct SettingsView: View {
             Slider(value: binding, in: range)
                 .tint(sliderTintColor)
         }
+    }
+
+    private func shortcutFlowPill(
+        title: String,
+        subtitle: String,
+        isPrimary: Bool
+    ) -> some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Text(title)
+                .font(.caption.weight(.bold))
+                .foregroundStyle(primaryTextColor)
+
+            Text(subtitle)
+                .font(.caption2)
+                .foregroundStyle(secondaryTextColor)
+                .lineLimit(3)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(12)
+        .background(
+            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                .fill(
+                    isPrimary
+                        ? primaryButtonFill.opacity(colorScheme == .dark ? 0.18 : 0.08)
+                        : secondaryButtonFill
+                )
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                .strokeBorder(
+                    isPrimary
+                        ? primaryButtonFill.opacity(colorScheme == .dark ? 0.34 : 0.18)
+                        : secondaryButtonStroke
+                )
+        )
     }
 
     private var doneBar: some View {

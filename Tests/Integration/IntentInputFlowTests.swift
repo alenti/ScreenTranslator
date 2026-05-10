@@ -25,18 +25,22 @@ final class IntentInputFlowTests: XCTestCase {
             scale: 3.0,
             timestamp: timestamp
         )
+        let request = IntentHandoffRequest(
+            screenshot: input,
+            launchBehavior: .openInApp
+        )
 
-        try await store.store(input)
+        try await store.store(request)
 
-        let peekedInput = try await store.peekLatestInput()
-        let consumedInput = try await store.consumeLatestInput()
-        let afterConsume = try await store.peekLatestInput()
+        let peekedRequest = try await store.peekLatestRequest()
+        let consumedRequest = try await store.consumeLatestRequest()
+        let afterConsume = try await store.peekLatestRequest()
 
-        XCTAssertEqual(peekedInput, input)
-        XCTAssertEqual(consumedInput, input)
+        XCTAssertEqual(peekedRequest, request)
+        XCTAssertEqual(consumedRequest, request)
         XCTAssertNil(afterConsume)
         XCTAssertEqual(
-            router.routeForIncomingScreenshot(input),
+            router.routeForIncomingRequest(request),
             .processing
         )
     }
@@ -104,5 +108,73 @@ final class IntentInputFlowTests: XCTestCase {
 
         XCTAssertNil(peekedInput)
         XCTAssertNil(consumedInput)
+    }
+
+    func testLegacyScreenshotPayloadStillDecodesAsOpenInAppRequest() async throws {
+        let baseDirectoryURL = try TestFixtures.makeTemporaryDirectory(
+            prefix: "IntentLegacyInput"
+        )
+        defer { try? FileManager.default.removeItem(at: baseDirectoryURL) }
+
+        let imageData = try TestFixtures.makePNGData(
+            width: 64,
+            height: 32,
+            orientation: 1
+        )
+        let builder = ScreenshotInputBuilder()
+        let store = TemporaryImageStore(baseDirectoryURL: baseDirectoryURL)
+        let input = try builder.build(
+            imageData: imageData,
+            sourceMetadata: .shortcuts(filename: "legacy.png"),
+            scale: 3.0,
+            timestamp: Date(timeIntervalSince1970: 1_700_000_000)
+        )
+
+        try await store.store(input)
+
+        let request = try await store.consumeLatestRequest()
+
+        XCTAssertEqual(
+            request,
+            IntentHandoffRequest(
+                screenshot: input,
+                launchBehavior: .openInApp
+            )
+        )
+    }
+
+    func testFloatingPreviewRequestsRoundTripThroughTemporaryStore() async throws {
+        let baseDirectoryURL = try TestFixtures.makeTemporaryDirectory(
+            prefix: "IntentFloatingRoundTrip"
+        )
+        defer { try? FileManager.default.removeItem(at: baseDirectoryURL) }
+
+        let imageData = try TestFixtures.makePNGData(
+            width: 64,
+            height: 32,
+            orientation: 1
+        )
+        let builder = ScreenshotInputBuilder()
+        let store = TemporaryImageStore(baseDirectoryURL: baseDirectoryURL)
+        let input = try builder.build(
+            imageData: imageData,
+            sourceMetadata: .shortcuts(filename: "floating.png"),
+            scale: 3.0,
+            timestamp: Date(timeIntervalSince1970: 1_700_000_000)
+        )
+        let request = IntentHandoffRequest(
+            screenshot: input,
+            launchBehavior: .floatingPreview
+        )
+
+        try await store.store(request)
+
+        let peekedRequest = try await store.peekLatestRequest()
+        let consumedRequest = try await store.consumeLatestRequest()
+        let pendingRequest = try await store.peekLatestRequest()
+
+        XCTAssertEqual(peekedRequest, request)
+        XCTAssertEqual(consumedRequest, request)
+        XCTAssertNil(pendingRequest)
     }
 }

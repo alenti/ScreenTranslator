@@ -52,6 +52,8 @@ private struct ScreenTranslatorRootView: View {
         switch coordinator.route {
         case .idle, .processing:
             ProcessingView(viewModel: environment.processingViewModel)
+        case .floatingPreview:
+            FloatingPreviewFlowView(viewModel: environment.processingViewModel)
         case .result:
             ResultOverlayView(
                 viewModel: environment.container.makeResultOverlayViewModel(

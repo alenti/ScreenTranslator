@@ -35,6 +35,7 @@
 		03494BE92F6EF5360048643B /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B982F6EF5360048643B /* SettingsStore.swift */; };
 		03494BEA2F6EF5360048643B /* IntentResultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BBB2F6EF5360048643B /* IntentResultRouter.swift */; };
 		03494BEB2F6EF5360048643B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BB52F6EF5360048643B /* SettingsView.swift */; };
+		03C1D0015A33000100000001 /* ShortcutsSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C1D0015A33000100000011 /* ShortcutsSetupView.swift */; };
 		03494BEC2F6EF5360048643B /* ScreenshotInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B7B2F6EF5360048643B /* ScreenshotInput.swift */; };
 		03494BED2F6EF5360048643B /* TranslationLanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494B9D2F6EF5360048643B /* TranslationLanguageManager.swift */; };
 		03494BEE2F6EF5360048643B /* LanguagePreparationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03494BB42F6EF5360048643B /* LanguagePreparationView.swift */; };
@@ -229,6 +230,38 @@
 		03B1C0015A2200010000000D /* DebugPipelineInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1C0015A22000100000013 /* DebugPipelineInspector.swift */; };
 		03B1C0015A2200010000000E /* OverlayPreviewSurface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1C0015A22000100000014 /* OverlayPreviewSurface.swift */; };
 		03B1C0015A2200010000000F /* ZoomablePreviewImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1C0015A22000100000015 /* ZoomablePreviewImage.swift */; };
+		03D1E0015A44000100000001 /* QuickLookOverlayRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D1E0015A44000100000011 /* QuickLookOverlayRenderer.swift */; };
+		03D1E0015A44000100000002 /* QuickLookCJKTextDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D1E0015A44000100000012 /* QuickLookCJKTextDetector.swift */; };
+		03D1E0015A44000100000003 /* QuickLookOCRBlockMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D1E0015A44000100000013 /* QuickLookOCRBlockMapper.swift */; };
+		03D1E0015A44000100000004 /* QuickLookOverlayRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D1E0015A44000100000011 /* QuickLookOverlayRenderer.swift */; };
+		03D1E0015A44000100000005 /* QuickLookCJKTextDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D1E0015A44000100000012 /* QuickLookCJKTextDetector.swift */; };
+		03D1E0015A44000100000006 /* QuickLookOCRBlockMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D1E0015A44000100000013 /* QuickLookOCRBlockMapper.swift */; };
+		03D1E0015A44000100000007 /* QuickLookOverlayRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D1E0015A44000100000011 /* QuickLookOverlayRenderer.swift */; };
+		03D1E0015A44000100000008 /* QuickLookCJKTextDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D1E0015A44000100000012 /* QuickLookCJKTextDetector.swift */; };
+		03D1E0015A44000100000009 /* QuickLookOCRBlockMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D1E0015A44000100000013 /* QuickLookOCRBlockMapper.swift */; };
+		03E1F0015A55000100000001 /* QuickLookLocalDictionaryTranslationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E1F0015A55000100000011 /* QuickLookLocalDictionaryTranslationProvider.swift */; };
+		03E1F0015A55000100000002 /* QuickLookLocalDictionaryTranslationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E1F0015A55000100000011 /* QuickLookLocalDictionaryTranslationProvider.swift */; };
+		03F2A0015A66000100000001 /* QuickLookDebugOCRIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2A0015A66000100000011 /* QuickLookDebugOCRIntent.swift */; };
+		03F2A0015A66000100000002 /* QuickLookDiagnosticsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2A0015A66000100000012 /* QuickLookDiagnosticsModels.swift */; };
+		03F2A0015A66000100000003 /* QuickLookDiagnosticsRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2A0015A66000100000013 /* QuickLookDiagnosticsRenderer.swift */; };
+		03F2A0015A66000100000004 /* QuickLookDebugOCRIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2A0015A66000100000011 /* QuickLookDebugOCRIntent.swift */; };
+		03F2A0015A66000100000005 /* QuickLookDiagnosticsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2A0015A66000100000012 /* QuickLookDiagnosticsModels.swift */; };
+		03F2A0015A66000100000006 /* QuickLookDiagnosticsRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2A0015A66000100000013 /* QuickLookDiagnosticsRenderer.swift */; };
+		03F3B0015A77000100000001 /* QuickLookIntentRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F3B0015A77000100000011 /* QuickLookIntentRunner.swift */; };
+		03F3B0015A77000100000002 /* QuickLookIntentRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F3B0015A77000100000011 /* QuickLookIntentRunner.swift */; };
+		03F4C0015A88000100000001 /* QuickLookEchoScreenshotIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F4C0015A88000100000011 /* QuickLookEchoScreenshotIntent.swift */; };
+		03F4C0015A88000100000002 /* QuickLookEchoScreenshotIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F4C0015A88000100000011 /* QuickLookEchoScreenshotIntent.swift */; };
+		03F4C0015A88000100000003 /* QuickLookIntentFileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F4C0015A88000100000012 /* QuickLookIntentFileFactory.swift */; };
+		03F4C0015A88000100000004 /* QuickLookIntentFileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F4C0015A88000100000012 /* QuickLookIntentFileFactory.swift */; };
+		03F5D0015A99000100000001 /* QuickLookDirectEchoScreenshotIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F5D0015A99000100000011 /* QuickLookDirectEchoScreenshotIntent.swift */; };
+		03F5D0015A99000100000002 /* QuickLookDirectEchoScreenshotIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F5D0015A99000100000011 /* QuickLookDirectEchoScreenshotIntent.swift */; };
+		03F5D0015A99000100000003 /* QuickLookTinyPNGIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F5D0015A99000100000012 /* QuickLookTinyPNGIntent.swift */; };
+		03F5D0015A99000100000004 /* QuickLookTinyPNGIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F5D0015A99000100000012 /* QuickLookTinyPNGIntent.swift */; };
+		03F6E0015AAA000100000001 /* QuickLookCEDICTStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F6E0015AAA000100000011 /* QuickLookCEDICTStore.swift */; };
+		03F6E0015AAA000100000002 /* QuickLookCEDICTStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F6E0015AAA000100000011 /* QuickLookCEDICTStore.swift */; };
+		03F6E0015AAA000100000003 /* QuickLookEnglishTranslationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F6E0015AAA000100000012 /* QuickLookEnglishTranslationProvider.swift */; };
+		03F6E0015AAA000100000004 /* QuickLookEnglishTranslationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F6E0015AAA000100000012 /* QuickLookEnglishTranslationProvider.swift */; };
+		03F6E0015AAA000100000005 /* QuickLookCEDICTGeneral_v2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 03F6E0015AAA000100000013 /* QuickLookCEDICTGeneral_v2.sqlite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -309,10 +342,26 @@
 		03494BB42F6EF5360048643B /* LanguagePreparationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagePreparationView.swift; sourceTree = "<group>"; };
 		03494BB52F6EF5360048643B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		03494BB62F6EF5360048643B /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		03C1D0015A33000100000011 /* ShortcutsSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutsSetupView.swift; sourceTree = "<group>"; };
 		03494BB92F6EF5360048643B /* AppShortcutsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppShortcutsProvider.swift; sourceTree = "<group>"; };
 		03494BBA2F6EF5360048643B /* IntentInputDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentInputDecoder.swift; sourceTree = "<group>"; };
 		03494BBB2F6EF5360048643B /* IntentResultRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentResultRouter.swift; sourceTree = "<group>"; };
 		03494BBC2F6EF5360048643B /* TranslateScreenshotIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateScreenshotIntent.swift; sourceTree = "<group>"; };
+		03D1E0015A44000100000011 /* QuickLookOverlayRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLookOverlayRenderer.swift; sourceTree = "<group>"; };
+		03D1E0015A44000100000012 /* QuickLookCJKTextDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLookCJKTextDetector.swift; sourceTree = "<group>"; };
+		03D1E0015A44000100000013 /* QuickLookOCRBlockMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLookOCRBlockMapper.swift; sourceTree = "<group>"; };
+		03E1F0015A55000100000011 /* QuickLookLocalDictionaryTranslationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLookLocalDictionaryTranslationProvider.swift; sourceTree = "<group>"; };
+		03F2A0015A66000100000011 /* QuickLookDebugOCRIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLookDebugOCRIntent.swift; sourceTree = "<group>"; };
+		03F2A0015A66000100000012 /* QuickLookDiagnosticsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLookDiagnosticsModels.swift; sourceTree = "<group>"; };
+		03F2A0015A66000100000013 /* QuickLookDiagnosticsRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLookDiagnosticsRenderer.swift; sourceTree = "<group>"; };
+		03F3B0015A77000100000011 /* QuickLookIntentRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLookIntentRunner.swift; sourceTree = "<group>"; };
+		03F4C0015A88000100000011 /* QuickLookEchoScreenshotIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLookEchoScreenshotIntent.swift; sourceTree = "<group>"; };
+		03F4C0015A88000100000012 /* QuickLookIntentFileFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLookIntentFileFactory.swift; sourceTree = "<group>"; };
+		03F5D0015A99000100000011 /* QuickLookDirectEchoScreenshotIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLookDirectEchoScreenshotIntent.swift; sourceTree = "<group>"; };
+		03F5D0015A99000100000012 /* QuickLookTinyPNGIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLookTinyPNGIntent.swift; sourceTree = "<group>"; };
+		03F6E0015AAA000100000011 /* QuickLookCEDICTStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLookCEDICTStore.swift; sourceTree = "<group>"; };
+		03F6E0015AAA000100000012 /* QuickLookEnglishTranslationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLookEnglishTranslationProvider.swift; sourceTree = "<group>"; };
+		03F6E0015AAA000100000013 /* QuickLookCEDICTGeneral_v2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = QuickLookCEDICTGeneral_v2.sqlite; sourceTree = "<group>"; };
 		03494BBE2F6EF5360048643B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		03494BC02F6EF5360048643B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03494BC22F6EF5360048643B /* ScaffoldSnapshot.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ScaffoldSnapshot.md; sourceTree = "<group>"; };
@@ -589,6 +638,7 @@
 				03494BB42F6EF5360048643B /* LanguagePreparationView.swift */,
 				03494BB52F6EF5360048643B /* SettingsView.swift */,
 				03494BB62F6EF5360048643B /* SettingsViewModel.swift */,
+				03C1D0015A33000100000011 /* ShortcutsSetupView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -611,9 +661,31 @@
 				03494BB92F6EF5360048643B /* AppShortcutsProvider.swift */,
 				03494BBA2F6EF5360048643B /* IntentInputDecoder.swift */,
 				03494BBB2F6EF5360048643B /* IntentResultRouter.swift */,
+				03D1E0015A44000100000010 /* QuickLook */,
+				03F5D0015A99000100000011 /* QuickLookDirectEchoScreenshotIntent.swift */,
+				03F2A0015A66000100000011 /* QuickLookDebugOCRIntent.swift */,
+				03F4C0015A88000100000011 /* QuickLookEchoScreenshotIntent.swift */,
+				03F5D0015A99000100000012 /* QuickLookTinyPNGIntent.swift */,
 				03494BBC2F6EF5360048643B /* TranslateScreenshotIntent.swift */,
 			);
 			path = Intents;
+			sourceTree = "<group>";
+		};
+		03D1E0015A44000100000010 /* QuickLook */ = {
+			isa = PBXGroup;
+			children = (
+				03F6E0015AAA000100000011 /* QuickLookCEDICTStore.swift */,
+				03D1E0015A44000100000012 /* QuickLookCJKTextDetector.swift */,
+				03F2A0015A66000100000012 /* QuickLookDiagnosticsModels.swift */,
+				03F2A0015A66000100000013 /* QuickLookDiagnosticsRenderer.swift */,
+				03F6E0015AAA000100000012 /* QuickLookEnglishTranslationProvider.swift */,
+				03F4C0015A88000100000012 /* QuickLookIntentFileFactory.swift */,
+				03F3B0015A77000100000011 /* QuickLookIntentRunner.swift */,
+				03E1F0015A55000100000011 /* QuickLookLocalDictionaryTranslationProvider.swift */,
+				03D1E0015A44000100000013 /* QuickLookOCRBlockMapper.swift */,
+				03D1E0015A44000100000011 /* QuickLookOverlayRenderer.swift */,
+			);
+			path = QuickLook;
 			sourceTree = "<group>";
 		};
 		03494BBF2F6EF5360048643B /* Preview Content */ = {
@@ -627,10 +699,19 @@
 		03494BC12F6EF5360048643B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				03F6E0015AAA000100000014 /* Dictionaries */,
 				03494BBF2F6EF5360048643B /* Preview Content */,
 				03494BC02F6EF5360048643B /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		03F6E0015AAA000100000014 /* Dictionaries */ = {
+			isa = PBXGroup;
+			children = (
+				03F6E0015AAA000100000013 /* QuickLookCEDICTGeneral_v2.sqlite */,
+			);
+			path = Dictionaries;
 			sourceTree = "<group>";
 		};
 		03494BC62F6EF5360048643B /* SupportingFiles */ = {
@@ -800,6 +881,7 @@
 				03494BCF2F6EF5360048643B /* Preview Assets.xcassets in Resources */,
 				03494BD02F6EF5360048643B /* ScaffoldSnapshot.md in Resources */,
 				03494BD12F6EF5360048643B /* Assets.xcassets in Resources */,
+				03F6E0015AAA000100000005 /* QuickLookCEDICTGeneral_v2.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -844,6 +926,20 @@
 				03494BDC2F6EF5360048643B /* OCRServiceProtocol.swift in Sources */,
 				03494BDD2F6EF5360048643B /* TranslationService.swift in Sources */,
 				03494BDE2F6EF5360048643B /* TranslateScreenshotIntent.swift in Sources */,
+				03F5D0015A99000100000001 /* QuickLookDirectEchoScreenshotIntent.swift in Sources */,
+				03F2A0015A66000100000001 /* QuickLookDebugOCRIntent.swift in Sources */,
+				03F4C0015A88000100000001 /* QuickLookEchoScreenshotIntent.swift in Sources */,
+				03F5D0015A99000100000003 /* QuickLookTinyPNGIntent.swift in Sources */,
+				03D1E0015A44000100000002 /* QuickLookCJKTextDetector.swift in Sources */,
+				03F6E0015AAA000100000001 /* QuickLookCEDICTStore.swift in Sources */,
+				03F2A0015A66000100000002 /* QuickLookDiagnosticsModels.swift in Sources */,
+				03F2A0015A66000100000003 /* QuickLookDiagnosticsRenderer.swift in Sources */,
+				03F6E0015AAA000100000003 /* QuickLookEnglishTranslationProvider.swift in Sources */,
+				03F4C0015A88000100000003 /* QuickLookIntentFileFactory.swift in Sources */,
+				03F3B0015A77000100000001 /* QuickLookIntentRunner.swift in Sources */,
+				03E1F0015A55000100000001 /* QuickLookLocalDictionaryTranslationProvider.swift in Sources */,
+				03D1E0015A44000100000003 /* QuickLookOCRBlockMapper.swift in Sources */,
+				03D1E0015A44000100000001 /* QuickLookOverlayRenderer.swift in Sources */,
 				03494BDF2F6EF5360048643B /* OverlayRenderResult.swift in Sources */,
 				03494BE02F6EF5360048643B /* DebugViewModel.swift in Sources */,
 				03494BE12F6EF5360048643B /* AppEnvironment.swift in Sources */,
@@ -857,6 +953,7 @@
 				03494BE92F6EF5360048643B /* SettingsStore.swift in Sources */,
 				03494BEA2F6EF5360048643B /* IntentResultRouter.swift in Sources */,
 				03494BEB2F6EF5360048643B /* SettingsView.swift in Sources */,
+				03C1D0015A33000100000001 /* ShortcutsSetupView.swift in Sources */,
 				03494BEC2F6EF5360048643B /* ScreenshotInput.swift in Sources */,
 				03494BED2F6EF5360048643B /* TranslationLanguageManager.swift in Sources */,
 				03494BEE2F6EF5360048643B /* LanguagePreparationView.swift in Sources */,
@@ -918,6 +1015,20 @@
 				03494C682F6EF5370048643B /* OCRServiceProtocol.swift in Sources */,
 				03494C692F6EF5370048643B /* TranslationService.swift in Sources */,
 				03494C6A2F6EF5370048643B /* TranslateScreenshotIntent.swift in Sources */,
+				03F5D0015A99000100000002 /* QuickLookDirectEchoScreenshotIntent.swift in Sources */,
+				03F2A0015A66000100000004 /* QuickLookDebugOCRIntent.swift in Sources */,
+				03F4C0015A88000100000002 /* QuickLookEchoScreenshotIntent.swift in Sources */,
+				03F5D0015A99000100000004 /* QuickLookTinyPNGIntent.swift in Sources */,
+				03D1E0015A44000100000005 /* QuickLookCJKTextDetector.swift in Sources */,
+				03F6E0015AAA000100000002 /* QuickLookCEDICTStore.swift in Sources */,
+				03F2A0015A66000100000005 /* QuickLookDiagnosticsModels.swift in Sources */,
+				03F2A0015A66000100000006 /* QuickLookDiagnosticsRenderer.swift in Sources */,
+				03F6E0015AAA000100000004 /* QuickLookEnglishTranslationProvider.swift in Sources */,
+				03F4C0015A88000100000004 /* QuickLookIntentFileFactory.swift in Sources */,
+				03F3B0015A77000100000002 /* QuickLookIntentRunner.swift in Sources */,
+				03E1F0015A55000100000002 /* QuickLookLocalDictionaryTranslationProvider.swift in Sources */,
+				03D1E0015A44000100000006 /* QuickLookOCRBlockMapper.swift in Sources */,
+				03D1E0015A44000100000004 /* QuickLookOverlayRenderer.swift in Sources */,
 				03494C6B2F6EF5370048643B /* OverlayRenderResult.swift in Sources */,
 				03494C6C2F6EF5370048643B /* DebugViewModel.swift in Sources */,
 				03494C6D2F6EF5370048643B /* AppEnvironment.swift in Sources */,
@@ -990,73 +1101,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03494C142F6EF5370048643B /* OverlayBlockView.swift in Sources */,
-				03494C152F6EF5370048643B /* AppSettings.swift in Sources */,
-				03494C162F6EF5370048643B /* TextBlockComposer.swift in Sources */,
-				03494C172F6EF5370048643B /* TranslationBlock.swift in Sources */,
-				03494C182F6EF5370048643B /* OverlayRenderStyle.swift in Sources */,
-				03494C192F6EF5370048643B /* HistoryStoreProtocol.swift in Sources */,
-				03494C1A2F6EF5370048643B /* OnDeviceTranslationService.swift in Sources */,
-				03494C1B2F6EF5370048643B /* AppCoordinator.swift in Sources */,
-				03494C1C2F6EF5370048643B /* ScreenshotInputBuilder.swift in Sources */,
-				03494C1D2F6EF5370048643B /* OverlayRenderer.swift in Sources */,
-				03B1C0015A2200010000000B /* AppServices.swift in Sources */,
-				03494C1E2F6EF5370048643B /* OCRServiceProtocol.swift in Sources */,
-				03494C1F2F6EF5370048643B /* TranslationService.swift in Sources */,
-				03494C202F6EF5370048643B /* TranslateScreenshotIntent.swift in Sources */,
-				03494C212F6EF5370048643B /* OverlayRenderResult.swift in Sources */,
-				03494C222F6EF5370048643B /* DebugViewModel.swift in Sources */,
-				03494C232F6EF5370048643B /* AppEnvironment.swift in Sources */,
-				03494C242F6EF5370048643B /* OCRTextObservation.swift in Sources */,
-				03494C252F6EF5370048643B /* ProcessingState.swift in Sources */,
-				03494C272F6EF5370048643B /* OCRService.swift in Sources */,
-				03B1C0015A2200010000000C /* DebugInspectionModels.swift in Sources */,
-				03494C282F6EF5370048643B /* DebugOverlayInspectorView.swift in Sources */,
-				03494C292F6EF5370048643B /* AppShortcutsProvider.swift in Sources */,
-				03494C2A2F6EF5370048643B /* ScreenshotNormalizer.swift in Sources */,
-				03494C2B2F6EF5370048643B /* SettingsStore.swift in Sources */,
-				03494C2C2F6EF5370048643B /* IntentResultRouter.swift in Sources */,
-				03494C2D2F6EF5370048643B /* SettingsView.swift in Sources */,
-				03494C2E2F6EF5370048643B /* ScreenshotInput.swift in Sources */,
-				03494C2F2F6EF5370048643B /* TranslationLanguageManager.swift in Sources */,
-				03494C302F6EF5370048643B /* LanguagePreparationView.swift in Sources */,
-				03494C312F6EF5370048643B /* OverlayRendererProtocol.swift in Sources */,
-				03494C322F6EF5370048643B /* HistoryStore.swift in Sources */,
-				03494C332F6EF5370048643B /* AppRoute.swift in Sources */,
-				03494C342F6EF5370048643B /* ResultOverlayView.swift in Sources */,
-				03B1C0015A2200010000000D /* DebugPipelineInspector.swift in Sources */,
-				03494C352F6EF5370048643B /* ErrorView.swift in Sources */,
-				03494C362F6EF5370048643B /* DebugView.swift in Sources */,
-				03494C372F6EF5370048643B /* ProcessingView.swift in Sources */,
-				03494C382F6EF5370048643B /* VisionOCRService.swift in Sources */,
-				03494C392F6EF5370048643B /* ProcessingViewModel.swift in Sources */,
-				03494C3A2F6EF5370048643B /* ResultOverlayViewModel.swift in Sources */,
-				03494C3C2F6EF5370048643B /* DebugOCRInspectorView.swift in Sources */,
-				03494C3E2F6EF5370048643B /* TextGroupingServiceProtocol.swift in Sources */,
-				03494C3F2F6EF5370048643B /* ProcessingOrchestrator.swift in Sources */,
-				03494C402F6EF5370048643B /* ProcessingJob.swift in Sources */,
-				03494C412F6EF5370048643B /* BoundingBoxGrouper.swift in Sources */,
-				03494C422F6EF5370048643B /* IntentInputDecoder.swift in Sources */,
-				03494C432F6EF5370048643B /* SettingsViewModel.swift in Sources */,
-				03494C442F6EF5370048643B /* ScreenTranslatorApp.swift in Sources */,
-				03494C452F6EF5370048643B /* AppContainer.swift in Sources */,
-				03494C462F6EF5370048643B /* AppError.swift in Sources */,
-				03494C472F6EF5370048643B /* TranslationBatchBuilder.swift in Sources */,
-				03494C482F6EF5370048643B /* OverlayTextFitter.swift in Sources */,
-				03494C492F6EF5370048643B /* OCRRequestFactory.swift in Sources */,
-				03494C4A2F6EF5370048643B /* OverlayLayoutEngine.swift in Sources */,
-				03494C4B2F6EF5370048643B /* ResultMode.swift in Sources */,
-				03494C4C2F6EF5370048643B /* SettingsStoreProtocol.swift in Sources */,
-				03494C4D2F6EF5370048643B /* OverlayCanvasView.swift in Sources */,
-				03B1C0015A2200010000000E /* OverlayPreviewSurface.swift in Sources */,
-				03494C4E2F6EF5370048643B /* TextGroupingService.swift in Sources */,
-				03494C4F2F6EF5370048643B /* ImageOrientationResolver.swift in Sources */,
-				03494C502F6EF5370048643B /* OverlayImageComposer.swift in Sources */,
-				03B1C0015A2200010000000F /* ZoomablePreviewImage.swift in Sources */,
-				03494C512F6EF5370048643B /* ErrorViewModel.swift in Sources */,
-				03494C522F6EF5370048643B /* TextBlock.swift in Sources */,
-				03494C542F6EF5370048643B /* TemporaryImageStore.swift in Sources */,
-				03494C552F6EF5370048643B /* TranslationServiceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

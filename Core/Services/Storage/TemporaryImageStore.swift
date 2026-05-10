@@ -29,31 +29,48 @@ actor TemporaryImageStore {
         self.decoder = decoder
     }
 
-    func store(_ input: ScreenshotInput) throws {
+    func store(_ request: IntentHandoffRequest) throws {
         try ensureStoreDirectoryExists()
-        let encodedInput = try encoder.encode(input)
-        try encodedInput.write(to: storeURL, options: .atomic)
+        let encodedRequest = try encoder.encode(request)
+        try encodedRequest.write(to: storeURL, options: .atomic)
     }
 
-    func consumeLatestInput() throws -> ScreenshotInput? {
+    func store(_ input: ScreenshotInput) throws {
+        try store(
+            IntentHandoffRequest(
+                screenshot: input,
+                launchBehavior: .openInApp
+            )
+        )
+    }
+
+    func consumeLatestRequest() throws -> IntentHandoffRequest? {
         guard FileManager.default.fileExists(atPath: storeURL.path) else {
             return nil
         }
 
-        guard let input = try loadLatestInput() else {
+        guard let request = try loadLatestRequest() else {
             return nil
         }
 
         try? FileManager.default.removeItem(at: storeURL)
-        return input
+        return request
     }
 
-    func peekLatestInput() throws -> ScreenshotInput? {
+    func consumeLatestInput() throws -> ScreenshotInput? {
+        try consumeLatestRequest()?.screenshot
+    }
+
+    func peekLatestRequest() throws -> IntentHandoffRequest? {
         guard FileManager.default.fileExists(atPath: storeURL.path) else {
             return nil
         }
 
-        return try loadLatestInput()
+        return try loadLatestRequest()
+    }
+
+    func peekLatestInput() throws -> ScreenshotInput? {
+        try peekLatestRequest()?.screenshot
     }
 
     func clear() {
@@ -71,25 +88,37 @@ actor TemporaryImageStore {
         )
     }
 
-    private func loadLatestInput() throws -> ScreenshotInput? {
+    private func loadLatestRequest() throws -> IntentHandoffRequest? {
         do {
             let data = try Data(contentsOf: storeURL)
-            let input = try decoder.decode(ScreenshotInput.self, from: data)
+            let request = try decodeRequest(from: data)
 
-            guard isFresh(input) else {
+            guard isFresh(request) else {
                 try? FileManager.default.removeItem(at: storeURL)
                 return nil
             }
 
-            return input
+            return request
         } catch {
             try? FileManager.default.removeItem(at: storeURL)
             throw AppError.intentInputFailure
         }
     }
 
-    private func isFresh(_ input: ScreenshotInput) -> Bool {
-        now().timeIntervalSince(input.timestamp) <= maxPendingAge
+    private func decodeRequest(from data: Data) throws -> IntentHandoffRequest {
+        if let request = try? decoder.decode(IntentHandoffRequest.self, from: data) {
+            return request
+        }
+
+        let input = try decoder.decode(ScreenshotInput.self, from: data)
+        return IntentHandoffRequest(
+            screenshot: input,
+            launchBehavior: .openInApp
+        )
+    }
+
+    private func isFresh(_ request: IntentHandoffRequest) -> Bool {
+        now().timeIntervalSince(request.screenshot.timestamp) <= maxPendingAge
     }
 
     private static func makeStoreURL(

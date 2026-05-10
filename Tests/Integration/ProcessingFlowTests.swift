@@ -168,6 +168,50 @@ final class ProcessingFlowTests: XCTestCase {
         XCTAssertEqual(completedResults.map(\.sourceInput.id), [secondInput.id])
     }
 
+    func testHandleIncomingScreenshotContinuesAfterEphemeralOwnerReleasesViewModel() async throws {
+        let result = OverlayRenderResult(
+            sourceInput: screenshotInput(filename: "ephemeral-owner.png"),
+            translatedBlocks: [
+                translationBlock(
+                    sourceText: "你好",
+                    translatedText: "Привет",
+                    sourceBoundingBox: CGRect(x: 12, y: 20, width: 60, height: 22)
+                )
+            ],
+            renderStyle: .defaultValue,
+            renderMetadata: .init(
+                generatedAt: Date(timeIntervalSince1970: 1_700_000_300),
+                note: "Ephemeral owner success"
+            ),
+            precomposedImageData: Data([0x03])
+        )
+        let job = ProcessingJob(input: result.sourceInput)
+        var completedResult: OverlayRenderResult?
+        var failedError: AppError?
+
+        do {
+            let viewModel = ProcessingViewModel(
+                orchestrator: makeOrchestrator(
+                    translationResult: .success(result.translatedBlocks),
+                    overlayOutcome: .success(result)
+                )
+            )
+
+            viewModel.configure(
+                onCompleted: { completedResult = $0 },
+                onFailed: { failedError = $0 }
+            )
+            viewModel.handleIncomingScreenshot(job)
+        }
+
+        await waitUntil(timeout: 1.0) {
+            completedResult == result || failedError != nil
+        }
+
+        XCTAssertEqual(completedResult, result)
+        XCTAssertNil(failedError)
+    }
+
     func testTranslationSessionBrokerTimesOutWhenSessionLoopIsNotRunning() async {
         let broker = TranslationSessionBroker(
             translationTimeout: 0.05,

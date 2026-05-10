@@ -21,10 +21,28 @@ final class AppEnvironment: ObservableObject {
 
         self.processingViewModel.configure(
             onCompleted: { [weak self] result in
-                self?.coordinator.showResult(result)
+                guard let self else {
+                    return
+                }
+
+                switch self.coordinator.activeLaunchBehavior {
+                case .floatingPreview:
+                    self.coordinator.retainFloatingPreviewResult(result)
+                case .openInApp, nil:
+                    self.coordinator.showResult(result)
+                }
             },
             onFailed: { [weak self] error in
-                self?.coordinator.showError(error)
+                guard let self else {
+                    return
+                }
+
+                switch self.coordinator.activeLaunchBehavior {
+                case .floatingPreview:
+                    self.coordinator.retainFloatingPreviewError(error)
+                case .openInApp, nil:
+                    self.coordinator.showError(error)
+                }
             }
         )
     }
@@ -35,20 +53,34 @@ final class AppEnvironment: ObservableObject {
 
     func consumePendingScreenshotIfNeeded() async {
         do {
-            guard let input = try await container.temporaryImageStore.consumeLatestInput() else {
+            guard let request = try await container.temporaryImageStore.consumeLatestRequest() else {
                 return
             }
 
-            let job = ProcessingJob(input: input)
-            processingViewModel.handleIncomingScreenshot(job)
+            guard let route = container.intentResultRouter.routeForIncomingRequest(request) else {
+                return
+            }
 
-            switch container.intentResultRouter.routeForIncomingScreenshot(input) {
+            let job = ProcessingJob(input: request.screenshot)
+
+            switch route {
             case .processing:
-                coordinator.showProcessing(job: job)
+                coordinator.showProcessing(
+                    job: job,
+                    launchBehavior: request.launchBehavior
+                )
+                processingViewModel.handleIncomingScreenshot(job)
+            case .floatingPreview:
+                coordinator.showFloatingPreview(job: job)
+                processingViewModel.handleIncomingScreenshot(job)
             case .error:
                 coordinator.showError(.intentInputFailure)
             default:
-                coordinator.showProcessing(job: job)
+                coordinator.showProcessing(
+                    job: job,
+                    launchBehavior: request.launchBehavior
+                )
+                processingViewModel.handleIncomingScreenshot(job)
             }
         } catch {
             coordinator.showError(.intentInputFailure)
