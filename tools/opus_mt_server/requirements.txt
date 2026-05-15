@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pydantic
+transformers
+sentencepiece
+ctranslate2
+huggingface_hub
+torch
+sacremoses

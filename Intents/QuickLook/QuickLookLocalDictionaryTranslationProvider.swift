@@ -35,6 +35,7 @@ struct QuickLookDictionaryTranslation: Equatable {
 }
 
 enum QuickLookDictionaryMatchKind: Equatable {
+    case localMT
     case phraseOverride
     case exact
     case segment
@@ -54,6 +55,7 @@ struct QuickLookDictionaryDiagnostics: Equatable {
 }
 
 enum QuickLookDictionaryDiagnosticsMatchType: String, Equatable {
+    case localMT = "LOCAL_MT"
     case phraseOverride = "PHRASE"
     case exact = "EXACT"
     case segment = "SEG"
@@ -203,6 +205,8 @@ struct QuickLookLocalDictionaryTranslationProvider {
         }
 
         switch translation.matchKind {
+        case .localMT:
+            return .localMT
         case .phraseOverride:
             return .phraseOverride
         case .exact:

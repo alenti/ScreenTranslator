@@ -1,3 +1,4 @@
+import OSLog
 import SwiftUI
 
 struct SettingsView: View {
@@ -6,6 +7,9 @@ struct SettingsView: View {
     @ObservedObject var viewModel: SettingsViewModel
     @EnvironmentObject private var coordinator: AppCoordinator
     @State private var isShowingShortcutsSetup = false
+    #if DEBUG
+    @State private var localMTPreflightState = LocalMTPreflightState.idle
+    #endif
 
     var body: some View {
         ZStack {
@@ -17,6 +21,9 @@ struct SettingsView: View {
                     shortcutsCard
                     displayCard
                     offlineCard
+                    #if DEBUG
+                    localMTDiagnosticsCard
+                    #endif
                 }
                 .padding(18)
                 .padding(.bottom, 110)
@@ -203,6 +210,140 @@ struct SettingsView: View {
         }
     }
 
+    #if DEBUG
+    private var localMTDiagnosticsCard: some View {
+        settingsCard(title: "Local MT Development") {
+            VStack(alignment: .leading, spacing: 14) {
+                Text("Use this foreground check to grant Local Network access before running the Quick Look Shortcut.")
+                    .font(.subheadline)
+                    .foregroundStyle(secondaryTextColor)
+
+                VStack(alignment: .leading, spacing: 10) {
+                    diagnosticRow(
+                        title: "Enabled",
+                        value: QuickLookLocalMTConfig.isEnabled ? "true" : "false"
+                    )
+                    diagnosticRow(
+                        title: "Base URL",
+                        value: QuickLookLocalMTConfig.baseURLString
+                    )
+                    diagnosticRow(
+                        title: "Last Check",
+                        value: localMTPreflightState.statusText
+                    )
+
+                    if let provider = localMTPreflightState.providerText {
+                        diagnosticRow(title: "Provider", value: provider)
+                    }
+
+                    if let error = localMTPreflightState.errorText {
+                        Text(error)
+                            .font(.caption)
+                            .foregroundStyle(errorTextColor)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                }
+
+                Button {
+                    runLocalMTPreflight()
+                } label: {
+                    HStack(spacing: 10) {
+                        if localMTPreflightState.isChecking {
+                            ProgressView()
+                                .tint(primaryButtonTextColor)
+                        }
+
+                        Text("Test Local MT Server")
+                            .font(.headline)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 15)
+                    .foregroundStyle(primaryButtonTextColor)
+                    .background(
+                        Capsule()
+                            .fill(primaryButtonFill)
+                    )
+                    .contentShape(Capsule())
+                }
+                .buttonStyle(.plain)
+                .disabled(localMTPreflightState.isChecking)
+            }
+        }
+    }
+
+    private func diagnosticRow(
+        title: String,
+        value: String
+    ) -> some View {
+        HStack(alignment: .firstTextBaseline, spacing: 12) {
+            Text(title)
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(tertiaryTextColor)
+                .frame(width: 78, alignment: .leading)
+
+            Text(value)
+                .font(.caption.monospaced())
+                .foregroundStyle(primaryTextColor)
+                .textSelection(.enabled)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+    }
+
+    private func runLocalMTPreflight() {
+        let logger = Logger(
+            subsystem: "AlenShamatov.ScreenTranslator",
+            category: "QuickLookLocalMT"
+        )
+        localMTPreflightState = .checking
+
+        Task {
+            logger.info(
+                """
+                Local MT preflight started baseURL=\
+                \(QuickLookLocalMTConfig.baseURLString, privacy: .public)
+                """
+            )
+
+            do {
+                let response = try await QuickLookLocalMTClient()
+                    .checkHealth(timeout: 5)
+
+                logger.info(
+                    """
+                    Local MT preflight success baseURL=\
+                    \(QuickLookLocalMTConfig.baseURLString, privacy: .public), \
+                    provider=\(response.provider ?? "unknown", privacy: .public), \
+                    ok=\(response.ok == true, privacy: .public)
+                    """
+                )
+
+                localMTPreflightState = .success(response)
+            } catch {
+                let message = Self.localMTErrorMessage(error)
+                logger.error(
+                    """
+                    Local MT preflight failed error=\
+                    \(message, privacy: .public), baseURL=\
+                    \(QuickLookLocalMTConfig.baseURLString, privacy: .public)
+                    """
+                )
+
+                localMTPreflightState = .failure(message)
+            }
+        }
+    }
+
+    private static func localMTErrorMessage(_ error: Error) -> String {
+        let localizedDescription = (error as NSError).localizedDescription
+
+        if localizedDescription.isEmpty == false {
+            return localizedDescription
+        }
+
+        return String(describing: error)
+    }
+    #endif
+
     private func settingsCard<Content: View>(
         title: String,
         @ViewBuilder content: () -> Content
@@ -376,6 +517,12 @@ struct SettingsView: View {
             : Color.black.opacity(0.52)
     }
 
+    private var errorTextColor: Color {
+        colorScheme == .dark
+            ? Color(red: 1.0, green: 0.45, blue: 0.42)
+            : Color(red: 0.70, green: 0.10, blue: 0.08)
+    }
+
     private var sliderTintColor: Color {
         colorScheme == .dark
             ? .white
@@ -436,3 +583,53 @@ struct SettingsView: View {
             : .black.opacity(0.12)
     }
 }
+
+#if DEBUG
+private enum LocalMTPreflightState: Equatable {
+    case idle
+    case checking
+    case success(QuickLookMTHealthResponse)
+    case failure(String)
+
+    var isChecking: Bool {
+        if case .checking = self {
+            return true
+        }
+
+        return false
+    }
+
+    var statusText: String {
+        switch self {
+        case .idle:
+            return "Not checked"
+        case .checking:
+            return "Checking..."
+        case .success(let response):
+            return response.ok == true ? "Healthy" : "Responded with error"
+        case .failure:
+            return "Failed"
+        }
+    }
+
+    var providerText: String? {
+        switch self {
+        case .success(let response):
+            return response.provider
+        case .idle, .checking, .failure:
+            return nil
+        }
+    }
+
+    var errorText: String? {
+        switch self {
+        case .success(let response):
+            return response.error
+        case .failure(let message):
+            return message
+        case .idle, .checking:
+            return nil
+        }
+    }
+}
+#endif

@@ -164,6 +164,24 @@ struct QuickLookEnglishTranslationProvider {
             )
         }
 
+        if let yuanTranslation = standaloneYuanTranslation(
+            normalizedText: normalizedText
+        ) {
+            return yuanTranslation
+        }
+
+        if let couponCountTranslation = couponCountAvailableTranslation(
+            normalizedText: normalizedText
+        ) {
+            return couponCountTranslation
+        }
+
+        if let discountTranslation = afterCouponDiscountTranslation(
+            normalizedText: normalizedText
+        ) {
+            return discountTranslation
+        }
+
         if let priceTranslation = pricePhraseTranslation(
             normalizedText: normalizedText,
             compactText: compactText
@@ -179,6 +197,76 @@ struct QuickLookEnglishTranslationProvider {
         }
 
         return nil
+    }
+
+    private func standaloneYuanTranslation(
+        normalizedText: String
+    ) -> QuickLookDictionaryTranslation? {
+        guard let amount = capturedGroups(
+            in: normalizedText,
+            pattern: #"^\s*([0-9]+(?:[.,][0-9]+)?)\s*元\s*$"#
+        )?.first else {
+            return nil
+        }
+
+        return runtimeTranslation(
+            displayText: "¥\(amount)",
+            matchedSource: "\(amount)元",
+            matchKind: .phraseOverride,
+            isImportant: true,
+            hasPreservedValue: true,
+            selectionReason: "runtimePattern:standaloneYuan"
+        )
+    }
+
+    private func couponCountAvailableTranslation(
+        normalizedText: String
+    ) -> QuickLookDictionaryTranslation? {
+        guard let count = capturedGroups(
+            in: normalizedText,
+            pattern: #"共?\s*([0-9]+)\s*张券可领"#
+        )?.first else {
+            return nil
+        }
+
+        let label = count == "1"
+            ? "1 coupon available"
+            : "\(count) coupons available"
+
+        return runtimeTranslation(
+            displayText: label,
+            matchedSource: "\(count)张券可领",
+            matchKind: .phraseOverride,
+            isImportant: true,
+            hasPreservedValue: true,
+            selectionReason: "runtimePattern:couponCountAvailable"
+        )
+    }
+
+    private func afterCouponDiscountTranslation(
+        normalizedText: String
+    ) -> QuickLookDictionaryTranslation? {
+        guard let rawDiscount = capturedGroups(
+            in: normalizedText,
+            pattern: #"券后低至\s*([0-9]+(?:[.,][0-9]+)?)\s*折"#
+        )?.first,
+              let discountValue = Double(rawDiscount.replacingOccurrences(of: ",", with: ".")) else {
+            return nil
+        }
+
+        let percentOff = max(0, min(100, (10 - discountValue) * 10))
+        let formattedPercent = percentOff.rounded() == percentOff
+            ? String(Int(percentOff))
+            : String(format: "%.1f", percentOff)
+
+        return runtimeTranslation(
+            displayText: "from \(formattedPercent)% off after coupon",
+            matchedSource: "券后低至\(rawDiscount)折",
+            matchKind: .phraseOverride,
+            isImportant: true,
+            hasPreservedValue: true,
+            selectionReason: "runtimePattern:afterCouponDiscount"
+        )
     }
 
     private func pricePhraseTranslation(
@@ -617,6 +705,8 @@ struct QuickLookEnglishTranslationProvider {
         }
 
         switch translation.matchKind {
+        case .localMT:
+            return .localMT
         case .phraseOverride:
             return .phraseOverride
         case .exact:
@@ -664,7 +754,10 @@ struct QuickLookEnglishTextNormalizer {
             previousWasWhitespace = false
         }
 
-        return String(scalars).trimmingCharacters(in: .whitespacesAndNewlines)
+        let normalized = String(scalars)
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+
+        return applySafeOCRCorrections(normalized)
     }
 
     func compact(_ text: String) -> String {
@@ -704,6 +797,33 @@ struct QuickLookEnglishTextNormalizer {
         default:
             return scalar
         }
+    }
+
+    private func applySafeOCRCorrections(_ text: String) -> String {
+        var corrected = text
+        let replacements: [(String, String)] = [
+            ("]外卖", "外卖"),
+            ("】外卖", "外卖"),
+            ("山外买", "外卖"),
+            ("外买", "外卖"),
+            ("页淘金币", "领淘金币"),
+            ("国家不贴", "国家补贴"),
+            ("7直播有好价", "直播有好价"),
+            ("2评价客服", "评价客服"),
+            ("©评价客服", "评价客服"),
+            ("淘工/", "淘工厂"),
+            ("立即抢>", "立即抢"),
+            ("520告白季|", "520告白季")
+        ]
+
+        for replacement in replacements {
+            corrected = corrected.replacingOccurrences(
+                of: replacement.0,
+                with: replacement.1
+            )
+        }
+
+        return corrected
     }
 }
 
@@ -789,9 +909,28 @@ private extension QuickLookEnglishTranslationProvider {
         QuickLookEnglishPhraseOverride(source: "无法连接", displayText: "cannot connect", isImportant: true),
         QuickLookEnglishPhraseOverride(source: "已过期", displayText: "expired", isImportant: true),
         QuickLookEnglishPhraseOverride(source: "不支持", displayText: "not supported", isImportant: true),
+        QuickLookEnglishPhraseOverride(source: "关注", displayText: "follow", isImportant: true),
+        QuickLookEnglishPhraseOverride(source: "推荐", displayText: "recommended", isImportant: true),
+        QuickLookEnglishPhraseOverride(source: "闪购", displayText: "flash deals", isImportant: true),
+        QuickLookEnglishPhraseOverride(source: "外卖", displayText: "food delivery", isImportant: true),
+        QuickLookEnglishPhraseOverride(source: "国补", displayText: "subsidy", isImportant: true),
+        QuickLookEnglishPhraseOverride(source: "国补飞猪告白季", displayText: "subsidy / travel / sale", isImportant: true),
+        QuickLookEnglishPhraseOverride(source: "飞猪", displayText: "Fliggy", isImportant: true),
+        QuickLookEnglishPhraseOverride(source: "告白季", displayText: "sale season", isImportant: true),
+        QuickLookEnglishPhraseOverride(source: "520告白季", displayText: "sale season", isImportant: true),
+        QuickLookEnglishPhraseOverride(source: "穿搭", displayText: "outfit", isImportant: true),
+        QuickLookEnglishPhraseOverride(source: "清凉", displayText: "summer / cool", isImportant: false),
+        QuickLookEnglishPhraseOverride(source: "加码", displayText: "extra bonus", isImportant: true),
+        QuickLookEnglishPhraseOverride(source: "补贴", displayText: "subsidy", isImportant: true),
+        QuickLookEnglishPhraseOverride(source: "消费券", displayText: "coupon", isImportant: true),
+        QuickLookEnglishPhraseOverride(source: "搜索", displayText: "search", isImportant: true),
+        QuickLookEnglishPhraseOverride(source: "陶瓷花盆", displayText: "ceramic pots", isImportant: false),
+        QuickLookEnglishPhraseOverride(source: "抵钱", displayText: "discount credit", isImportant: true),
+        QuickLookEnglishPhraseOverride(source: "优惠", displayText: "discount", isImportant: true),
         QuickLookEnglishPhraseOverride(source: "购物车", displayText: "cart", isImportant: true),
         QuickLookEnglishPhraseOverride(source: "优惠券", displayText: "coupon", isImportant: true),
         QuickLookEnglishPhraseOverride(source: "红包", displayText: "red packet", isImportant: true),
+        QuickLookEnglishPhraseOverride(source: "频道专享红包", displayText: "channel red packet", isImportant: true),
         QuickLookEnglishPhraseOverride(source: "支付", displayText: "pay", isImportant: true),
         QuickLookEnglishPhraseOverride(source: "付款", displayText: "pay", isImportant: true),
         QuickLookEnglishPhraseOverride(source: "退款", displayText: "refund", isImportant: true),
@@ -812,13 +951,28 @@ private extension QuickLookEnglishTranslationProvider {
         QuickLookEnglishPhraseOverride(source: "政府补贴", displayText: "government subsidy", isImportant: true),
         QuickLookEnglishPhraseOverride(source: "补贴价", displayText: "subsidized price", isImportant: true),
         QuickLookEnglishPhraseOverride(source: "券后价", displayText: "after-coupon price", isImportant: true),
+        QuickLookEnglishPhraseOverride(source: "抢", displayText: "grab", isImportant: true),
+        QuickLookEnglishPhraseOverride(source: "立即抢", displayText: "grab now", isImportant: true),
+        QuickLookEnglishPhraseOverride(source: "立即抢购", displayText: "buy now", isImportant: true),
+        QuickLookEnglishPhraseOverride(source: "88VIP专享", displayText: "88VIP exclusive", isImportant: true),
+        QuickLookEnglishPhraseOverride(source: "苹果惊喜直降", displayText: "Apple discount", isImportant: true),
+        QuickLookEnglishPhraseOverride(source: "优惠超千元", displayText: "over ¥1000 off", isImportant: true),
+        QuickLookEnglishPhraseOverride(source: "超级单品", displayText: "featured item", isImportant: true),
+        QuickLookEnglishPhraseOverride(source: "闪降更优惠", displayText: "extra discount", isImportant: true),
+        QuickLookEnglishPhraseOverride(source: "特惠爆款", displayText: "hot deal", isImportant: true),
+        QuickLookEnglishPhraseOverride(source: "风格上新", displayText: "new style", isImportant: false),
+        QuickLookEnglishPhraseOverride(source: "立即领取", displayText: "claim now", isImportant: true),
         QuickLookEnglishPhraseOverride(source: "去使用", displayText: "use", isImportant: true),
         QuickLookEnglishPhraseOverride(source: "待使用", displayText: "pending use", isImportant: true),
+        QuickLookEnglishPhraseOverride(source: "视频", displayText: "video", isImportant: true),
+        QuickLookEnglishPhraseOverride(source: "消息", displayText: "messages", isImportant: true),
         QuickLookEnglishPhraseOverride(source: "我的淘宝", displayText: "My Taobao", isImportant: true),
-        QuickLookEnglishPhraseOverride(source: "自助服务", displayText: "self service", isImportant: true),
+        QuickLookEnglishPhraseOverride(source: "自助服务", displayText: "self-service", isImportant: true),
         QuickLookEnglishPhraseOverride(source: "猜你喜欢", displayText: "you may like", isImportant: true),
-        QuickLookEnglishPhraseOverride(source: "评价客服", displayText: "reviews / support", isImportant: true),
+        QuickLookEnglishPhraseOverride(source: "评价客服", displayText: "support/reviews", isImportant: true),
         QuickLookEnglishPhraseOverride(source: "淘工厂", displayText: "Taobao Factory", isImportant: true),
+        QuickLookEnglishPhraseOverride(source: "限时买一送一", displayText: "limited-time BOGO", isImportant: true),
+        QuickLookEnglishPhraseOverride(source: "收藏有礼", displayText: "save for reward", isImportant: true),
         QuickLookEnglishPhraseOverride(source: "高跟鞋", displayText: "high-heeled shoes", isImportant: false),
         QuickLookEnglishPhraseOverride(source: "洗面奶", displayText: "cleanser", isImportant: false),
         QuickLookEnglishPhraseOverride(source: "新版洗面奶", displayText: "cleanser", isImportant: false),

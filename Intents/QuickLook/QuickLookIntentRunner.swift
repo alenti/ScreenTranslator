@@ -107,19 +107,35 @@ struct QuickLookIntentRunner {
 
                 switch mode {
                 case .translated:
+                    logger.info(
+                        """
+                        Quick Look Local MT startup enabled=\
+                        \(QuickLookLocalMTConfig.isEnabled, privacy: .public), \
+                        baseURL=\(QuickLookLocalMTConfig.baseURLString, privacy: .public), \
+                        cjkOCRBlocks=\(cjkCount, privacy: .public)
+                        """
+                    )
+
                     if cjkCount == 0 {
+                        logger.info(
+                            """
+                            Quick Look Local MT preparedMTBlocks=0 reason=\
+                            noCJKFastPath
+                            """
+                        )
+
                         outputData = fallbackRenderer.renderPNGData(
                             backgroundImageData: decodedScreenshot.imageData,
                             message: "No Chinese text detected"
                         )
                     } else {
-                        outputData = try QuickLookOverlayRenderer().renderPNGData(
+                        outputData = try await QuickLookOverlayRenderer().renderPNGData(
                             for: decodedScreenshot,
                             observations: observations
                         )
                     }
                 case .debug:
-                    outputData = try QuickLookDiagnosticsRenderer().renderPNGData(
+                    outputData = try await QuickLookDiagnosticsRenderer().renderPNGData(
                         for: decodedScreenshot,
                         observations: observations
                     )

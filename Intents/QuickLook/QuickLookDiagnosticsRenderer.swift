@@ -13,13 +13,13 @@ struct QuickLookDiagnosticsRenderer {
     func renderPNGData(
         for input: ScreenshotInput,
         observations: [OCRTextObservation]
-    ) throws -> Data {
+    ) async throws -> Data {
         guard let sourceImage = UIImage(data: input.imageData) else {
             throw AppError.unsupportedImage
         }
 
         let canvasSize = input.size
-        let snapshot = analyzer.analyze(
+        let snapshot = await analyzer.analyze(
             observations: observations,
             canvasSize: canvasSize
         )
@@ -63,6 +63,11 @@ struct QuickLookDiagnosticsRenderer {
         }
 
         let color = diagnosticColor(for: block.status)
+        drawChildFrames(
+            block.childFrames,
+            canvasRect: canvasRect
+        )
+
         let cornerRadius = min(8, max(3, min(frame.width, frame.height) * 0.08))
         let path = UIBezierPath(
             roundedRect: frame,
@@ -89,6 +94,10 @@ struct QuickLookDiagnosticsRenderer {
     ) {
         let text = """
         OCR \(summary.totalOCRBlocks)  CJK \(summary.cjkBlocks)
+        ROUTE_MT \(summary.routeMT)  ROUTE_DOMAIN \(summary.routeDomain)  ROUTE_CEDICT \(summary.routeCEDICT)  ROUTE_SKIP \(summary.routeSkip)
+        MT_ACCEPTED \(summary.mtAccepted)  LOCAL_MT \(summary.localMTHits)  SUSPICIOUS_REJECTED \(summary.suspiciousRejected)  CEDICT \(summary.cedictHits)  FALLBACK \(summary.fallbackHits)  MT_FAIL \(summary.mtFailures)
+        GROUPS \(summary.groupedBlocks)  LOCAL_MT_GROUP \(summary.localMTTranslatedGroups)  FALLBACK_GROUP \(summary.fallbackGroups)  RENDERED_GROUP \(summary.renderedGroups)
+        LOCAL_MT_TEXT_REPLACEMENT \(summary.renderedReplacementCards)  PILL \(summary.renderedPills)  LOW_QUALITY_REJECT \(summary.lowQualityFallbackRejected)
         PHRASE \(summary.phraseOverrideHits)  EXACT \(summary.exactHits)  SEG \(summary.segmentHits)
         SINGLE \(summary.singleAllowlistHits)  SUMMARY \(summary.summaryHits)  LONG \(summary.longUntranslated)
         MATCH \(summary.matchedBlocks)  MISS \(summary.missedBlocks)  UNKNOWN \(summary.skippedUnknownCJK)  SKIP \(summary.skippedBlocks)  RENDER \(summary.renderedBlocks)
@@ -205,36 +214,107 @@ struct QuickLookDiagnosticsRenderer {
         )
     }
 
+    private func drawChildFrames(
+        _ childFrames: [CGRect],
+        canvasRect: CGRect
+    ) {
+        guard childFrames.count > 1 else {
+            return
+        }
+
+        UIColor.systemBlue.withAlphaComponent(0.85).setStroke()
+
+        for childFrame in childFrames {
+            let frame = childFrame.standardized
+
+            guard frame.isNull == false && frame.isEmpty == false else {
+                continue
+            }
+
+            let path = UIBezierPath(
+                roundedRect: frame,
+                cornerRadius: min(5, max(2, frame.height * 0.08))
+            )
+            path.lineWidth = max(1, canvasRect.width * 0.0012)
+            path.stroke()
+        }
+    }
+
     private func labelText(for block: QuickLookDiagnosticsBlock) -> String {
         switch block.status {
         case .matched:
             let translation = block.dictionaryDiagnostics.translation?.displayText ?? ""
+            if block.dictionaryDiagnostics.matchType == .localMT,
+               shouldLabelAsTextReplacement(block) {
+                let groupID = block.groupID ?? "group"
+                return clipped(
+                    "\(block.route.rawValue) LOCAL_MT_TEXT_REPLACEMENT \(groupID) \(block.blockType.rawValue) L\(block.lineCount): \(translation)",
+                    maxLength: 76
+                )
+            }
+
+            if block.dictionaryDiagnostics.matchType == .localMT {
+                return clipped(
+                    "\(block.route.rawValue) LOCAL_MT: \(translation)",
+                    maxLength: 58
+                )
+            }
+
+            if block.route == .domainDictionary,
+               block.originalText != block.normalizedText {
+                return clipped(
+                    "\(block.route.rawValue) NORMALIZED_DOMAIN_HIT \(block.dictionaryDiagnostics.matchType.rawValue): \(translation)",
+                    maxLength: 70
+                )
+            }
+
+            if block.blockType == .uiLabel {
+                return clipped(
+                    "\(block.route.rawValue) UNGROUPED_UI \(block.dictionaryDiagnostics.matchType.rawValue): \(translation)",
+                    maxLength: 64
+                )
+            }
+
             return clipped(
-                "\(block.dictionaryDiagnostics.matchType.rawValue): \(translation)",
+                "\(block.route.rawValue) \(block.dictionaryDiagnostics.matchType.rawValue): \(translation)",
                 maxLength: 58
             )
         case .missed:
             return clipped(
-                "MISS: \(preferredSourceText(for: block))",
+                "\(block.route.rawValue) MISS: \(preferredSourceText(for: block))",
                 maxLength: 48
             )
         case .longUntranslated:
             return clipped(
-                "LONG_UNTRANSLATED: \(preferredSourceText(for: block))",
+                "\(block.route.rawValue) LONG_UNTRANSLATED: \(preferredSourceText(for: block))",
                 maxLength: 58
             )
         case .skipped:
             let reason = block.skipReason?.rawValue ?? "skipped"
 
+            if block.skipReason == .lowQualityFallbackRejected {
+                return clipped(
+                    "\(block.route.rawValue) LOW_QUALITY_FALLBACK_REJECTED: \(preferredSourceText(for: block))",
+                    maxLength: 68
+                )
+            }
+
+            if block.skipReason == .suspiciousMTRejected {
+                return clipped(
+                    "\(block.route.rawValue) SUSPICIOUS_REJECTED: \(preferredSourceText(for: block))",
+                    maxLength: 68
+                )
+            }
+
             if let translation = block.dictionaryDiagnostics.translation {
                 return clipped(
-                    "SKIP \(reason): \(translation.displayText)",
+                    "\(block.route.rawValue) SKIP \(reason): \(translation.displayText)",
                     maxLength: 58
                 )
             }
 
             return clipped(
-                "SKIP \(reason): \(preferredSourceText(for: block))",
+                "\(block.route.rawValue) SKIP \(reason): \(preferredSourceText(for: block))",
                 maxLength: 48
             )
         }
@@ -248,6 +328,16 @@ struct QuickLookDiagnosticsRenderer {
         }
 
         return block.originalText
+    }
+
+    private func shouldLabelAsTextReplacement(
+        _ block: QuickLookDiagnosticsBlock
+    ) -> Bool {
+        block.lineCount > 1
+            || block.normalizedText.count >= 20
+            || block.blockType == .chatBubble
+            || block.blockType == .paragraph
+            || block.blockType == .addressBlock
     }
 
     private func clipped(_ text: String, maxLength: Int) -> String {

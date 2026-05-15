@@ -1,0 +1,52 @@
+[
+  {
+    "id": "block_1",
+    "kind": "chatBubble",
+    "text": "麻烦货送到集运仓检查哈，从集运仓发出后不是我们的物流，破损无法核实。"
+  },
+  {
+    "id": "block_2",
+    "kind": "systemMessage",
+    "text": "网络错误，请重试"
+  },
+  {
+    "id": "block_3",
+    "kind": "chatStatus",
+    "text": "对方正在输入"
+  },
+  {
+    "id": "block_4",
+    "kind": "chatBubble",
+    "text": "这批货物后续还有国际运输，请务必做好非常牢固的包装。"
+  },
+  {
+    "id": "block_5",
+    "kind": "commerce",
+    "text": "红包"
+  },
+  {
+    "id": "block_6",
+    "kind": "commerce",
+    "text": "国家补贴"
+  },
+  {
+    "id": "block_7",
+    "kind": "productTitle",
+    "text": "轻熟绝美高跟鞋"
+  },
+  {
+    "id": "block_8",
+    "kind": "chatBubble",
+    "text": "请在外箱上注明里面是什么货物，方便仓库识别。"
+  },
+  {
+    "id": "block_9",
+    "kind": "chatBubble",
+    "text": "打出口加收木架80一个包装费。"
+  },
+  {
+    "id": "block_10",
+    "kind": "chatBubble",
+    "text": "私人仓，无入仓费。"
+  }
+]

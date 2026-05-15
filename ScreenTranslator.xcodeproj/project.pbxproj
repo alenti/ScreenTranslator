@@ -262,6 +262,16 @@
 		03F6E0015AAA000100000003 /* QuickLookEnglishTranslationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F6E0015AAA000100000012 /* QuickLookEnglishTranslationProvider.swift */; };
 		03F6E0015AAA000100000004 /* QuickLookEnglishTranslationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F6E0015AAA000100000012 /* QuickLookEnglishTranslationProvider.swift */; };
 		03F6E0015AAA000100000005 /* QuickLookCEDICTGeneral_v2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 03F6E0015AAA000100000013 /* QuickLookCEDICTGeneral_v2.sqlite */; };
+		03F7A0015ABB000100000001 /* QuickLookLocalMTConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F7A0015ABB000100000011 /* QuickLookLocalMTConfig.swift */; };
+		03F7A0015ABB000100000002 /* QuickLookLocalMTConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F7A0015ABB000100000011 /* QuickLookLocalMTConfig.swift */; };
+		03F7A0015ABB000100000003 /* QuickLookLocalMTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F7A0015ABB000100000012 /* QuickLookLocalMTClient.swift */; };
+		03F7A0015ABB000100000004 /* QuickLookLocalMTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F7A0015ABB000100000012 /* QuickLookLocalMTClient.swift */; };
+		03F7A0015ABB000100000005 /* QuickLookLocalMTTranslationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F7A0015ABB000100000013 /* QuickLookLocalMTTranslationProvider.swift */; };
+		03F7A0015ABB000100000006 /* QuickLookLocalMTTranslationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F7A0015ABB000100000013 /* QuickLookLocalMTTranslationProvider.swift */; };
+		03F7A0015ABB000100000007 /* QuickLookMTBlockPreparer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F7A0015ABB000100000014 /* QuickLookMTBlockPreparer.swift */; };
+		03F7A0015ABB000100000008 /* QuickLookMTBlockPreparer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F7A0015ABB000100000014 /* QuickLookMTBlockPreparer.swift */; };
+		03F8A0015ACC000100000001 /* QuickLookTextBlockGrouper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F8A0015ACC000100000011 /* QuickLookTextBlockGrouper.swift */; };
+		03F8A0015ACC000100000002 /* QuickLookTextBlockGrouper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F8A0015ACC000100000011 /* QuickLookTextBlockGrouper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -362,6 +372,11 @@
 		03F6E0015AAA000100000011 /* QuickLookCEDICTStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLookCEDICTStore.swift; sourceTree = "<group>"; };
 		03F6E0015AAA000100000012 /* QuickLookEnglishTranslationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLookEnglishTranslationProvider.swift; sourceTree = "<group>"; };
 		03F6E0015AAA000100000013 /* QuickLookCEDICTGeneral_v2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = QuickLookCEDICTGeneral_v2.sqlite; sourceTree = "<group>"; };
+		03F7A0015ABB000100000011 /* QuickLookLocalMTConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLookLocalMTConfig.swift; sourceTree = "<group>"; };
+		03F7A0015ABB000100000012 /* QuickLookLocalMTClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLookLocalMTClient.swift; sourceTree = "<group>"; };
+		03F7A0015ABB000100000013 /* QuickLookLocalMTTranslationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLookLocalMTTranslationProvider.swift; sourceTree = "<group>"; };
+		03F7A0015ABB000100000014 /* QuickLookMTBlockPreparer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLookMTBlockPreparer.swift; sourceTree = "<group>"; };
+		03F8A0015ACC000100000011 /* QuickLookTextBlockGrouper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLookTextBlockGrouper.swift; sourceTree = "<group>"; };
 		03494BBE2F6EF5360048643B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		03494BC02F6EF5360048643B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03494BC22F6EF5360048643B /* ScaffoldSnapshot.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ScaffoldSnapshot.md; sourceTree = "<group>"; };
@@ -682,8 +697,13 @@
 				03F4C0015A88000100000012 /* QuickLookIntentFileFactory.swift */,
 				03F3B0015A77000100000011 /* QuickLookIntentRunner.swift */,
 				03E1F0015A55000100000011 /* QuickLookLocalDictionaryTranslationProvider.swift */,
+				03F7A0015ABB000100000012 /* QuickLookLocalMTClient.swift */,
+				03F7A0015ABB000100000011 /* QuickLookLocalMTConfig.swift */,
+				03F7A0015ABB000100000013 /* QuickLookLocalMTTranslationProvider.swift */,
+				03F7A0015ABB000100000014 /* QuickLookMTBlockPreparer.swift */,
 				03D1E0015A44000100000013 /* QuickLookOCRBlockMapper.swift */,
 				03D1E0015A44000100000011 /* QuickLookOverlayRenderer.swift */,
+				03F8A0015ACC000100000011 /* QuickLookTextBlockGrouper.swift */,
 			);
 			path = QuickLook;
 			sourceTree = "<group>";
@@ -938,8 +958,13 @@
 				03F4C0015A88000100000003 /* QuickLookIntentFileFactory.swift in Sources */,
 				03F3B0015A77000100000001 /* QuickLookIntentRunner.swift in Sources */,
 				03E1F0015A55000100000001 /* QuickLookLocalDictionaryTranslationProvider.swift in Sources */,
+				03F7A0015ABB000100000003 /* QuickLookLocalMTClient.swift in Sources */,
+				03F7A0015ABB000100000001 /* QuickLookLocalMTConfig.swift in Sources */,
+				03F7A0015ABB000100000005 /* QuickLookLocalMTTranslationProvider.swift in Sources */,
+				03F7A0015ABB000100000007 /* QuickLookMTBlockPreparer.swift in Sources */,
 				03D1E0015A44000100000003 /* QuickLookOCRBlockMapper.swift in Sources */,
 				03D1E0015A44000100000001 /* QuickLookOverlayRenderer.swift in Sources */,
+				03F8A0015ACC000100000001 /* QuickLookTextBlockGrouper.swift in Sources */,
 				03494BDF2F6EF5360048643B /* OverlayRenderResult.swift in Sources */,
 				03494BE02F6EF5360048643B /* DebugViewModel.swift in Sources */,
 				03494BE12F6EF5360048643B /* AppEnvironment.swift in Sources */,
@@ -1027,8 +1052,13 @@
 				03F4C0015A88000100000004 /* QuickLookIntentFileFactory.swift in Sources */,
 				03F3B0015A77000100000002 /* QuickLookIntentRunner.swift in Sources */,
 				03E1F0015A55000100000002 /* QuickLookLocalDictionaryTranslationProvider.swift in Sources */,
+				03F7A0015ABB000100000004 /* QuickLookLocalMTClient.swift in Sources */,
+				03F7A0015ABB000100000002 /* QuickLookLocalMTConfig.swift in Sources */,
+				03F7A0015ABB000100000006 /* QuickLookLocalMTTranslationProvider.swift in Sources */,
+				03F7A0015ABB000100000008 /* QuickLookMTBlockPreparer.swift in Sources */,
 				03D1E0015A44000100000006 /* QuickLookOCRBlockMapper.swift in Sources */,
 				03D1E0015A44000100000004 /* QuickLookOverlayRenderer.swift in Sources */,
+				03F8A0015ACC000100000002 /* QuickLookTextBlockGrouper.swift in Sources */,
 				03494C6B2F6EF5370048643B /* OverlayRenderResult.swift in Sources */,
 				03494C6C2F6EF5370048643B /* DebugViewModel.swift in Sources */,
 				03494C6D2F6EF5370048643B /* AppEnvironment.swift in Sources */,
@@ -1250,13 +1280,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XWSTFX7FZU;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Save translated screenshots from ScreenTranslator.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1280,13 +1305,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XWSTFX7FZU;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Save translated screenshots from ScreenTranslator.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
