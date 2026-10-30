@@ -1,0 +1,4 @@
+Runtime/
+DerivedData/
+xcuserdata/
+*.gguf

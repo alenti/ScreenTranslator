@@ -2,7 +2,7 @@ import CoreGraphics
 import ImageIO
 import UniformTypeIdentifiers
 import XCTest
-@testable import ScreenTranslator
+@testable import ChinaTap_Screen_Translator
 
 final class ScreenshotInputBuilderTests: XCTestCase {
     func testBuildFromImageDataReadsPixelSizeAndOrientationMetadata() throws {

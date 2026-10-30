@@ -1,0 +1,8 @@
+{
+  "images" : [
+    { "filename" : "SetupShortcutQuickPreview-en.jpg", "idiom" : "universal", "locale" : "en" },
+    { "filename" : "SetupShortcutQuickPreview-ru.jpg", "idiom" : "universal", "locale" : "ru" }
+  ],
+  "info" : { "author" : "xcode", "version" : 1 },
+  "properties" : { "localizable" : true }
+}

@@ -1,6 +1,9 @@
 import Foundation
 
 actor TemporaryImageStore {
+    static let shared = TemporaryImageStore()
+    static let requestStored = Notification.Name("ScreenTranslator.screenshotStored")
+    private var claimed: [UUID: Date] = [:]
     private static let defaultMaxPendingAge: TimeInterval = 15 * 60
 
     private let storeURL: URL
@@ -54,6 +57,9 @@ actor TemporaryImageStore {
         }
 
         try? FileManager.default.removeItem(at: storeURL)
+        claimed = claimed.filter { now().timeIntervalSince($0.value) <= maxPendingAge }
+        guard claimed[request.screenshot.id] == nil else { return nil }
+        claimed[request.screenshot.id] = now()
         return request
     }
 

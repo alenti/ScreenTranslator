@@ -1,173 +1,66 @@
 import CoreGraphics
 import Foundation
+import UIKit
 
 @MainActor
 final class ResultOverlayViewModel: ObservableObject {
-    @Published var displayMode: ResultMode
-    @Published private(set) var result: OverlayRenderResult
+    @Published var displayMode: ResultMode = .overlay
+    let result: ProcessedScreenshot
 
-    let availableModes: [ResultMode]
-
-    init(
-        result: OverlayRenderResult,
-        displayMode: ResultMode = .overlay,
-        availableModes: [ResultMode] = [.overlay, .original]
-    ) {
+    init(result: ProcessedScreenshot) {
         self.result = result
-        self.availableModes = availableModes
-        self.displayMode = availableModes.contains(displayMode)
-            ? displayMode
-            : .overlay
     }
 
-    var translatedBlocks: [TranslationBlock] {
-        result.translatedBlocks
-    }
+    var blocks: [ProcessedBlock] { result.blocks }
 
-    var primaryModes: [ResultMode] {
-        availableModes
-    }
-
-    var title: String {
-        "Translation Ready"
-    }
-
-    var summaryText: String {
-        "\(translatedBlocks.count) block\(translatedBlocks.count == 1 ? "" : "s")"
-    }
-
-    var sourceSizeDescription: String {
-        let width = Int(result.sourceInput.size.width)
-        let height = Int(result.sourceInput.size.height)
-        return "\(width)x\(height)"
-    }
-
-    var renderNote: String {
-        result.renderMetadata.note
-    }
-
-    var hasRenderedPreview: Bool {
-        result.precomposedImageData != nil
-    }
-
-    var hasSourcePreview: Bool {
-        result.sourceInput.imageData.isEmpty == false
-    }
-
-    var renderedPreviewData: Data? {
-        result.precomposedImageData
-    }
-
-    var sourcePreviewData: Data? {
-        result.sourceInput.imageData.isEmpty ? nil : result.sourceInput.imageData
-    }
+    var translationFailureCount: Int { result.translationFailureCount }
 
     var sourceCanvasSize: CGSize {
-        result.sourceInput.size
+        CGSize(width: result.originalImage.size.width * result.originalImage.scale, height: result.originalImage.size.height * result.originalImage.scale)
     }
 
-    var sourceFilename: String {
-        result.sourceInput.sourceMetadata.automationName ?? "screen-translator-result.png"
+    var shareFilename: String {
+        String(localized: "Translation") + "-\(result.targetLanguage.rawValue).png"
     }
 
-    var translationText: String {
-        translatedBlocks
-            .map(\.translatedText)
-            .map(normalizedBlockText(_:))
-            .filter { $0.isEmpty == false }
-            .joined(separator: "\n\n")
+    var translationText: String { joined(blocks.compactMap(\.translatedText)) }
+    var originalText: String { joined(blocks.map(\.sourceText)) }
+    var combinedText: String { joined(blocks.map(combinedText(for:))) }
+
+    func translationText(for block: ProcessedBlock) -> String { trimmed(block.translatedText ?? "") }
+    func originalText(for block: ProcessedBlock) -> String { trimmed(block.sourceText) }
+
+    func combinedText(for block: ProcessedBlock) -> String {
+        joined([originalText(for: block), translationText(for: block)], separator: "\n")
     }
 
-    var originalText: String {
-        translatedBlocks
-            .map(\.sourceText)
-            .map(normalizedBlockText(_:))
-            .filter { $0.isEmpty == false }
-            .joined(separator: "\n\n")
-    }
-
-    var combinedText: String {
-        translatedBlocks
-            .map { block in
-                let original = normalizedBlockText(block.sourceText)
-                let translation = normalizedBlockText(block.translatedText)
-
-                if original.isEmpty {
-                    return translation
-                }
-
-                if translation.isEmpty {
-                    return original
-                }
-
-                return "\(original)\n\(translation)"
-            }
-            .filter { $0.isEmpty == false }
-            .joined(separator: "\n\n")
-    }
-
-    func ensureHeroMode() {
-        if displayMode != .overlay {
-            displayMode = .overlay
+    /// User-facing note for a block; the raw validation/layout message stays in diagnostics.
+    func note(for block: ProcessedBlock) -> String? {
+        switch block.failure?.stage {
+        case .translation: String(localized: "This text couldn’t be translated reliably, so the original is shown on the image.")
+        case .rendering: String(localized: "The translation didn’t fully fit on the image. The complete text is shown here.")
+        case nil: nil
         }
     }
 
-    func interactiveFrame(
-        for block: TranslationBlock,
-        in mode: ResultMode
-    ) -> CGRect {
-        switch mode {
-        case .overlay:
-            return block.targetFrame
-        case .original:
-            return block.sourceBoundingBox
-        case .text:
-            return block.targetFrame
+    func hotspots(in mode: ResultMode) -> [ZoomablePreviewHotspot] {
+        blocks.map { block in
+            ZoomablePreviewHotspot(
+                id: block.hotspotID,
+                frame: mode == .overlay ? (block.renderedRect ?? block.sourceRect) : block.sourceRect,
+                accessibilityLabel: translationText(for: block).isEmpty ? originalText(for: block) : translationText(for: block)
+            )
         }
     }
 
-    func translationText(
-        for block: TranslationBlock
-    ) -> String {
-        normalizedBlockText(block.translatedText)
+    private func trimmed(_ text: String) -> String { text.trimmingCharacters(in: .whitespacesAndNewlines) }
+
+    private func joined(_ texts: [String], separator: String = "\n\n") -> String {
+        texts.map(trimmed).filter { !$0.isEmpty }.joined(separator: separator)
     }
+}
 
-    func originalText(
-        for block: TranslationBlock
-    ) -> String {
-        normalizedBlockText(block.sourceText)
-    }
-
-    func combinedText(
-        for block: TranslationBlock
-    ) -> String {
-        let original = originalText(for: block)
-        let translation = translationText(for: block)
-
-        if original.isEmpty {
-            return translation
-        }
-
-        if translation.isEmpty {
-            return original
-        }
-
-        return "\(original)\n\(translation)"
-    }
-
-    func blockAccessibilityLabel(
-        for block: TranslationBlock
-    ) -> String {
-        let translation = translationText(for: block)
-        if translation.isEmpty == false {
-            return translation
-        }
-
-        let original = originalText(for: block)
-        return original.isEmpty ? "Translation block" : original
-    }
-
-    private func normalizedBlockText(_ text: String) -> String {
-        text.trimmingCharacters(in: .whitespacesAndNewlines)
-    }
+extension ProcessedBlock {
+    // Existing UIKit zoom viewer uses UUID; project the stable OCR ID deterministically.
+    var hotspotID: UUID { UUID(uuidString: String(format: "00000000-0000-0000-0000-%012llx", UInt64(id)))! }
 }

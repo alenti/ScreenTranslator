@@ -1,0 +1,6 @@
+// Shared pinned local translation core.
+CLANG_CXX_LANGUAGE_STANDARD = c++17
+HEADER_SEARCH_PATHS = $(inherited) "$(SRCROOT)/ScreenTranslatorNext/Runtime/source/common" "$(SRCROOT)/ScreenTranslatorNext/Runtime/source/vendor" "$(SRCROOT)/ScreenTranslatorNext/Runtime/source/ggml/include"
+LIBRARY_SEARCH_PATHS[sdk=iphoneos*] = $(inherited) "$(SRCROOT)/ScreenTranslatorNext/Runtime/jinja/iphoneos"
+LIBRARY_SEARCH_PATHS[sdk=iphonesimulator*] = $(inherited) "$(SRCROOT)/ScreenTranslatorNext/Runtime/jinja/iphonesimulator"
+OTHER_LDFLAGS = $(inherited) -lnextjinja -lc++ -framework Metal

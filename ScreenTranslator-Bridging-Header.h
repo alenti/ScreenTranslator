@@ -1,0 +1,1 @@
+#import "ScreenTranslatorNext/HyMTNative.h"

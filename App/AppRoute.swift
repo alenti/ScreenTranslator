@@ -5,7 +5,4 @@ enum AppRoute: String, CaseIterable, Sendable {
     case processing
     case floatingPreview
     case result
-    case error
-    case settings
-    case debug
 }

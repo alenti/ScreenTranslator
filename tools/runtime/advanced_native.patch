@@ -1,0 +1,179 @@
+--- a/HyMTNative.mm
++++ b/HyMTNative.mm
+@@ -8,6 +8,7 @@
+ #include "jinja/runtime.h"
+ #include "json.h"
+ #include <atomic>
++#include <algorithm>
+ #include <chrono>
+ #include <cstring>
+ #include <mutex>
+@@ -253,22 +254,29 @@
+     struct Item {
+         std::vector<llama_token> input; std::string output;
+         int sourceTokens=0, limit=512, generated=0, lastLogit=-1, position=0;
++        size_t originalIndex=0;
+         llama_token next; bool done=false, eog=false;
+         double tokenizeMs=0, prefillMs=0, sampleMs=0, decodeShareMs=0, latencyMs=0;
+         llama_sampler *sampler=nullptr; Clock::time_point began;
+     };
+     std::vector<Item> items(messages.count);
++#if DEBUG
++    const double budgetMs=[options[@"budgetMs"] doubleValue];
++#else
++    const double budgetMs=0;
++#endif
++    auto expired=[&] { return budgetMs>0 && ms(start)>=budgetMs; };
+     double prefillTotal=0, decodeTotal=0, sampleTotal=0, prefixMs=0, peak=0;
+     NSMutableArray *waves=[NSMutableArray array];
+     auto cleanup = [&] { for (auto &s:items) if(s.sampler) { llama_sampler_free(s.sampler);s.sampler=nullptr; } };
+     auto fail = [&](NSString *message)->NSDictionary * {
+         llama_synchronize(_context);llama_memory_clear(llama_get_memory(_context),true);cleanup();
+-        return @{@"error":_cancelled.load()?[@"Cancelled: " stringByAppendingString:message]:message,@"cancelled":@(_cancelled.load()),@"nativeSafeExit":@YES,@"plannedWaves":waves};
++        return @{@"error":_cancelled.load()?[@"Cancelled: " stringByAppendingString:message]:(expired()?@"Experimental retry budget exhausted":message),@"cancelled":@(_cancelled.load()),@"nativeSafeExit":@YES,@"plannedWaves":waves};
+     };
+     try {
+         for (NSUInteger i=0;i<messages.count;++i) {
+             if(_cancelled.load())return fail(@"Tokenization cancelled");
+-            auto &s=items[i]; const auto t=Clock::now(); auto prompt=modelPrompt(_model,messages[i]);
++            auto &s=items[i];s.originalIndex=i; const auto t=Clock::now(); auto prompt=modelPrompt(_model,messages[i]);
+             int n=-llama_tokenize(vocab,prompt.data(),(int)prompt.size(),nullptr,0,true,true);
+             if(n<=0 || (uint64_t)n+512>=llama_n_ctx(_context)) return fail(@"Prompt and output cannot fit the shared context");
+             s.input.resize(n);
+@@ -279,6 +287,9 @@
+             s.tokenizeMs=ms(t);
+         }
+     } catch(const std::exception &e) { return fail(@(e.what())); }
++#if DEBUG
++    if([options[@"longestFirst"] boolValue])std::stable_sort(items.begin(),items.end(),[](const Item &a,const Item &b){return a.sourceTokens>b.sourceTokens;});
++#endif
+     size_t common=items[0].input.size()-1;
+     for(auto &s:items) { common=std::min(common,s.input.size()-1);size_t j=0;while(j<common && s.input[j]==items[0].input[j])++j;common=j; }
+     if(!prefix)common=0;
+@@ -292,10 +303,10 @@
+         #if DEBUG
+         if(_cancelAtStage==stage) { _cancelAtStage.clear();_cancelled.store(true); }
+         #endif
+-        return !_cancelled.load();
++        return !_cancelled.load() && !expired();
+     };
+     auto decode=[&](const char *stage) {
+-        if(_cancelled.load() || llama_decode(_context,batch)!=0)return false;
++        if(_cancelled.load() || expired() || llama_decode(_context,batch)!=0)return false;
+         llama_synchronize(_context);return checkpoint(stage);
+     };
+     auto initializeSampler=[&](Item &s) {
+@@ -317,6 +328,76 @@
+         prefixMs=ms(t);prefillTotal+=prefixMs;
+     }
+     NSInteger completed=0;
++    NSMutableArray *decodeSteps=[NSMutableArray array];
++    auto recordStep=[&](size_t active,double elapsed) {
++        [decodeSteps addObject:@{@"active":@(active),@"ms":@(elapsed)}];
++    };
++#if DEBUG
++    // Isolated experiment: Release keeps the accepted bounded-wave scheduler.
++    if([options[@"refill"] boolValue]) {
++        std::vector<int> slots(_parallel,-1);
++        size_t waiting=0;
++        while(completed<(NSInteger)items.size()) {
++            if(!checkpoint("wave"))return releaseFail(@"Refill admission cancelled");
++            size_t reserved=common;
++            for(int slot=0;slot<_parallel;++slot) {
++                int index=slots[slot];if(index<0)continue;
++                auto &s=items[index];
++                if(llama_vocab_is_eog(vocab,s.next)) {
++                    s.eog=true;s.done=true;s.latencyMs=ms(s.began);
++                    llama_sampler_free(s.sampler);s.sampler=nullptr;
++                    if(!llama_memory_seq_rm(mem,slot,-1,-1))return releaseFail(@"Refill sequence removal failed");
++                    slots[slot]=-1;++completed;if(progress)progress(completed);
++                } else reserved+=s.input.size()-common+s.limit;
++            }
++            std::vector<int> admitted;
++            for(int slot=0;slot<_parallel && waiting<items.size();++slot) {
++                if(slots[slot]>=0)continue;
++                size_t needed=items[waiting].input.size()-common+items[waiting].limit;
++                if(reserved+needed>=llama_n_ctx(_context))continue;
++                if(!llama_memory_seq_rm(mem,slot,-1,-1))return releaseFail(@"Refill empty-slot removal failed");
++                auto &s=items[waiting];s.began=Clock::now();s.position=(int)s.input.size();initializeSampler(s);
++                if(common)llama_memory_seq_cp(mem,_parallel,slot,0,(int)common);
++                slots[slot]=(int)waiting++;reserved+=needed;admitted.push_back(slot);
++            }
++            if(!admitted.empty()) {
++                if(completed && !checkpoint("betweenWaves"))return releaseFail(@"Refill transition cancelled");
++                NSMutableArray *admittedIDs=[NSMutableArray array];for(int slot:admitted)[admittedIDs addObject:ids[items[slots[slot]].originalIndex]];
++                [waves addObject:@{@"ids":admittedIDs,@"reservedTokens":@(reserved)}];
++                size_t k=0,position=common;
++                while(k<admitted.size()) {
++                    batch.n_tokens=0;std::vector<std::pair<int,int>> endings;
++                    while(k<admitted.size() && batch.n_tokens<256) {
++                        int slot=admitted[k];auto &s=items[slots[slot]];bool last=position+1==s.input.size();
++                        int logit=add(s.input[position],(int)position,slot,last);++position;
++                        if(last) { endings.emplace_back(slot,logit);++k;position=common; }
++                    }
++                    auto t=Clock::now();if(!decode("prefill"))return releaseFail(@"Refill packed prefill failed");prefillTotal+=ms(t);
++                    for(auto ending:endings)if(!sample(items[slots[ending.first]],ending.second,ending.first))return releaseFail(@"Refill logits mismatch");
++                }
++            }
++            batch.n_tokens=0;std::vector<int> active;
++            for(int slot=0;slot<_parallel;++slot) {
++                if(slots[slot]<0)continue;auto &s=items[slots[slot]];
++                if(llama_vocab_is_eog(vocab,s.next))continue;
++                if(s.generated>=s.limit)return releaseFail(@"Refill output limit exceeded without EOG");
++                char bytes[256];int n=llama_token_to_piece(vocab,s.next,bytes,256,0,false);
++                if(n<0) {std::vector<char> buf(-n);n=llama_token_to_piece(vocab,s.next,buf.data(),(int)buf.size(),0,false);if(n<0)return releaseFail(@"Refill token piece failed");s.output.append(buf.data(),n);}else s.output.append(bytes,n);
++                ++s.generated;s.lastLogit=add(s.next,s.position++,slot,true);active.push_back(slot);
++            }
++            if(active.empty()) {
++                if(completed==(NSInteger)items.size())break;
++                bool occupied=false;for(int i:slots)occupied|=i>=0;
++                if(!occupied)return releaseFail(@"Refill capacity cannot admit the next source");
++                continue;
++            }
++            auto t=Clock::now();if(!decode("decode"))return releaseFail(@"Refill decode failed/cancelled");double elapsed=ms(t);decodeTotal+=elapsed;recordStep(active.size(),elapsed);
++            for(int slot:active) {auto &s=items[slots[slot]];s.decodeShareMs+=elapsed/active.size();if(!sample(s,s.lastLogit,slot))return releaseFail(@"Refill decode mapping mismatch");}
++            peak=std::max(peak,[[HyMTNative memory][@"footprintMB"] doubleValue]);
++        }
++    } else
++#endif
++    {
+     // shortcut: bounded waves, add continuous slot refill only if A19 timings justify it.
+     for(size_t wave=0;wave<items.size();) {
+         size_t count=0;
+@@ -327,7 +408,8 @@
+             required+=needed;++count;
+         }
+         if(!count)return releaseFail(@"Single sequence exceeds shared KV capacity");
+-        [waves addObject:@{@"ids":[ids subarrayWithRange:NSMakeRange(wave,count)],@"reservedTokens":@(required)}];
++        NSMutableArray *waveIDs=[NSMutableArray array];for(size_t i=wave;i<wave+count;++i)[waveIDs addObject:ids[items[i].originalIndex]];
++        [waves addObject:@{@"ids":waveIDs,@"reservedTokens":@(required)}];
+         if(!checkpoint("wave"))return releaseFail(@"Wave cancelled");
+         for(int slot=0;slot<_parallel;++slot)if(!llama_memory_seq_rm(mem,slot,-1,-1))return releaseFail(@"Sequence removal failed");
+         if(batchPrefill) {
+@@ -373,20 +455,23 @@
+             }
+             if(active.empty())break;
+             auto t=Clock::now();if(!decode("decode"))return releaseFail(@"Batched decode failed/cancelled");double elapsed=ms(t);decodeTotal+=elapsed;
++            recordStep(active.size(),elapsed);
+             for(auto i:active) {auto &s=items[i];s.decodeShareMs+=elapsed/active.size();if(!sample(s,s.lastLogit,(int)(i-wave)))return releaseFail(@"Invalid decode logits mapping");}
+         }
+         peak=std::max(peak,[[HyMTNative memory][@"footprintMB"] doubleValue]);
+         wave+=count;
+         if(wave<items.size() && !checkpoint("betweenWaves"))return releaseFail(@"Between waves");
++    }
+     }
+     llama_batch_free(batch);NSMutableArray *rows=[NSMutableArray array];int generated=0,inputs=0;
+     for(size_t i=0;i<items.size();++i) {
+         auto &s=items[i];NSString *text=[[NSString alloc]initWithBytes:s.output.data() length:s.output.size() encoding:NSUTF8StringEncoding];
+         if(!s.eog || !text.length || ![text stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceAndNewlineCharacterSet].length)return fail(@"Missing EOG or empty/invalid UTF8 output");
+         generated+=s.generated;inputs+=(int)s.input.size();sampleTotal+=s.sampleMs;
+-        [rows addObject:@{@"id":ids[i],@"index":@(i),@"text":[text stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceAndNewlineCharacterSet],@"sourceTokens":@(s.sourceTokens),@"promptTokens":@(s.input.size()),@"generatedTokens":@(s.generated),@"tokenizationMs":@(s.tokenizeMs),@"prefillMs":@(s.prefillMs),@"samplingMs":@(s.sampleMs),@"decodeShareMs":@(s.decodeShareMs),@"sequenceLatencyMs":@(s.latencyMs),@"tokensPerSecond":@(s.generated/std::max(s.latencyMs/1000,0.000001)),@"limit":@(s.limit),@"eog":@(s.eog)}];
+-    }
++        [rows addObject:@{@"id":ids[s.originalIndex],@"index":@(s.originalIndex),@"text":[text stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceAndNewlineCharacterSet],@"sourceTokens":@(s.sourceTokens),@"promptTokens":@(s.input.size()),@"generatedTokens":@(s.generated),@"tokenizationMs":@(s.tokenizeMs),@"prefillMs":@(s.prefillMs),@"samplingMs":@(s.sampleMs),@"decodeShareMs":@(s.decodeShareMs),@"sequenceLatencyMs":@(s.latencyMs),@"tokensPerSecond":@(s.generated/std::max(s.latencyMs/1000,0.000001)),@"limit":@(s.limit),@"eog":@(s.eog)}];
++    }
++    [rows sortUsingComparator:^NSComparisonResult(NSDictionary *a,NSDictionary *b){return [a[@"index"] compare:b[@"index"]];}];
+     llama_synchronize(_context);llama_memory_clear(mem,true);cleanup();double elapsed=ms(start);
+-    return @{@"rows":rows,@"totalMs":@(elapsed),@"prefillMs":@(prefillTotal),@"decodeMs":@(decodeTotal),@"samplingMs":@(sampleTotal),@"prefixMs":@(prefixMs),@"prefixTokens":@(common),@"inputTokens":@(inputs),@"outputTokens":@(generated),@"aggregateTokensPerSecond":@(generated/(elapsed/1000)),@"peakSampleFootprintMB":@(peak),@"memory":[HyMTNative memory],@"timingVersion":@"synchronized-v2",@"batchPrefill":@(batchPrefill),@"waves":waves,@"parallel":@(_parallel),@"context":@(llama_n_ctx(_context)),@"reservedPrefixSequence":@(_parallel)};
++    return @{@"rows":rows,@"totalMs":@(elapsed),@"prefillMs":@(prefillTotal),@"decodeMs":@(decodeTotal),@"decodeSteps":decodeSteps,@"samplingMs":@(sampleTotal),@"prefixMs":@(prefixMs),@"prefixTokens":@(common),@"inputTokens":@(inputs),@"outputTokens":@(generated),@"aggregateTokensPerSecond":@(generated/(elapsed/1000)),@"peakSampleFootprintMB":@(peak),@"memory":[HyMTNative memory],@"timingVersion":@"synchronized-v2",@"batchPrefill":@(batchPrefill),@"waves":waves,@"parallel":@(_parallel),@"context":@(llama_n_ctx(_context)),@"reservedPrefixSequence":@(_parallel)};
+ }
+ @end

@@ -1,9 +1,9 @@
 import Foundation
 import XCTest
-@testable import ScreenTranslator
+@testable import ChinaTap_Screen_Translator
 
 final class IntentInputFlowTests: XCTestCase {
-    func testBuiltScreenshotRoundTripsThroughTemporaryStoreAndRoutesToProcessing() async throws {
+    func testBuiltScreenshotRoundTripsThroughTemporaryStore() async throws {
         let baseDirectoryURL = try TestFixtures.makeTemporaryDirectory(
             prefix: "IntentInputFlow"
         )
@@ -16,8 +16,7 @@ final class IntentInputFlowTests: XCTestCase {
             orientation: 6
         )
         let builder = ScreenshotInputBuilder()
-        let store = TemporaryImageStore(baseDirectoryURL: baseDirectoryURL)
-        let router = IntentResultRouter()
+        let store = TemporaryImageStore(baseDirectoryURL: baseDirectoryURL, now: { Date(timeIntervalSince1970: 1_700_000_000) })
 
         let input = try builder.build(
             imageData: imageData,
@@ -39,10 +38,6 @@ final class IntentInputFlowTests: XCTestCase {
         XCTAssertEqual(peekedRequest, request)
         XCTAssertEqual(consumedRequest, request)
         XCTAssertNil(afterConsume)
-        XCTAssertEqual(
-            router.routeForIncomingRequest(request),
-            .processing
-        )
     }
 
     func testConsumeLatestInputThrowsIntentInputFailureForCorruptedPayload() async throws {
@@ -62,7 +57,7 @@ final class IntentInputFlowTests: XCTestCase {
         )
         try Data("not-json".utf8).write(to: storeURL)
 
-        let store = TemporaryImageStore(baseDirectoryURL: baseDirectoryURL)
+        let store = TemporaryImageStore(baseDirectoryURL: baseDirectoryURL, now: { Date(timeIntervalSince1970: 1_700_000_000) })
 
         do {
             _ = try await store.consumeLatestInput()
@@ -122,7 +117,7 @@ final class IntentInputFlowTests: XCTestCase {
             orientation: 1
         )
         let builder = ScreenshotInputBuilder()
-        let store = TemporaryImageStore(baseDirectoryURL: baseDirectoryURL)
+        let store = TemporaryImageStore(baseDirectoryURL: baseDirectoryURL, now: { Date(timeIntervalSince1970: 1_700_000_000) })
         let input = try builder.build(
             imageData: imageData,
             sourceMetadata: .shortcuts(filename: "legacy.png"),
@@ -155,7 +150,7 @@ final class IntentInputFlowTests: XCTestCase {
             orientation: 1
         )
         let builder = ScreenshotInputBuilder()
-        let store = TemporaryImageStore(baseDirectoryURL: baseDirectoryURL)
+        let store = TemporaryImageStore(baseDirectoryURL: baseDirectoryURL, now: { Date(timeIntervalSince1970: 1_700_000_000) })
         let input = try builder.build(
             imageData: imageData,
             sourceMetadata: .shortcuts(filename: "floating.png"),

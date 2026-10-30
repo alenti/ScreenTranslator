@@ -1,0 +1,33 @@
+{
+  "provenance": "Constructed public-style commerce text, reviewed by the coding assistant. Disjoint from screenshots and commerce_holdouts.json. Not an independently certified parallel corpus.",
+  "pairs": [
+    ["这款杯子容量350毫升，可以放进洗碗机。","This cup holds 350 ml and is dishwasher safe.","Объём этой чашки — 350 мл; её можно мыть в посудомоечной машине."],
+    ["两件商品合计68元，运费另算。","The two items cost 68 yuan in total; shipping is extra.","Два товара стоят 68 юаней в сумме; доставка оплачивается отдельно."],
+    ["满300减40，优惠不能叠加。","Spend 300 to save 40; discounts cannot be combined.","При покупке на 300 скидка составляет 40; скидки не суммируются."],
+    ["这次打九折，原价90元，现价81元。","The discount is 10%: originally 90 yuan, now 81.","Скидка 10%: прежняя цена 90 юаней, новая — 81."],
+    ["请拍一段故障视频发给客服。","Please record a video of the fault and send it to customer service.","Пожалуйста, снимите неисправность на видео и отправьте его в службу поддержки."],
+    ["如果收到的商品损坏，我们负责换货。","If the item arrives damaged, we will arrange an exchange.","Если товар придёт повреждённым, мы организуем замену."],
+    ["买家先把商品寄回，卖家收到后退款。","The buyer returns the item first; the seller refunds after receiving it.","Покупатель сначала отправляет товар обратно; продавец возвращает деньги после получения."],
+    ["我已经付过款了，请不要重复收费。","I have already paid; please do not charge me again.","Я уже оплатил; пожалуйста, не списывайте деньги повторно."],
+    ["您不用退回旧的，我们直接补发一个新的。","You do not need to return the old one; we will send a new one directly.","Старый экземпляр возвращать не нужно; мы сразу отправим новый."],
+    ["这个开关没有防水功能。","This switch is not waterproof.","Этот выключатель не защищён от воды."],
+    ["包装里只有支架，不含手机。","The package contains only the stand, not the phone.","В комплекте только подставка, без телефона."],
+    ["外箱尺寸45×32×28厘米，每箱12套。","Carton dimensions: 45×32×28 cm; 12 sets per carton.","Размер коробки: 45×32×28 см; в каждой коробке 12 комплектов."],
+    ["额定功率60W，输入电压220V。","Rated power: 60W; input voltage: 220V.","Номинальная мощность — 60 Вт, входное напряжение — 220 В."],
+    ["工作温度为零下10度到50度。","Operating temperature is from minus 10 to 50 degrees.","Рабочая температура — от минус 10 до 50 градусов."],
+    ["黑色有现货，蓝色需要等三天。","Black is in stock; blue requires a three-day wait.","Чёрный цвет есть в наличии; синий нужно ждать три дня."],
+    ["请确认接口是USB-C还是Lightning。","Please confirm whether the connector is USB-C or Lightning.","Пожалуйста, уточните разъём: USB-C или Lightning."],
+    ["型号AB-72支持Bluetooth 5.3。","Model AB-72 supports Bluetooth 5.3.","Модель AB-72 поддерживает Bluetooth 5.3."],
+    ["适用于[[P0]]，不能用于[[P1]]。","Compatible with [[P0]], not with [[P1]].","Подходит для [[P0]], но не для [[P1]]."],
+    ["价格为[[P0]]，一包有[[P1]]个。","The price is [[P0]]; each pack contains [[P1]] items.","Цена — [[P0]]; в упаковке [[P1]] штук."],
+    ["今天下单，预计三个工作日内发出。","Order today; dispatch is expected within three business days.","При заказе сегодня отправка ожидается в течение трёх рабочих дней."],
+    ["春节期间暂停发货，节后按顺序处理。","Shipping is paused during Spring Festival; orders will be processed in sequence afterward.","На время Праздника весны отправка приостановлена; после праздников заказы обработают по очереди."],
+    ["定做需要先确认图纸，确认后再生产。","Custom orders require drawing approval before production.","Для изготовления на заказ сначала нужно согласовать чертёж, затем начнётся производство."],
+    ["这个报价已经包含印刷费，但不包含模具费。","This quote includes printing but excludes the mould fee.","В эту цену включена печать, но не стоимость пресс-формы."],
+    ["数量越多单价越低，打样费单独收取。","Larger quantities have a lower unit price; samples are charged separately.","Чем больше количество, тем ниже цена за единицу; образцы оплачиваются отдельно."],
+    ["加入购物车后可以一起结算。","Add the items to your cart to check out together.","Добавьте товары в корзину, чтобы оплатить их вместе."],
+    ["查看物流详情，联系卖家，申请售后。","View shipping details, contact the seller, request after-sales support.","Посмотреть доставку, связаться с продавцом, запросить обслуживание после покупки."],
+    ["请勿在通电时拆开外壳。","Do not open the housing while power is connected.","Не открывайте корпус при подключённом питании."],
+    ["商品颜色可能因显示器不同略有差异。","The colour may vary slightly between displays.","Цвет может немного отличаться на разных экранах."]
+  ]
+}

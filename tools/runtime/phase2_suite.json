@@ -1,0 +1,314 @@
+[
+  {
+    "id": "real-pdf-ru",
+    "provenance": "authentic Phase1 Action Button / Files PDF capture",
+    "source": "/Users/notnik_kg/Desktop/Programming/ScreenTranslator/BuildArtifacts/oct2026/migration-phase1/captures/ru-cancel-retry-final/5F5275E1-6BA7-4FFF-864A-08ADCAC9CCDE",
+    "sha256": "0204a8f35ffa286cad65bb6eb8f4812cf8e7317fba647d5973419f8596097a28",
+    "expected": {
+      "centeredParagraphOneGroup": true,
+      "tableCellsSeparate": true,
+      "panelIntersections": 0,
+      "unrelatedSourceOverlap": 0,
+      "boundsViolations": 0,
+      "mustMergeRects": [
+        [
+          324.7949639211972,
+          787.866279710002,
+          678.7381591796875,
+          50.133720397949084
+        ],
+        [
+          524.5262194994141,
+          837.0211317047314,
+          275.1116027832032,
+          47.59145736694317
+        ]
+      ],
+      "mustKeepSeparateRects": [
+        [
+          91.42422753352008,
+          2787.7415780510573,
+          137.78245544433594,
+          27.121493339538517
+        ],
+        [
+          337.28707387926045,
+          2792.9651161874144,
+          137.41323852539065,
+          21.034883499145547
+        ],
+        [
+          582.9272164040151,
+          2788.5924350915025,
+          133.32537841796875,
+          25.419780731201136
+        ],
+        [
+          824.2892671433298,
+          2787.7079371223335,
+          137.79370117187509,
+          27.188776016235337
+        ],
+        [
+          1070.1577357672732,
+          2792.9651161005686,
+          137.4132385253905,
+          21.034883499145547
+        ]
+      ],
+      "readableHeadings": [
+        "多款式注塑杯盖",
+        "多颜色可选品质好"
+      ],
+      "minimumClippedExclusions": 1,
+      "maximumPanelAreaRatio": 2.5
+    },
+    "baselineTarget": "russian"
+  },
+  {
+    "id": "real-pdf-en",
+    "provenance": "authentic Phase1 Action Button / Files PDF capture",
+    "source": "/Users/notnik_kg/Desktop/Programming/ScreenTranslator/BuildArtifacts/oct2026/migration-phase1/captures/en-rapid-final/B75E9D51-F095-4B35-9F26-F650C84804A1/5E45FDE6-EA2E-40BD-8F8B-C622EF0C54CA",
+    "sha256": "a98987f043661a141a35a63c0d50fd1ca7ffad296fe9c8998e93dc6f770b8b4e",
+    "expected": {
+      "centeredParagraphOneGroup": true,
+      "tableCellsSeparate": true,
+      "panelIntersections": 0,
+      "unrelatedSourceOverlap": 0,
+      "boundsViolations": 0,
+      "mustMergeRects": [
+        [
+          324.7949631131755,
+          787.8662796603755,
+          678.7381591796875,
+          50.133720397949396
+        ],
+        [
+          524.5262194994141,
+          837.0211317047314,
+          275.1116027832032,
+          47.59145736694317
+        ]
+      ],
+      "mustKeepSeparateRects": [
+        [
+          91.60883986821949,
+          2792.9651161005686,
+          137.4132385253906,
+          21.034883499145547
+        ],
+        [
+          337.287070318421,
+          2792.9651161005686,
+          133.24920654296875,
+          21.034883499145547
+        ],
+        [
+          578.7521926157106,
+          2788.5246654803623,
+          137.51138305664065,
+          25.555319786071834
+        ],
+        [
+          824.4795023287871,
+          2792.9651161005686,
+          137.41323852539065,
+          21.034883499145547
+        ],
+        [
+          1070.1577357672732,
+          2792.9651161005686,
+          137.4132385253905,
+          21.034883499145547
+        ]
+      ],
+      "readableHeadings": [
+        "多款式注塑杯盖",
+        "多颜色可选品质好"
+      ],
+      "minimumClippedExclusions": 1,
+      "maximumPanelAreaRatio": 2.5
+    },
+    "baselineTarget": "english"
+  },
+  {
+    "id": "real-action-pdf",
+    "provenance": "authentic Phase1 Action Button / Files PDF capture",
+    "source": "/Users/notnik_kg/Desktop/Programming/ScreenTranslator/BuildArtifacts/oct2026/migration-phase1/captures/action-button-final/9C19853E-F4B6-4185-819B-C91EAC37D175/73802E9B-40CB-4276-9A84-CA9BC03046B1",
+    "sha256": "7e2a23f5ad2786e50ab46c0b8e443cad2ddf581d02ef5d6e57dbc692028c806d",
+    "expected": {
+      "centeredParagraphOneGroup": true,
+      "tableCellsSeparate": true,
+      "panelIntersections": 0,
+      "unrelatedSourceOverlap": 0,
+      "boundsViolations": 0,
+      "mustMergeRects": [
+        [
+          324.7949526956453,
+          625.0000006610608,
+          678.7381591796875,
+          50.31395149230959
+        ],
+        [
+          524.5677728592691,
+          670.6216507155973,
+          279.1925354003906,
+          55.23925781249996
+        ]
+      ],
+      "mustKeepSeparateRects": [
+        [
+          91.46395732442829,
+          2625.4007648029474,
+          137.7030029296875,
+          26.651958465575973
+        ],
+        [
+          328.95899655135565,
+          2626.000000348973,
+          145.74131774902344,
+          25.232557296752873
+        ],
+        [
+          578.8012648390966,
+          2626.000000348973,
+          141.5772857666016,
+          25.232557296752873
+        ],
+        [
+          824.3527319673807,
+          2625.5063069837515,
+          137.66677856445324,
+          26.440874099731303
+        ],
+        [
+          1070.0494574778822,
+          2625.703399081596,
+          137.6297912597657,
+          30.21529388427752
+        ]
+      ],
+      "readableHeadings": [
+        "多款式注塑杯盖",
+        "多颜色可选品质好"
+      ],
+      "minimumClippedExclusions": 0,
+      "maximumPanelAreaRatio": 2.5
+    },
+    "baselineTarget": "english"
+  },
+  {
+    "id": "real-action-app",
+    "provenance": "authentic Phase1 Action Button / Files PDF capture",
+    "source": "/Users/notnik_kg/Desktop/Programming/ScreenTranslator/BuildArtifacts/oct2026/migration-phase1/captures/action-button-final/E4774647-3B41-425A-97C9-77815CDACDB4/97AF8DB9-2794-48AD-AD19-AD1A07A9C73E",
+    "sha256": "74ad16c48c5d7f80efef9eb15b8394c62f65919391f98b78cf42b2965ea65dc8",
+    "expected": {
+      "centeredParagraphOneGroup": true,
+      "tableCellsSeparate": true,
+      "panelIntersections": 0,
+      "unrelatedSourceOverlap": 0,
+      "boundsViolations": 0,
+      "mustMergeRects": [
+        [
+          324.7949639211972,
+          629.0000006054961,
+          678.7381591796875,
+          46.31395149230974
+        ],
+        [
+          524.5139521312317,
+          674.4508603852203,
+          275.1361389160157,
+          51.74944114685055
+        ]
+      ],
+      "mustKeepSeparateRects": [
+        [
+          91.46395732442829,
+          2625.4007648029474,
+          137.7030029296875,
+          26.651958465575973
+        ],
+        [
+          328.95899655135565,
+          2626.000000348973,
+          145.74131774902344,
+          25.232557296752873
+        ],
+        [
+          578.8012648390966,
+          2626.000000348973,
+          141.5772857666016,
+          25.232557296752873
+        ],
+        [
+          824.3527319673807,
+          2625.5063069837515,
+          137.66677856445324,
+          26.440874099731303
+        ],
+        [
+          1070.0494574778822,
+          2625.703399081596,
+          137.6297912597657,
+          30.21529388427752
+        ]
+      ],
+      "readableHeadings": [
+        "多款式注塑杯盖",
+        "多颜色可选品质好"
+      ],
+      "minimumClippedExclusions": 0,
+      "maximumPanelAreaRatio": 2.5
+    },
+    "baselineTarget": "english"
+  },
+  {
+    "id": "synthetic-A_product_ui",
+    "provenance": "synthetic secondary card from reboot",
+    "source": "/Users/notnik_kg/Desktop/Programming/ScreenTranslator/BuildArtifacts/oct2026/e2e-final/00-A_product_ui-english-original.png",
+    "sha256": "2bd4fdc7e85c1f77118312d0d555936b871b8e6991fdfe7300e573fb06c01a2a",
+    "expected": {
+      "panelIntersections": 0,
+      "unrelatedSourceOverlap": 0,
+      "boundsViolations": 0,
+      "maximumPanelAreaRatio": 2.5
+    }
+  },
+  {
+    "id": "synthetic-B_dense_commerce",
+    "provenance": "synthetic secondary card from reboot",
+    "source": "/Users/notnik_kg/Desktop/Programming/ScreenTranslator/BuildArtifacts/oct2026/e2e-final/02-B_dense_commerce-english-original.png",
+    "sha256": "c05377648d8b732645f1a69404ec45d6d4fc940b1fdabadf66077fc5ed84c490",
+    "expected": {
+      "panelIntersections": 0,
+      "unrelatedSourceOverlap": 0,
+      "boundsViolations": 0,
+      "maximumPanelAreaRatio": 2.5
+    }
+  },
+  {
+    "id": "synthetic-C_seller_chat",
+    "provenance": "synthetic secondary card from reboot",
+    "source": "/Users/notnik_kg/Desktop/Programming/ScreenTranslator/BuildArtifacts/oct2026/e2e-final/04-C_seller_chat-english-original.png",
+    "sha256": "dd8522bf29a4e00743dbb8404a461f181caac1387bcc401a29896dcc47021cc2",
+    "expected": {
+      "panelIntersections": 0,
+      "unrelatedSourceOverlap": 0,
+      "boundsViolations": 0,
+      "maximumPanelAreaRatio": 2.5
+    }
+  },
+  {
+    "id": "synthetic-D_packaging_spec",
+    "provenance": "synthetic secondary card from reboot",
+    "source": "/Users/notnik_kg/Desktop/Programming/ScreenTranslator/BuildArtifacts/oct2026/e2e-final/06-D_packaging_spec-english-original.png",
+    "sha256": "3e862f80c22e5bb721702140ea2e3dfd1f0f3c08ef9786446927b8385486eb42",
+    "expected": {
+      "panelIntersections": 0,
+      "unrelatedSourceOverlap": 0,
+      "boundsViolations": 0,
+      "maximumPanelAreaRatio": 2.5
+    }
+  }
+]

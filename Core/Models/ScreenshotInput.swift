@@ -18,6 +18,8 @@ struct ScreenshotInput: Identifiable, Equatable, Sendable, Codable {
             automationName: "Prompt 1 Placeholder"
         )
 
+        static let photoLibrary = SourceMetadata(sourceName: "Photos", automationName: nil)
+
         static func shortcuts(filename: String?) -> SourceMetadata {
             SourceMetadata(
                 sourceName: "Shortcuts / App Intent",
@@ -51,12 +53,14 @@ struct ScreenshotInput: Identifiable, Equatable, Sendable, Codable {
         self.timestamp = timestamp
         self.sourceMetadata = sourceMetadata
     }
+}
 
-    static let placeholder = ScreenshotInput(
-        imageData: Data(),
-        size: CGSize(width: 1179, height: 2556),
-        orientation: .up,
-        scale: 3.0,
-        sourceMetadata: .scaffold
-    )
+struct IntentHandoffRequest: Equatable, Sendable, Codable {
+    enum LaunchBehavior: String, CaseIterable, Sendable, Codable {
+        case floatingPreview
+        case openInApp
+    }
+
+    let screenshot: ScreenshotInput
+    let launchBehavior: LaunchBehavior
 }

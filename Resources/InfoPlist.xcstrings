@@ -1,0 +1,22 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "NSPhotoLibraryAddUsageDescription": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Translated screenshots are saved to Photos only when you tap Save."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Переведённые скриншоты сохраняются в Фото, только когда вы нажимаете «Сохранить»."
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

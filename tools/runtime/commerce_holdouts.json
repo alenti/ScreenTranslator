@@ -1,0 +1,29 @@
+{
+  "provenance": "Constructed locally for this experiment. Intended meanings reviewed by the coding assistant, not independently human-certified. Never use this held-out file for calibration/training.",
+  "cases": [
+    {"source":"优惠85折，不包邮。","meaning":"Pay 85% of original price (15% off); shipping is not included.","critical":"discount and shipping"},
+    {"source":"原价200元，八五折后170元，便宜30元。","meaning":"Original 200 yuan, final 170 after 15% discount, saving 30.","critical":"price and discount"},
+    {"source":"第二件半价，不是两件都半价。","meaning":"Only the second item is half price, not both.","critical":"discount and negation"},
+    {"source":"请先退款，不要补发。","meaning":"Please refund first; do not send a replacement.","critical":"refund and negation"},
+    {"source":"收到坏的配件后，我们会免费补发新的。","meaning":"After we receive the defective accessory, we will send a new one free.","critical":"actor and replacement condition"},
+    {"source":"你把坏的退给我，我把新的寄给你。","meaning":"You return the defective item to me; I send the new item to you.","critical":"sender/receiver"},
+    {"source":"不是没货，是暂时不能发俄罗斯。","meaning":"It is in stock, but temporarily cannot be shipped to Russia.","critical":"negation and destination"},
+    {"source":"不是充电器坏了，是线没插紧。","meaning":"The charger is not broken; the cable is not plugged in firmly.","critical":"negation and diagnosis"},
+    {"source":"一箱24个，一共5箱，不是5个。","meaning":"24 items per carton, five cartons total, not five items.","critical":"quantity"},
+    {"source":"外径80毫米，内径76毫米，误差不超过0.2毫米。","meaning":"Outside diameter 80 mm, inside 76 mm, tolerance at most 0.2 mm.","critical":"dimensions and bound"},
+    {"source":"容量500毫升，净重不是500克。","meaning":"Capacity 500 ml; this does not mean a net weight of 500 g.","critical":"units and negation"},
+    {"source":"订金可以退，定制开工后不退。","meaning":"Deposit is refundable before customized work starts; not after it starts.","critical":"refund condition"},
+    {"source":"今天付款，后天发货，不是后天到货。","meaning":"Pay today, ship the day after tomorrow; arrival is not promised then.","critical":"shipping versus delivery"},
+    {"source":"我们承担寄回运费，您承担第一次寄出的运费。","meaning":"We pay return shipping; you pay the initial outbound shipping.","critical":"who pays"},
+    {"source":"免费安装不包括上楼搬运。","meaning":"Free installation excludes carrying the item upstairs.","critical":"exclusion"},
+    {"source":"这笔是开机费，不是运费。","meaning":"This charge is a machine setup/start-up charge, not shipping.","critical":"fee meaning"},
+    {"source":"高度可以调节，亮度不能调节。","meaning":"Height is adjustable; brightness is not.","critical":"attribute and negation"},
+    {"source":"适用于iPhone 18 promax，支持Magsafe，17pro不能用。","meaning":"Suitable for iPhone 18 promax, supports Magsafe; not compatible with 17pro.","critical":"protected product fragments and incompatibility"},
+    {"source":"USB-C输入5V/3A，输出最大20W，电池不含在内。","meaning":"USB-C input 5V/3A, output up to 20W; battery not included.","critical":"electrical specs and exclusion"},
+    {"source":"先不要确认收货，等补发件到了再确认。","meaning":"Do not confirm receipt yet; confirm after the replacement arrives.","critical":"sequence and negation"},
+    {"source":"不是让您再付135元，是退您135元。","meaning":"You are not being asked to pay another 135 yuan; 135 yuan is being refunded to you.","critical":"money direction"},
+    {"source":"最低3000件，每种颜色至少500件。","meaning":"At least 3000 items total and at least 500 of each color.","critical":"minimum quantities"},
+    {"source":"发错颜色可以换，不是质量问题也可以换。","meaning":"Wrong colors may be exchanged; an exchange is also possible without a quality defect.","critical":"exchange eligibility"},
+    {"source":"价格不含税，含税需要另外加13%。","meaning":"Price excludes tax; tax-inclusive price requires an additional 13%.","critical":"tax and price"}
+  ]
+}

@@ -14,6 +14,4 @@ struct ProcessingJob: Identifiable, Equatable, Sendable {
         self.input = input
         self.createdAt = createdAt
     }
-
-    static let placeholder = ProcessingJob(input: .placeholder)
 }

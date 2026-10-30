@@ -1,0 +1,18 @@
+# Local model artifacts
+*.gguf
+*.bin
+*.safetensors
+*.pt
+*.pth
+
+# Local llama.cpp build products
+LocalLlama/*
+!LocalLlama/README.md
+
+# Apple/editor noise
+.DS_Store
+xcuserdata/
+DerivedData/
+
+# Preserved local Python bytecode caches
+__pycache__/

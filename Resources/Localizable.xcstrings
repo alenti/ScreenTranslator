@@ -1,0 +1,1568 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "%lld of %lld text blocks": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld из %lld фрагментов текста"
+          }
+        }
+      }
+    },
+    "%lld text blocks shown in the original": {
+      "localizations": {
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld text block shown in the original"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld text blocks shown in the original"
+                }
+              }
+            }
+          }
+        },
+        "ru": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld фрагмент оставлен в оригинале"
+                }
+              },
+              "few": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld фрагмента оставлены в оригинале"
+                }
+              },
+              "many": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld фрагментов оставлены в оригинале"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld фрагмента оставлены в оригинале"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "AI Model Couldn’t Start": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не удалось запустить ИИ-модель"
+          }
+        }
+      }
+    },
+    "AI Model Needs Reinstalling": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ИИ-модель нужно переустановить"
+          }
+        }
+      }
+    },
+    "AI Model Not Installed": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ИИ-модель не установлена"
+          }
+        }
+      }
+    },
+    "AI Model Ready": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ИИ-модель готова"
+          }
+        }
+      }
+    },
+    "About": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "О приложении"
+          }
+        }
+      }
+    },
+    "Accepts a screenshot from Shortcuts and returns a PNG file for the Shortcuts Quick Look action.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Принимает скриншот из Быстрых команд и возвращает PNG для действия «Быстро просмотреть»."
+          }
+        }
+      }
+    },
+    "Acknowledgements": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Благодарности"
+          }
+        }
+      }
+    },
+    "Action Button": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Кнопка действия"
+          }
+        }
+      }
+    },
+    "Action Button Setup": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Настройка кнопки действия"
+          }
+        }
+      }
+    },
+    "Add **Translate Screenshot for Quick Look**. Search for “ChinaTap” to find it.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Добавьте **Перевести скриншот для просмотра** — найдите его поиском по «ChinaTap»."
+          }
+        }
+      }
+    },
+    "Add **Translate Screenshot in App**. Search for “ChinaTap” to find it.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Добавьте **Перевести скриншот в приложении** — найдите его поиском по «ChinaTap»."
+          }
+        }
+      }
+    },
+    "Add Ready-Made Shortcut": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Добавить готовую команду"
+          }
+        }
+      }
+    },
+    "Add the **Quick Look** action.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Добавьте действие **Быстро просмотреть**."
+          }
+        }
+      }
+    },
+    "Add the **Take Screenshot** action.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Добавьте действие **Сделать снимок экрана**."
+          }
+        }
+      }
+    },
+    "All Text": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Весь текст"
+          }
+        }
+      }
+    },
+    "Already have a ScreenTranslator shortcut? It keeps working — you can skip this step.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Уже есть команда ScreenTranslator? Она продолжит работать — этот шаг можно пропустить."
+          }
+        }
+      }
+    },
+    "Already have a shortcut? It keeps working. To switch modes, edit it in Shortcuts to match the steps above.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Уже есть быстрая команда? Она продолжит работать. Чтобы сменить режим, измените её в Быстрых командах по шагам выше."
+          }
+        }
+      }
+    },
+    "App Language": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Язык приложения"
+          }
+        }
+      }
+    },
+    "Back": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Назад"
+          }
+        }
+      }
+    },
+    "Cancel": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отменить"
+          }
+        }
+      }
+    },
+    "Can’t Read This Image": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не удаётся прочитать изображение"
+          }
+        }
+      }
+    },
+    "Checking the model file. This can take a minute — keep the app open.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Проверка файла модели. Это может занять минуту — не закрывайте приложение."
+          }
+        }
+      }
+    },
+    "Checking…": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Проверка…"
+          }
+        }
+      }
+    },
+    "Chinese": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Китайский"
+          }
+        }
+      }
+    },
+    "Chinese text is translated privately on this iPhone.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Китайский текст переводится конфиденциально, прямо на этом iPhone."
+          }
+        }
+      }
+    },
+    "Chinese text will be translated into this language. You can change it any time.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Китайский текст будет переводиться на этот язык. Его можно сменить в любой момент."
+          }
+        }
+      }
+    },
+    "Chinese → %@": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Китайский → %@"
+          }
+        }
+      }
+    },
+    "Choose a Language": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выберите язык"
+          }
+        }
+      }
+    },
+    "Choose “%@.gguf” in Files. The file is checked before it is installed.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выберите «%@.gguf» в Файлах. Перед установкой файл будет проверен."
+          }
+        }
+      }
+    },
+    "Close": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Закрыть"
+          }
+        }
+      }
+    },
+    "Close other apps and try again. If this keeps happening, restart your iPhone.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Закройте другие приложения и попробуйте снова. Если ошибка повторяется, перезапустите iPhone."
+          }
+        }
+      }
+    },
+    "Continue": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Продолжить"
+          }
+        }
+      }
+    },
+    "Copy": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Копировать"
+          }
+        }
+      }
+    },
+    "Copy Both": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Скопировать всё"
+          }
+        }
+      }
+    },
+    "Copy Original": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Скопировать оригинал"
+          }
+        }
+      }
+    },
+    "Copy Translation": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Скопировать перевод"
+          }
+        }
+      }
+    },
+    "Couldn’t Save. Allow Photos access in Settings.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не удалось сохранить. Разрешите доступ к Фото в Настройках."
+          }
+        }
+      }
+    },
+    "Create a shortcut once — then translate any screen with a single press.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Создайте быструю команду один раз — и переводите любой экран одним нажатием."
+          }
+        }
+      }
+    },
+    "Done": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Готово"
+          }
+        }
+      }
+    },
+    "English": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Английский"
+          }
+        }
+      }
+    },
+    "Everything runs on this iPhone. Nothing is uploaded.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Всё работает на этом iPhone. Ничего не загружается."
+          }
+        }
+      }
+    },
+    "Example: the Action Button set to the new shortcut": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пример: кнопке действия назначена новая команда"
+          }
+        }
+      }
+    },
+    "Example: the finished shortcut": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пример: готовая быстрая команда"
+          }
+        }
+      }
+    },
+    "Floating Screen Translator": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Floating Screen Translator"
+          }
+        }
+      }
+    },
+    "Free up at least %@ of storage, then try again.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Освободите не менее %@ и попробуйте снова."
+          }
+        }
+      }
+    },
+    "Free up some space on your iPhone and try again.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Освободите место на iPhone и попробуйте снова."
+          }
+        }
+      }
+    },
+    "Get Started": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Начать"
+          }
+        }
+      }
+    },
+    "Getting the AI model ready…": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Подготовка ИИ-модели…"
+          }
+        }
+      }
+    },
+    "How Should Results Open?": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Как показывать результат?"
+          }
+        }
+      }
+    },
+    "Import Model File…": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Импортировать файл модели…"
+          }
+        }
+      }
+    },
+    "In Place": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Прямо на месте"
+          }
+        }
+      }
+    },
+    "In iPhone **Settings › Action Button**, choose **Shortcut** and select your new shortcut.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "В **Настройках iPhone › Кнопка действия** выберите **Быстрая команда** и укажите новую команду."
+          }
+        }
+      }
+    },
+    "Install the AI Model": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Установите ИИ-модель"
+          }
+        }
+      }
+    },
+    "Install the AI model in Settings to translate on this iPhone.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Установите ИИ-модель в Настройках, чтобы переводить на этом iPhone."
+          }
+        }
+      }
+    },
+    "Installing…": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Установка…"
+          }
+        }
+      }
+    },
+    "Last Translation": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Последний перевод"
+          }
+        }
+      }
+    },
+    "Make sure the screenshot contains Chinese text and try again.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Убедитесь, что на скриншоте есть китайский текст, и попробуйте снова."
+          }
+        }
+      }
+    },
+    "More": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ещё"
+          }
+        }
+      }
+    },
+    "No Chinese Text Found": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Китайский текст не найден"
+          }
+        }
+      }
+    },
+    "Not Enough Storage": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Недостаточно места"
+          }
+        }
+      }
+    },
+    "Not Working": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не работает"
+          }
+        }
+      }
+    },
+    "Not translated": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не переведено"
+          }
+        }
+      }
+    },
+    "Nothing is uploaded. The app has no accounts, ads or analytics.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ничего не загружается. В приложении нет аккаунтов, рекламы и аналитики."
+          }
+        }
+      }
+    },
+    "Nothing to Copy": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нечего копировать"
+          }
+        }
+      }
+    },
+    "OK": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ОК"
+          }
+        }
+      }
+    },
+    "One Press": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Одно нажатие"
+          }
+        }
+      }
+    },
+    "Open **Shortcuts** and tap **+** to create a shortcut.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Откройте **Быстрые команды** и нажмите **+**, чтобы создать команду."
+          }
+        }
+      }
+    },
+    "Open Full Viewer": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Открыть полный просмотр"
+          }
+        }
+      }
+    },
+    "Open ScreenTranslator with the full viewer: compare, zoom, copy text, share and save.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Открывает ScreenTranslator с полным просмотром: сравнение, масштаб, копирование текста, отправка и сохранение."
+          }
+        }
+      }
+    },
+    "Open Shortcuts": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Открыть Быстрые команды"
+          }
+        }
+      }
+    },
+    "Open in App": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Открыть в приложении"
+          }
+        }
+      }
+    },
+    "Open in viewer": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Открыть в просмотре"
+          }
+        }
+      }
+    },
+    "Opens iOS Settings. Choose Language there to use the app in English or Russian.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Откроются Настройки iOS. Выберите там «Язык», чтобы пользоваться приложением на русском или английском."
+          }
+        }
+      }
+    },
+    "Opens the screenshot in the app and shows the translation in the full viewer.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Открывает скриншот в приложении и показывает перевод в полном просмотре."
+          }
+        }
+      }
+    },
+    "Original": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Оригинал"
+          }
+        }
+      }
+    },
+    "Original Copied": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Оригинал скопирован"
+          }
+        }
+      }
+    },
+    "Partly translated": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Переведено частично"
+          }
+        }
+      }
+    },
+    "Pick what happens after you translate with the Action Button.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выберите, что происходит после перевода кнопкой действия."
+          }
+        }
+      }
+    },
+    "Preparing preview": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Подготовка результата"
+          }
+        }
+      }
+    },
+    "Preparing the AI Model": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Подготовка ИИ-модели"
+          }
+        }
+      }
+    },
+    "Press the Action Button on any Chinese screen, or translate an image from Photos.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нажмите кнопку действия на любом экране с китайским текстом или переведите изображение из Фото."
+          }
+        }
+      }
+    },
+    "Privacy": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Конфиденциальность"
+          }
+        }
+      }
+    },
+    "Private": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Конфиденциально"
+          }
+        }
+      }
+    },
+    "Quick Look Translate Screenshot": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Перевести скриншот (просмотр)"
+          }
+        }
+      }
+    },
+    "Quick Preview": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Быстрый просмотр"
+          }
+        }
+      }
+    },
+    "Quick Preview is recommended for everyday use.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Для повседневного использования рекомендуем «Быстрый просмотр»."
+          }
+        }
+      }
+    },
+    "Reading screenshot": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Чтение скриншота"
+          }
+        }
+      }
+    },
+    "Recommended": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Рекомендуется"
+          }
+        }
+      }
+    },
+    "Reset Zoom": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сбросить масштаб"
+          }
+        }
+      }
+    },
+    "Russian": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Русский"
+          }
+        }
+      }
+    },
+    "Save to Photos": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сохранить в Фото"
+          }
+        }
+      }
+    },
+    "Saved to Photos": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сохранено в Фото"
+          }
+        }
+      }
+    },
+    "Screen Translator": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Screen Translator"
+          }
+        }
+      }
+    },
+    "Screenshot": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Скриншот"
+          }
+        }
+      }
+    },
+    "Screenshot Not Received": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Скриншот не получен"
+          }
+        }
+      }
+    },
+    "Screenshots and recognized text are processed only on this iPhone.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Скриншоты и распознанный текст обрабатываются только на этом iPhone."
+          }
+        }
+      }
+    },
+    "Set Up %@": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Настройка: %@"
+          }
+        }
+      }
+    },
+    "Set Up AI Model": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Установить ИИ-модель"
+          }
+        }
+      }
+    },
+    "Set Up Later": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Настроить позже"
+          }
+        }
+      }
+    },
+    "Set Up the Action Button": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Настройте кнопку действия"
+          }
+        }
+      }
+    },
+    "Set up the translator in Settings, then press the Action Button on any Chinese screen.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Настройте переводчик в Настройках, затем нажмите кнопку действия на экране с китайским текстом."
+          }
+        }
+      }
+    },
+    "Settings": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Настройки"
+          }
+        }
+      }
+    },
+    "Share": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Поделиться"
+          }
+        }
+      }
+    },
+    "Show All Text": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Весь текст"
+          }
+        }
+      }
+    },
+    "Show Results": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Показ результата"
+          }
+        }
+      }
+    },
+    "Show Welcome Guide": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Показать приветствие"
+          }
+        }
+      }
+    },
+    "Shows all recognized text": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Показывает весь распознанный текст"
+          }
+        }
+      }
+    },
+    "Some text couldn’t be translated reliably. It stays in Chinese on the image and is marked below.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Часть текста не удалось надёжно перевести. На изображении она осталась на китайском и отмечена ниже."
+          }
+        }
+      }
+    },
+    "Something went wrong while translating. Please try again.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "При переводе что-то пошло не так. Попробуйте ещё раз."
+          }
+        }
+      }
+    },
+    "Start Translating": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Начать перевод"
+          }
+        }
+      }
+    },
+    "Stay in the current app. The translation opens in a system preview; close it to go right back.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Остаётесь в текущем приложении. Перевод открывается в системном просмотре — закройте его, чтобы сразу вернуться."
+          }
+        }
+      }
+    },
+    "Tap any text for details": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нажмите на текст, чтобы увидеть подробности"
+          }
+        }
+      }
+    },
+    "Text": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Текст"
+          }
+        }
+      }
+    },
+    "Text Copied": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Текст скопирован"
+          }
+        }
+      }
+    },
+    "The image is empty, damaged or in an unsupported format.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Изображение пустое, повреждено или в неподдерживаемом формате."
+          }
+        }
+      }
+    },
+    "The installed AI model file is incomplete or damaged. Import it again in Settings.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Файл ИИ-модели неполный или повреждён. Импортируйте его заново в Настройках."
+          }
+        }
+      }
+    },
+    "The screenshot from Shortcuts couldn’t be opened.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не удалось открыть скриншот из Быстрых команд."
+          }
+        }
+      }
+    },
+    "The translation didn’t fully fit on the image. The complete text is shown here.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Перевод не поместился на изображении полностью. Полный текст — здесь."
+          }
+        }
+      }
+    },
+    "The translation model is installed on this iPhone.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Модель перевода установлена на этом iPhone."
+          }
+        }
+      }
+    },
+    "This text couldn’t be translated reliably, so the original is shown on the image.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Этот текст не удалось надёжно перевести, поэтому на изображении оставлен оригинал."
+          }
+        }
+      }
+    },
+    "Translate Again": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Перевести заново"
+          }
+        }
+      }
+    },
+    "Translate Chinese screenshots into %@ — right on your iPhone.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Переводите китайские скриншоты прямо на iPhone. Язык перевода: %@."
+          }
+        }
+      }
+    },
+    "Translate Chinese screenshots into English or Russian in seconds.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Переводите китайские скриншоты на английский или русский за секунды."
+          }
+        }
+      }
+    },
+    "Translate Image": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Перевести изображение"
+          }
+        }
+      }
+    },
+    "Translate Screenshot for Quick Look": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Перевести скриншот для просмотра"
+          }
+        }
+      }
+    },
+    "Translate Screenshot in App": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Перевести скриншот в приложении"
+          }
+        }
+      }
+    },
+    "Translate To": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Язык перевода"
+          }
+        }
+      }
+    },
+    "Translate from Any App": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Перевод из любого приложения"
+          }
+        }
+      }
+    },
+    "Translate whatever is on screen with the Action Button.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Переводите всё, что на экране, кнопкой действия."
+          }
+        }
+      }
+    },
+    "Translated": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Перевод"
+          }
+        }
+      }
+    },
+    "Translated Screenshot": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Переведённый скриншот"
+          }
+        }
+      }
+    },
+    "Translated images are saved to Photos only when you tap Save.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Переведённые изображения сохраняются в Фото, только когда вы нажимаете «Сохранить»."
+          }
+        }
+      }
+    },
+    "Translated screenshot": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Переведённый скриншот"
+          }
+        }
+      }
+    },
+    "Translates the screenshot on this iPhone and returns an image. Add the Quick Look action after it.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Переводит скриншот на этом iPhone и возвращает изображение. Добавьте после него действие «Быстро просмотреть»."
+          }
+        }
+      }
+    },
+    "Translating": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Перевод"
+          }
+        }
+      }
+    },
+    "Translation": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Перевод"
+          }
+        }
+      }
+    },
+    "Translation Cancelled": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Перевод отменён"
+          }
+        }
+      }
+    },
+    "Translation Copied": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Перевод скопирован"
+          }
+        }
+      }
+    },
+    "Translation Failed": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не удалось перевести"
+          }
+        }
+      }
+    },
+    "Translation needs a %@ model that runs on this iPhone. Import the model file from Files.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Для перевода нужна модель размером %@, которая работает на этом iPhone. Импортируйте файл модели из Файлов."
+          }
+        }
+      }
+    },
+    "Translations are drawn right over the original text.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Перевод появляется поверх исходного текста."
+          }
+        }
+      }
+    },
+    "Translator": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Переводчик"
+          }
+        }
+      }
+    },
+    "Try Again": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Повторить"
+          }
+        }
+      }
+    },
+    "Version": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Версия"
+          }
+        }
+      }
+    },
+    "View": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Вид"
+          }
+        }
+      }
+    },
+    "Welcome to Screen Translator": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Добро пожаловать в Screen Translator"
+          }
+        }
+      }
+    },
+    "Working": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Работает"
+          }
+        }
+      }
+    },
+    "You can try again at any time.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Можно попробовать снова в любой момент."
+          }
+        }
+      }
+    },
+    "You’re All Set": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Всё готово"
+          }
+        }
+      }
+    },
+    "“Show Results” sets up your Action Button shortcut. After changing it, update the shortcut once — see Action Button Setup below.": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "«Показ результата» определяет, какую быструю команду использовать для кнопки действия. После изменения один раз обновите команду — см. «Настройка кнопки действия»."
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}
